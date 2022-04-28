@@ -19,7 +19,6 @@ public class GameOver : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        FindObjectOfType<PauseMenu>().Toggle();
     }
 
     public void Menu ()

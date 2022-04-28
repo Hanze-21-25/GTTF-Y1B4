@@ -4,12 +4,12 @@ public class CameraController : MonoBehaviour
 {
     public Transform cameraTransform;
 
-    
-    //public float minY;
-    //public float maxY;
+
+    //public float minY; - was not working, resulted in additional bugs
+    //public float maxY; - was not working, resulted in additional bugs
 
 
-   //Variable for X camera limits
+    //Variable for X camera limits
     public float minposX;
     public float maxposX;
 

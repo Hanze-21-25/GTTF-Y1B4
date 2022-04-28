@@ -62,6 +62,7 @@ public class WaveSpawner : MonoBehaviour
         {
             Debug.Log("LEVEL WON!");
             this.enabled = false;
+            FindObjectOfType<GameManager>().WinLevel();
         }
      
     }

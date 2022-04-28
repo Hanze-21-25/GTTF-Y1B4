@@ -34,6 +34,8 @@ public class Turret : MonoBehaviour
 
 	void UpdateTarget()
 	{
+		//Makes turret focus on the closest enemy
+
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
 		float shortestDistance = Mathf.Infinity;
 		GameObject nearestEnemy = null;
@@ -58,7 +60,7 @@ public class Turret : MonoBehaviour
 
 	}
 
-	// Update is called once per frame
+
 	void Update()
 	{
 		if (target == null)

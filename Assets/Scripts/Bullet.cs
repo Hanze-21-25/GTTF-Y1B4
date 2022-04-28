@@ -3,7 +3,7 @@ public class Bullet : MonoBehaviour
 {
 	private Transform target;
 
-	//Speed variable
+	//Speed of the bullet variable
 	public float speed = 70f;
 
 	public int damage = 50;
@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
 	{
 		target = _target;
 	}
-	// Update is called once per frame
+	
 	void Update()
 	{
 		if (target == null)

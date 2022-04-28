@@ -1,0 +1,4 @@
+repository "OTD@TTGF_B3G2_PSES@cloud"
+  path "/"
+    br "/main"
+    co "/main"

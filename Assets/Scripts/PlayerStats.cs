@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static int Money;
+    
+    //Variable for money in the begining
     public int startMoney;
-
     public static int Rounds;
     
 

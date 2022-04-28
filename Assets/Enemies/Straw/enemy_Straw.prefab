@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   startHealth: 125
-  value: 5
+  value: 30
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035
 CapsuleCollider:
