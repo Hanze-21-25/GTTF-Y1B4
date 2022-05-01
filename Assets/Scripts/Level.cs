@@ -2,28 +2,34 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// ReSharper disable MemberCanBeMadeStatic.Local
 
 public class Level : MonoBehaviour
 {
-    private Vector2 coordinates;
-    
-    [SerializeField] private int levelVerticalSize;
-    [SerializeField] private int levelHorizontalSize;
-    [SerializeField] private float squareSize;
+    public Transform tilePrefab;
+    [SerializeField] private Vector2 coordinates;
+    [SerializeField] private float tileSize;
+    [SerializeField] private float tileOffset;
 
 
     void Start()
     {
-        coordinates = new Vector2(levelHorizontalSize, levelVerticalSize);
-        for (var x = 0; x < coordinates.x; x++)
+        GenerateLevel();
+    }
+
+    private void GenerateLevel()
+    {
+        for(var x = 0; x < coordinates.x; x++)
         {
-            GenerateTile();
+            for(var y = 0; y < coordinates.y; y++)
+            {
+                SpawnTile(x,y,tileOffset);
+            }
         }
     }
 
-    private void GenerateTile()
+    private void SpawnTile(int x, int y, float offset)
     {
-        throw new NotImplementedException();
         
     }
 }
