@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class Spawn : Waypoint
 {
@@ -8,7 +5,7 @@ public class Spawn : Waypoint
     {
         
     }
-
+    
     void Update()
     {
         
