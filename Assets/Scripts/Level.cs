@@ -1,17 +1,24 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
-// ReSharper disable MemberCanBeMadeStatic.Local
 
 public class Level : MonoBehaviour
 {
     public Transform tilePrefab;
     private string contentsFolderName = "Contents";
-    [SerializeField] private Vector2 tiles;
+    private int width;
+    private int height;
+    private List<Transform> tiles;
+    
+    [SerializeField] private Vector2 size;
     [SerializeField] private float tileSize;
     [SerializeField] private float tileOffset;
 
     void Start()
     {
+        width = (int) size.x;
+        height = (int) size.y;
+        
         if (tileOffset < 1)
         {
             tileOffset = 1;
@@ -34,14 +41,14 @@ public class Level : MonoBehaviour
         folder.parent = transform;
         
         tilePrefab.localScale = new Vector3(tileSize/10, 1, tileSize/10);
-        if (tiles.x <= 0 || tiles.y <= 0)
+        if (size.x <= 0 || size.y <= 0)
         {
             throw new Exception("Null Exception - tile amount can not be less than 1");
         }
 
-        for(var x = 0; x < tiles.x; x++)
+        for(var x = 0; x < size.x; x++)
         {
-            for(var y = 0; y < tiles.y; y++)
+            for(var y = 0; y < size.y; y++)
             {
                 var tile = SpawnTile(x,y,tileOffset);
                 tile.parent = folder;
@@ -53,8 +60,8 @@ public class Level : MonoBehaviour
     {
         var position = transform.position;
         
-        var x1 = position.x + tileSize * x * tileOffset + tileSize / 2;
-        var z1 = position.z + tileSize * y * tileOffset + tileSize / 2;
+        var x1 = position.x + tileSize * x * tileOffset + tileSize / 2 - tileSize*size.x/2;
+        var z1 = position.z + tileSize * y * tileOffset + tileSize / 2 - tileSize*size.y/2;
         
         var tilePosition = new Vector3(x1 ,0 ,z1);
         return Instantiate(tilePrefab, tilePosition, Quaternion.Euler(Vector3.zero));
