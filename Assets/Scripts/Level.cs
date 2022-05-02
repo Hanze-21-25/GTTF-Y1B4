@@ -10,16 +10,6 @@ public class Level : MonoBehaviour
     [SerializeField] private float tileSize;
     [SerializeField] private float tileOffset;
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     void Start()
     {
         if (tileOffset < 1)
@@ -29,13 +19,6 @@ public class Level : MonoBehaviour
 
         GenerateLevel();
     }
-    
-    
-    
-    
-    
-    
-    
 
     private void GenerateLevel()
     {
@@ -65,14 +48,6 @@ public class Level : MonoBehaviour
             }
         }
     }
-
-    
-    
-    
-    
-    
-    
-    
     
     private Transform SpawnTile(int x, int y, float offset)
     {

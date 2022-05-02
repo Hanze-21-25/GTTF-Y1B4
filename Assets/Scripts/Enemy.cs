@@ -1,9 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public abstract class Enenmy : MonoBehaviour
+public abstract class Enenmy : Entity
 {
-    // Start is called before the first frame update
-    protected abstract void Move();
+    private void Move()
+    {
+        throw new NotImplementedException();
+    }
+
+    private Waypoint locateNearestWaypoint()
+    {
+        throw new NotImplementedException();
+        return null;
+    }
 }

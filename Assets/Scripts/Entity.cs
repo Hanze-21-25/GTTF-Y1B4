@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 /**
@@ -6,9 +5,9 @@ using UnityEngine;
  */
 public abstract class Entity : MonoBehaviour
 {
-    private int health;
-    private string model;
-    private float agility;
+    [SerializeField] private int health;
+    [SerializeField] private Transform model;
+    [SerializeField] private float agility;
 
     
     private void Start()

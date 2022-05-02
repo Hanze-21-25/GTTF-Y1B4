@@ -1,16 +1,6 @@
 
 public class Spawn : Waypoint
 {
-    void Start()
-    {
-        
-    }
-    
-    void Update()
-    {
-        
-    }
-
     /**
      * <summary>Starts a spawning loop</summary>>
      */
