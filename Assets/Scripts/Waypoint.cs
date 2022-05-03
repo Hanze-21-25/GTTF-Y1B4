@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class Waypoint : Tile
 {
-    
+    public override void Function()
+    {
+        DefaultBehaviour();
+        //Additional Behaviour
+    }
 }

@@ -1,19 +1,18 @@
 
 public class Spawn : Waypoint
 {
-    /**
-     * <summary>Starts a spawning loop</summary>>
-     */
-    private void Launch()
+    public override void Function()
     {
-        while (!Stop())
-        {
-            
-        }
+        DefaultBehaviour();
+        //Additional behaviour
     }
 
-    private bool Stop()
+    private void Launch()
     {
-        return false;
+    }
+
+    private void Stop()
+    {
+        
     }
 }
