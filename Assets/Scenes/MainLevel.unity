@@ -231,7 +231,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!114 &1238835178
 MonoBehaviour:
@@ -246,8 +246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 105917569194135651, guid: 9cc775366bdb640a9bb8a940c18d1153, type: 3}
-  tiles: {x: 8, y: 8}
-  tileSize: 0.5
+  sceneryPrefab: {fileID: 3066326970851568656, guid: b9fa2d2db260042fba7c4e8af7dfca06, type: 3}
+  size: {x: 8, y: 8}
+  tileSize: 1
   tileOffset: 1.2
 --- !u!4 &1238835179
 Transform:
