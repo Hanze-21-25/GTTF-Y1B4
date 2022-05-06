@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Contains player info, scripts GameManager | Enemy | BuildManager have reference to PlayerStats
 public class PlayerStats : MonoBehaviour
 {
     public static int Money;

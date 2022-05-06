@@ -33,8 +33,9 @@ public class Node : MonoBehaviour
     {
 		return transform.position + positionOffset;
     }
+	//When mouse is presses and the mouse is above the node, buildmanager function of building the turret is called
 
-	void OnMouseDown()
+	void OnMouseUp()
 	{
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
@@ -55,12 +56,15 @@ public class Node : MonoBehaviour
 
 	void BuildTurret (TurretBlueprint blueprint)
     {
+		//function checks if player has enough money to build a turret
+
 		if (PlayerStats.Money < blueprint.cost)
 		{
 			Debug.Log("You dont have enough money to build that!");
 			return;
 		}
-		//substracts the cost of the turret
+		
+		//substracts the cost of the turret from player money
 		PlayerStats.Money -= blueprint.cost;
 
 		GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity); //Quaternion.identity - no rotation
@@ -79,6 +83,7 @@ public class Node : MonoBehaviour
 			return;
 		}
 		
+		//substracts the cost of the upgrade from player money
 		PlayerStats.Money -= turretBlueprint.upgradeCost;
 
 		//Deleting old turret
@@ -96,6 +101,7 @@ public class Node : MonoBehaviour
 
 	public void SellTurret()
     {
+		//adds the sell amount to the player money
 		PlayerStats.Money += turretBlueprint.GetSellAmount();
 
 		Destroy(turret);
@@ -106,13 +112,14 @@ public class Node : MonoBehaviour
 
 	void OnMouseEnter()
 	{
+		//When the mouse if above the node, it changes the color
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
 
 		if (!buildManager.CanBuild)
 			return;
-		
-		if(buildManager.HasMoney){
+		//If payer does not have enough money to build the turret, node displays other color
+		if (buildManager.HasMoney){
 
           rend.material.color = hoverColor;
 		} else {

@@ -24,12 +24,12 @@ public class BuildManager : MonoBehaviour
 
 	public NodeUI nodeUI;
 
-	//property that checks if player can build
+	//property that checks if player can build turrets
 	public bool CanBuild { get { return turretToBuild != null; } }
 	public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
 
-	
 
+	//Selected node makes the NodeUI appear
 	public void SelectNode (Node node)
     {
 		if (selectedNode == node)
@@ -43,18 +43,24 @@ public class BuildManager : MonoBehaviour
 		selectedNode = node;
 		turretToBuild = null;
 
+		//Sets target from NodeUI script
 		nodeUI.SetTarget(node);
     }
+
+	//Makes the NodeUI disapear with the reference to the NodeUI script
 	public void DeselectNode()
     {
 		selectedNode = null;
 		
 		nodeUI.Hide();
     }
+
+	//Reference to TurretBlueprint script to build the turret
 	public void SelectTurretToBuild (TurretBlueprint turret)
     {
 		turretToBuild = turret;
-
+		
+		//Deselects the node when the turret is build
 		DeselectNode();
     }
 

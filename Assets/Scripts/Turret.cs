@@ -7,7 +7,7 @@ public class Turret : MonoBehaviour
 	private Transform target;
 
 	[Header("Attributes")]
-
+	//Range of the turret can be defined
 	public float range = 15f;
 
 	public float fireRate = 1f;
@@ -18,6 +18,8 @@ public class Turret : MonoBehaviour
 
 	public string enemyTag = "Enemy";
 
+
+	//partToRotate and firePoint are in the prefab of every turret model
 	public Transform partToRotate;
 	public float turnSpeed = 10f;
 
@@ -60,7 +62,7 @@ public class Turret : MonoBehaviour
 
 	}
 
-
+	//Locks the turret on the closest target
 	void Update()
 	{
 		if (target == null)

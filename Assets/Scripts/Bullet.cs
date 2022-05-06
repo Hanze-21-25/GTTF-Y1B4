@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 	public float speed = 70f;
 
 	public int damage = 50;
+	
 	//Explosion radius variable
 	public float explosionRadius = 0f;
 	public GameObject impactEffect;
@@ -15,7 +16,8 @@ public class Bullet : MonoBehaviour
 	{
 		target = _target;
 	}
-	
+
+	//Update void makes the bullet follow the enemy
 	void Update()
 	{
 		if (target == null)
@@ -32,6 +34,8 @@ public class Bullet : MonoBehaviour
 		}
 
 		transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+
+		//Makes the bullet always turn face to the enemy
 		transform.LookAt(target);
 
 	}
@@ -52,7 +56,7 @@ public class Bullet : MonoBehaviour
 			Damage(target);
 		}
 
-		
+		//Bullet gets distroyed when touches the enemy
 		Destroy(gameObject);
 	}
 
@@ -76,6 +80,7 @@ public class Bullet : MonoBehaviour
 	{
 		Enemy e = enemy.GetComponent<Enemy>();
 
+		//This function calls Damage taking funtion in enemy script
 		if (e != null) 
 		{
 	       e.TakeDamage(damage);
