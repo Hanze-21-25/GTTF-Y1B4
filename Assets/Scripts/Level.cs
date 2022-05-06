@@ -15,7 +15,17 @@ public class Level : MonoBehaviour
     [SerializeField] private float tileSize;
     [SerializeField] private float tileOffset;
 
+    
+    
     void Start()
+    {
+        SetNecessaryProperties();
+        GenerateLevel(); 
+        //GenerateLevelScenery();
+    }
+
+    
+    private void SetNecessaryProperties()
     {
         tileAmount = (int) (size.x * size.y);
         tilePrefab.localScale = new Vector3(tileSize/10, 1, tileSize/10);
@@ -23,13 +33,8 @@ public class Level : MonoBehaviour
         {
             tileOffset = 1;
         }
-
-        GenerateLevel(); 
-        GenerateLevelScenery();
     }
 
-    
-    
     //Generates the whole level
     private void GenerateLevel()
     {
@@ -56,32 +61,28 @@ public class Level : MonoBehaviour
         
     }
 
-    
-    
-    
     //Generates the structure of tiles and returns a list of tiles and their coordinates.
-    private object[] GenerateLevelBody()
+    private object[,] GenerateLevelBody()
     {
-        var tiles = new object[tileAmount];
-        var counter = 0;
+        //object[] tiles = new object[tileAmount];
+        //var counter = 0;
         
         
         for(var x = 0; x < size.x; x++)
         {
             for(var y = 0; y < size.y; y++)
             {
-                tiles[counter] = SpawnTile(x,y,tileOffset,"Tile");
-                counter++;
+                //tiles[x] =
+                SpawnTile(x,y,tileOffset,"Tile");
+                //counter++;
             }
         }
         
         
         return tiles;
     }
-
     
-    
-    
+    /*
     //Generates scenery of the level - for example beach or mountain range.
     private void GenerateLevelScenery(int tileNumber)
     {
@@ -96,10 +97,8 @@ public class Level : MonoBehaviour
         lvlScenery.parent = transform;
         lvlScenery.name = "Level Scenery";
     }
-    
-    
-    
-    
+    */
+
     //Spawns tiles under an instance of this class.
     private object[] SpawnTile(int x, int y, float offset, string tileName)
     {
@@ -123,4 +122,5 @@ public class Level : MonoBehaviour
         
         return tile;
     }
+    
 }

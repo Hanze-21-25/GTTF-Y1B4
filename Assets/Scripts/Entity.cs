@@ -32,9 +32,10 @@ public abstract class Entity : MonoBehaviour
         if (health > 0) return;
         Kill();
     }
-    private void Kill()
-    {
+
+    private void Kill(){
         Destroy(gameObject);
     }
-    
+
+
 }
