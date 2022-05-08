@@ -5,6 +5,9 @@ public class CameraController : MonoBehaviour
     public Transform cameraTransform;
 
 
+    //This part is not working correctly with the camera rig so I removed the zoom limit
+
+    //Zoom limit:
     //public float minY; - was not working, resulted in additional bugs
     //public float maxY; - was not working, resulted in additional bugs
 
@@ -17,8 +20,11 @@ public class CameraController : MonoBehaviour
     public float minposZ;
     public float maxposZ;
 
+    //Camera movement speed and time
     public float movementSpeed;
     public float movementTime;
+
+    //Amount of the rotation and zoom
     public float rotationAmount;
     public Vector3 zoomAmount;
 
@@ -54,7 +60,7 @@ public class CameraController : MonoBehaviour
 
     }
 
-    //Mouse buttons inputs
+    //Mouse buttons inputs (mouse wheel pressed and rolled)
     void HandleMouseInput()
     {
 
@@ -104,6 +110,8 @@ public class CameraController : MonoBehaviour
         {
             newPosition += (transform.right * -movementSpeed);
         }
+
+        //Also included Q and E in case mouse buttons are not working correctly
 
         if (Input.GetKey(KeyCode.Q))
         {
