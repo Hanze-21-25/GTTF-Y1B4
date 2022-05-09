@@ -3,14 +3,15 @@ public class BuildManager : MonoBehaviour{
     
     public static BuildManager instance; // The instance of an only Build Manager in the scene.
     public GameObject turretToBuild { get; private set; }
-    private Node selectedNode; 
-    public NodeMenu nodeMenu;
-    
-    
+    private Node selectedNode;
+
+
     /// Checks if player can build
     public bool CanBuild => turretToBuild != null;
+    
     /// Checks if player has enough money to buy selected turret
     public bool HasMoney => PlayerStats.Money >= turretToBuild.GetComponent<Turret>().cost;
+    
     /// Insures that this is the only BuildManager in the Scene
     private void Awake() {
         if (instance != null) {
@@ -20,6 +21,7 @@ public class BuildManager : MonoBehaviour{
         instance = this;
     }
     
+    /// Selects and deselects node
     public void SelectNode(Node node) {
         // Deselects if you click on the same node you clicked before.
         if (selectedNode == node) {
@@ -30,24 +32,18 @@ public class BuildManager : MonoBehaviour{
         selectedNode = node;
         turretToBuild = null;
 
-        nodeMenu.SetTarget(node);
+        selectedNode.contextMenu.Add(ref node);
     }
 
     /// Deselects a node
     public void DeselectNode() {
         selectedNode = null;
-        nodeMenu.Hide();
+        selectedNode.contextMenu.Hide();
     }
 
     /// Selects a turret from a set -> (shop)
-    public Turret SelectTurretToBuild(Turret turret) {
-        turretToBuild = turret;
+    public void SelectTurretToBuild(Turret turret) {
+        turretToBuild = turret.gameObject;
         DeselectNode();
-        return turretToBuild;
     }
 }
-
-/*
- *
- * .GetComponent<Turret>()
- */

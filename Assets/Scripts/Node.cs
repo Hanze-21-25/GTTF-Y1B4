@@ -1,22 +1,23 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-
-public class Node : MonoBehaviour{
+/**
+ * Represents an in-game node, to which player places turrets.
+ */
+public class Node : MonoBehaviour {
     
-    [SerializeField] private Color hoverColor; // Available colour
-    public Color notEnoughMoneyColor; // Unavailable colour
-    public Vector3 positionOffset; // Offset of a turret from this
-
-    [HideInInspector] public GameObject turret; // Turret on top of this
-    [HideInInspector] public bool isUpgraded; 
-
-    private Renderer rend; //??
+    public GameObject turret; // Turret on top of this
+    public bool isUpgraded;
+    private Renderer rend;
     private Color startColor; //Basic colour of this
+    private BuildManager buildManager;
+    public NodeMenu contextMenu;
 
-    BuildManager buildManager;
+    [SerializeField] private Color available; // Available colour
+    [SerializeField] public Color unavailable; // Unavailable colour
     
     /// Initialises necessary values
     void Start() {
+        
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
         buildManager = BuildManager.instance;
@@ -40,35 +41,11 @@ public class Node : MonoBehaviour{
         }
         PlayerStats.Money -= turret.GetComponent<Turret>().cost; 
         
-        this.turret = Instantiate(turret.GetComponent<Turret>().prefab, transform.position + positionOffset, Quaternion.identity);
-        Debug.Log("Turret build!");
-    }
-
-    
-    /// Upgrades a turret
-    public void UpgradeTurret() {
-        if (PlayerStats.Money < this.turret.GetComponent<Turret>().upgradeCost) {
-            Debug.Log("You dont have enough money to upgrade that!");
-            return;
-        }
-        var turret = this.turret.GetComponent<Turret>();
-        var oldTurret = turret;
-        //Deleting old turret
-        Destroy(this.turret);
-        //Building a new turret
-        this.turret = Instantiate(oldTurret.upgradedPrefab,
-            transform.position + positionOffset,
+        this.turret = Instantiate(turret.GetComponent<Turret>().prefab,
+            transform.position + turret.GetComponent<Turret>().positionOffset,
             Quaternion.identity);
-        isUpgraded = true;
-        Debug.Log("Turret upgraded!");
-    }
-
-    /// Sells turret
-    public void SellTurret() {
-        PlayerStats.Money += turretBlueprint.GetSellAmount();
-
-        Destroy(turret);
-        turretBlueprint = null;
+        
+        Debug.Log("Turret build!");
     }
 
     /// Changes colour of this
@@ -78,10 +55,10 @@ public class Node : MonoBehaviour{
         if (!buildManager.CanBuild) return;
 
         if (buildManager.HasMoney) {
-            rend.material.color = hoverColor;
+            rend.material.color = available;
         }
         else {
-            rend.material.color = notEnoughMoneyColor;
+            rend.material.color = unavailable;
         }
     }
 

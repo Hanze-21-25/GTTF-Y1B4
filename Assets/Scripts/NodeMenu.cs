@@ -1,65 +1,38 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class NodeMenu : MonoBehaviour{
+
+    public int displayedSellCost;
+    public int displayedUpgradeCost;
     public GameObject ui;
-
-    public Text upgradeCost;
     public Button upgradeButton;
-
-    public Text sellAmount;
-
     private Node menuHost;
-
-    /*public void SetTarget(Node _target) {
-        target = _target;
-
-        transform.position = target.transform.position + target.positionOffset;
-        // checks if turret is upgraded if set to do so
-        if (!target.isUpgraded) {
-            upgradeCost.text = "Upgraded" + target.GetComponent<Turret>().upgradeCost;
-            upgradeButton.interactable = true;
-        }
-        else {
-            upgradeCost.text = "DONE";
-            upgradeButton.interactable = false;
-        }
-        sellAmount.text = "$" + target.GetComponent<Turret>().GetSellCost();
-        ui.SetActive(true);
-    }*/
 
     /// Hides context menu
     public void Hide() {
         ui.SetActive(false);
     }
 
-    public void SetTarget(Node menuHost) {
-        this.menuHost = menuHost;
-
-        transform.position = menuHost.transform.position + menuHost.positionOffset;
-        // checks if turret is upgraded if set to do so
-        if (!menuHost.isUpgraded) {
-            upgradeCost.text = "Upgraded" + menuHost.turret.GetComponent<Turret>().upgradeCost;
-            upgradeButton.interactable = true;
-        }
-        else {
-            upgradeCost.text = "DONE";
-            upgradeButton.interactable = false;
-        }
-        sellAmount.text = "$" + menuHost.turret.GetComponent<Turret>().GetSellCost();
+    /// Adds this to a host, which sent as a parameter
+    public void Add(ref Node menuHost) {
+        transform.position = this.menuHost.transform.position + menuHost.turret.GetComponent<Turret>().positionOffset;
+        displayedSellCost = menuHost.turret.GetComponent<Turret>().GetSellCost();
         ui.SetActive(true);
+        
+        menuHost.contextMenu = this;
     }
 
-    /// 
+    /// Upgrades the turret and deselects the node
     public void Upgrade() {
-        // Upgrades the turret and deselects the node
-        menuHost.UpgradeTurret();
+        menuHost.turret.GetComponent<Turret>().Upgrade();
         BuildManager.instance.DeselectNode();
     }
 
     /// Upgrades the turret and deselects the node
     public void Sell() {
-        menuHost.SellTurret();
+        menuHost.turret.GetComponent<Turret>().Sell();
         BuildManager.instance.DeselectNode();
         menuHost.isUpgraded = false;
     }

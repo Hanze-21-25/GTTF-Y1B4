@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Turret : MonoBehaviour
 {
-
 	private Transform target;
 
 	[Header("Prefabs")]
@@ -16,27 +15,26 @@ public class Turret : MonoBehaviour
 	public float range = 15f;
 	public float fireRate = 1f;
 	private float fireCountdown;
-
+	public bool isUpgraded;
+	public Vector3 positionOffset; // Offset of a turret from this
+	public Node host;
 
 	[Header("Unity Setup Fields")]
-
 	public string enemyTag = "Enemy";
 	public Transform partToRotate;
 	public float turnSpeed = 10f;
 	public GameObject bulletPrefab;
 	public Transform firePoint;
 	
-
-
 	/// Executes working loop
 	void Start()
 	{
 		InvokeRepeating("Target", 0f, 0.5f);
 	}
 
+	/// Targets closest enemy (launched from the start loop) 
 	void Target()
 	{
-		//Makes turret focus on the closest enemy
 
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
 		float shortestDistance = Mathf.Infinity;
@@ -62,11 +60,13 @@ public class Turret : MonoBehaviour
 
 	}
 
-
+	/// Executes combat
 	void Update()
-	{
+	{ 
 		if (target == null)
 			return;
+		
+		CheckUpgraded();
 
 		//Target lock on
 		Vector3 dir = target.position - transform.position;
@@ -83,7 +83,8 @@ public class Turret : MonoBehaviour
 		fireCountdown -= Time.deltaTime;
 
 	}
-
+	
+	/// Launches a projectile towards closest enemy
 	void Shoot ()
     {
 		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -92,13 +93,41 @@ public class Turret : MonoBehaviour
 		if (bullet != null)
 			bullet.Seek(target);
 	}
-
-	void OnDrawGizmosSelected()
-	{
-		Gizmos.color = Color.blue;
-		Gizmos.DrawWireSphere(transform.position, range);
-	}
+	
+	///  Gets the cost of a turret on sale
 	public int GetSellCost() {
 		return cost / 2;
+	}
+
+	/// Checks if turret is upgraded
+	private void CheckUpgraded() {
+		if (!isUpgraded) {
+			host.contextMenu.upgradeButton.interactable = true;
+		}
+		else {
+			host.contextMenu.upgradeButton.interactable = true;
+		}
+	}
+
+	/// Upgrades a turret
+	public void Upgrade() {
+		if (PlayerStats.Money < GetComponent<Turret>().upgradeCost) {
+			Debug.Log("You dont have enough money to upgrade that!");
+			return;
+		}
+		//Deleting old turret
+		Destroy(this);
+		//Building a new turret
+		prefab = Instantiate(upgradedPrefab,
+			transform.position + positionOffset,
+			Quaternion.identity);
+		isUpgraded = true;
+		Debug.Log("Turret upgraded!");
+	}
+
+	/// Sells turret
+	public void Sell() {
+		PlayerStats.Money +=  GetSellCost();
+		Destroy(this);
 	}
 }
