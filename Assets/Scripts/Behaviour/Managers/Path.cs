@@ -2,8 +2,11 @@ using UnityEngine;
 /**
  * All waypoints must be under a "Path" object, which inherits this class.
  */
-public class Path : MonoBehaviour
+public class Waypoint : MonoBehaviour
 {
+	
+	public int number { get; private set; }
+	
 	private static Transform[] points;
 	private void Start() {
 		Initialise();

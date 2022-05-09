@@ -74,14 +74,6 @@ public class Bullet : MonoBehaviour
 
 	void Damage(Transform enemy)
 	{
-		Enemy e = enemy.GetComponent<Enemy>();
-
-		if (e != null) 
-		{
-	       e.Hit(damage);
-
-		}
-
 	}
 
 	void OnDrawGizmosSelected()
