@@ -1,58 +1,53 @@
 using UnityEngine;
-
 public class BuildManager : MonoBehaviour{
-    public static BuildManager instance;
-
-    void Awake() {
+    
+    public static BuildManager instance; // The instance of an only Build Manager in the scene.
+    public GameObject turretToBuild { get; private set; }
+    private Node selectedNode; 
+    public NodeMenu nodeMenu;
+    
+    
+    /// Checks if player can build
+    public bool CanBuild => turretToBuild != null;
+    /// Checks if player has enough money to buy selected turret
+    public bool HasMoney => PlayerStats.Money >= turretToBuild.GetComponent<Turret>().cost;
+    /// Insures that this is the only BuildManager in the Scene
+    private void Awake() {
         if (instance != null) {
             Debug.LogError("More than one BuildManager in scene!");
             return;
         }
-
         instance = this;
     }
-
-    private TurretBlueprint turretToBuild;
-
-    private Node selectedNode;
-
-    public NodeUI nodeUI;
-
-    //property that checks if player can build
-    public bool CanBuild {
-        get { return turretToBuild != null; }
-    }
-
-    public bool HasMoney {
-        get { return PlayerStats.Money >= turretToBuild.cost; }
-    }
-
+    
     public void SelectNode(Node node) {
+        // Deselects if you click on the same node you clicked before.
         if (selectedNode == node) {
             DeselectNode();
-
             return;
         }
-
+        // Sets selected node to argument node.
         selectedNode = node;
         turretToBuild = null;
 
-        nodeUI.SetTarget(node);
+        nodeMenu.SetTarget(node);
     }
 
+    /// Deselects a node
     public void DeselectNode() {
         selectedNode = null;
-
-        nodeUI.Hide();
+        nodeMenu.Hide();
     }
 
-    public void SelectTurretToBuild(TurretBlueprint turret) {
+    /// Selects a turret from a set -> (shop)
+    public Turret SelectTurretToBuild(Turret turret) {
         turretToBuild = turret;
-
         DeselectNode();
-    }
-
-    public TurretBlueprint GetTurretToBuild() {
         return turretToBuild;
     }
 }
+
+/*
+ *
+ * .GetComponent<Turret>()
+ */

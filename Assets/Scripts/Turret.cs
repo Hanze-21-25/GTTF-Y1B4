@@ -6,33 +6,35 @@ public class Turret : MonoBehaviour
 
 	private Transform target;
 
+	[Header("Prefabs")]
+	public GameObject prefab;
+	public GameObject upgradedPrefab;
+	
 	[Header("Attributes")]
-
+	public int cost;
+	public int upgradeCost;
 	public float range = 15f;
-
 	public float fireRate = 1f;
-	private float fireCountdown = 0f;
+	private float fireCountdown;
 
 
 	[Header("Unity Setup Fields")]
 
 	public string enemyTag = "Enemy";
-
 	public Transform partToRotate;
 	public float turnSpeed = 10f;
-
 	public GameObject bulletPrefab;
 	public Transform firePoint;
 	
 
 
-	// Use this for initialization
+	/// Executes working loop
 	void Start()
 	{
-		InvokeRepeating("UpdateTarget", 0f, 0.5f);
+		InvokeRepeating("Target", 0f, 0.5f);
 	}
 
-	void UpdateTarget()
+	void Target()
 	{
 		//Makes turret focus on the closest enemy
 
@@ -95,5 +97,8 @@ public class Turret : MonoBehaviour
 	{
 		Gizmos.color = Color.blue;
 		Gizmos.DrawWireSphere(transform.position, range);
+	}
+	public int GetSellCost() {
+		return cost / 2;
 	}
 }

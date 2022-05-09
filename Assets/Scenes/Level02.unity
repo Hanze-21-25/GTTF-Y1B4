@@ -13667,8 +13667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 727582072805204795, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectSeaturtleTurret
-      objectReference: {fileID: 0}
+      value:SelectSeaTurtleTurret      objectReference: {fileID: 0}
     - target: {fileID: 727582072805204795, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Shop, Assembly-CSharp

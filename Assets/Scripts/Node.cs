@@ -1,128 +1,92 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Node : MonoBehaviour
-{
-	
-	public Color hoverColor;
-	public Color notEnoughMoneyColor;
-	public Vector3 positionOffset;
-	
-	[HideInInspector]
-	public GameObject turret;
-	[HideInInspector]
-	public TurretBlueprint turretBlueprint;
-	[HideInInspector]
-	public bool isUpgraded = false;
+public class Node : MonoBehaviour{
+    
+    [SerializeField] private Color hoverColor; // Available colour
+    public Color notEnoughMoneyColor; // Unavailable colour
+    public Vector3 positionOffset; // Offset of a turret from this
 
+    [HideInInspector] public GameObject turret; // Turret on top of this
+    [HideInInspector] public bool isUpgraded; 
 
-	private Renderer rend;
-	private Color startColor;
+    private Renderer rend; //??
+    private Color startColor; //Basic colour of this
 
-	BuildManager buildManager;
-
-	void Start()
-	{
-		rend = GetComponent<Renderer>();
-		startColor = rend.material.color;
-
-		buildManager = BuildManager.instance;
-	}
-
-	public Vector3 GetBuildPosition ()
-    {
-		return transform.position + positionOffset;
+    BuildManager buildManager;
+    
+    /// Initialises necessary values
+    void Start() {
+        rend = GetComponent<Renderer>();
+        startColor = rend.material.color;
+        buildManager = BuildManager.instance;
+    }
+    
+    /// Calls BuildTurret
+    void OnMouseDown() {
+        BuildTurret(buildManager.turretToBuild);
     }
 
-	void OnMouseDown()
-	{
-		if (EventSystem.current.IsPointerOverGameObject())
-			return;
-
-		if (turret != null)
-		{
-			buildManager.SelectNode(this);
-			return;
-		}
-
-		
-
-		if (!buildManager.CanBuild)
-			return;
-
-		BuildTurret(buildManager.GetTurretToBuild());
-	}
-
-	void BuildTurret (TurretBlueprint blueprint)
-    {
-		if (PlayerStats.Money < blueprint.cost)
-		{
-			Debug.Log("You dont have enough money to build that!");
-			return;
-		}
-		//substracts the cost of the turret
-		PlayerStats.Money -= blueprint.cost;
-
-		GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity); //Quaternion.identity - no rotation
-		turret = _turret;
-
-		turretBlueprint = blueprint;
-
-		Debug.Log("Turret build!");
-	}
-
-	public void UpgradeTurret()
-    {
-		if (PlayerStats.Money < turretBlueprint.upgradeCost)
-		{
-			Debug.Log("You dont have enough money to upgrade that!");
-			return;
-		}
-		
-		PlayerStats.Money -= turretBlueprint.upgradeCost;
-
-		//Deleting old turret
-		Destroy(turret);
-
-		//Building a new turret
-		GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
-		turret = _turret;
-
-		isUpgraded = true;
-
-
-		Debug.Log("Turret upgraded!");
-	}
-
-	public void SellTurret()
-    {
-		PlayerStats.Money += turretBlueprint.GetSellAmount();
-
-		Destroy(turret);
-		turretBlueprint = null;
-
+    /// Builds a turret on top of this
+    void BuildTurret(GameObject turret) {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+        if (turret != null) {
+            buildManager.SelectNode(this);
+            return;
+        } if (!buildManager.CanBuild) return;
+        if (PlayerStats.Money < turret.GetComponent<Turret>().cost) {
+            Debug.Log("You dont have enough money to build that!");
+            return;
+        }
+        PlayerStats.Money -= turret.GetComponent<Turret>().cost; 
+        
+        this.turret = Instantiate(turret.GetComponent<Turret>().prefab, transform.position + positionOffset, Quaternion.identity);
+        Debug.Log("Turret build!");
     }
 
+    
+    /// Upgrades a turret
+    public void UpgradeTurret() {
+        if (PlayerStats.Money < this.turret.GetComponent<Turret>().upgradeCost) {
+            Debug.Log("You dont have enough money to upgrade that!");
+            return;
+        }
+        var turret = this.turret.GetComponent<Turret>();
+        var oldTurret = turret;
+        //Deleting old turret
+        Destroy(this.turret);
+        //Building a new turret
+        this.turret = Instantiate(oldTurret.upgradedPrefab,
+            transform.position + positionOffset,
+            Quaternion.identity);
+        isUpgraded = true;
+        Debug.Log("Turret upgraded!");
+    }
 
-	void OnMouseEnter()
-	{
-		if (EventSystem.current.IsPointerOverGameObject())
-			return;
+    /// Sells turret
+    public void SellTurret() {
+        PlayerStats.Money += turretBlueprint.GetSellAmount();
 
-		if (!buildManager.CanBuild)
-			return;
-		
-		if(buildManager.HasMoney){
+        Destroy(turret);
+        turretBlueprint = null;
+    }
 
-          rend.material.color = hoverColor;
-		} else {
-			rend.material.color = notEnoughMoneyColor;
-		}
+    /// Changes colour of this
+    void OnMouseEnter() {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
-	}
+        if (!buildManager.CanBuild) return;
 
-	void OnMouseExit()
-	{
-		rend.material.color = startColor;
-	}
+        if (buildManager.HasMoney) {
+            rend.material.color = hoverColor;
+        }
+        else {
+            rend.material.color = notEnoughMoneyColor;
+        }
+    }
+
+    /// Resets to a basic colour
+    void OnMouseExit() {
+        rend.material.color = startColor;
+    }
 }

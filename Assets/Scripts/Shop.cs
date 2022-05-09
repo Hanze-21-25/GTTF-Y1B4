@@ -1,12 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Shop : MonoBehaviour
 {
-	public TurretBlueprint Crab;
-	public TurretBlueprint Seaturtle;
-	public TurretBlueprint Squid;
-	public TurretBlueprint Seal;
-	public TurretBlueprint Seagull;
+	[Header("Prefabs")]
+	public Turret crab;
+	public Turret seaTurtle;
+	public Turret squid;
+	public Turret seal;
+	public Turret seagull;
 
 	BuildManager buildManager;
 
@@ -15,33 +17,30 @@ public class Shop : MonoBehaviour
 		buildManager = BuildManager.instance;
 	}
 
+	/// Selection of a turret
 	public void SelectCrabTurret()
 	{
 		Debug.Log("Crab Selected");
-		buildManager.SelectTurretToBuild(Crab);
+		buildManager.SelectTurretToBuild(crab);
 	}
-
-	public void SelectSeaturtleTurret()
+	public void SelectSeaTurtleTurret()
 	{
 		Debug.Log("Seaturtle Selected");
-		buildManager.SelectTurretToBuild(Seaturtle);
+		buildManager.SelectTurretToBuild(seaTurtle);
 	}
-	
 	public void SelectSquidTurret()
 	{
 		Debug.Log("Squid Selected");
-		buildManager.SelectTurretToBuild(Squid);
+		buildManager.SelectTurretToBuild(squid);
 	}
-
 	public void SelectSealTurret()
 	{
 		Debug.Log("Seal Selected");
-		buildManager.SelectTurretToBuild(Seal);
+		buildManager.SelectTurretToBuild(seal);
 	}
-
 	public void SelectSeagullTower()
 	{
 		Debug.Log("Seagull Tower Selected");
-		buildManager.SelectTurretToBuild(Seagull);
+		buildManager.SelectTurretToBuild(seagull);
 	}
 }
