@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 public class Turret : MonoBehaviour
 {
-	private Transform target;
+	private Transform _target;
 
 	[Header("Prefabs")]
 	public GameObject prefab;
@@ -15,7 +15,7 @@ public class Turret : MonoBehaviour
 	public int upgradeCost;
 	public float range = 15f;
 	public float fireRate = 1f;
-	private float fireCountdown;
+	private float _fireCountdown;
 	public bool upgraded;
 	public Vector3 positionOffset; // Offset of a turret from this
 	public Node host;
@@ -52,11 +52,11 @@ public class Turret : MonoBehaviour
 
 		if (nearestEnemy != null && shortestDistance <= range)
 		{
-			target = nearestEnemy.transform;
+			_target = nearestEnemy.transform;
 		}
 		else
 		{
-			target = null;
+			_target = null;
 		}
 
 	}
@@ -64,35 +64,35 @@ public class Turret : MonoBehaviour
 	/// Executes combat
 	void Update()
 	{ 
-		if (target == null)
+		if (_target == null)
 			return;
 		
 		CheckUpgraded();
 
 		//Target lock on
-		Vector3 dir = target.position - transform.position;
+		Vector3 dir = _target.position - transform.position;
 		Quaternion lookRotation = Quaternion.LookRotation(dir);
 		Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
 		partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-		if (fireCountdown <= 0f)
+		if (_fireCountdown <= 0f)
         {
 			Shoot();
-			fireCountdown = 1f / fireRate;
+			_fireCountdown = 1f / fireRate;
 
 		}
-		fireCountdown -= Time.deltaTime;
+		_fireCountdown -= Time.deltaTime;
 
 	}
 	
 	/// Launches a projectile towards closest enemy
 	void Shoot ()
     {
-		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-		Bullet bullet = bulletGO.GetComponent<Bullet>();
+		GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		Bullet bullet = bulletGo.GetComponent<Bullet>();
 
 		if (bullet != null)
-			bullet.Seek(target);
+			bullet.Seek(_target);
 	}
 	
 	///  Gets the cost of a turret on sale

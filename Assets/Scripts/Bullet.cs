@@ -1,7 +1,7 @@
 using UnityEngine;
 public class Bullet : MonoBehaviour
 {
-	private Transform target;
+	private Transform _target;
 
 	//Speed of the bullet variable
 	public float speed = 70f;
@@ -11,19 +11,19 @@ public class Bullet : MonoBehaviour
 	public float explosionRadius = 0f;
 	public GameObject impactEffect;
 
-	public void Seek(Transform _target)
+	public void Seek(Transform target)
 	{
-		target = _target;
+		this._target = target;
 	}
 	
 	void Update()
 	{
-		if (target == null)
+		if (_target == null)
 		{
 			Destroy(gameObject);
 			return;
 		}
-		Vector3 dir = target.position - transform.position;
+		Vector3 dir = _target.position - transform.position;
 		float distanceThisFrame = speed * Time.deltaTime;
 		if (dir.magnitude <= distanceThisFrame)
 		{
@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
 		}
 
 		transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-		transform.LookAt(target);
+		transform.LookAt(_target);
 
 	}
 
@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
 		}
 		else
 		{
-			Damage(target);
+			Damage(_target);
 		}
 
 		

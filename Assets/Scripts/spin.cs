@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spin : MonoBehaviour
+public class Spin : MonoBehaviour
 {
     //Makes the object (seagull) spin
     void Update()

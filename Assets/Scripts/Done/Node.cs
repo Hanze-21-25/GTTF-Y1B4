@@ -1,17 +1,16 @@
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 /** Issues -> Renderer is not working.
  * Represents an in-game node, to which player places turrets.
  */
 public class Node : MonoBehaviour {
     
-    private Game game;
-    private bool occupied => turret == null;
+    public Game game;
+    private bool Occupied => turret == null;
     
-    [NonSerialized] public Turret turret; // Turret on top of this
-    [NonSerialized] public NodeMenu contextMenu;
+    public Turret turret; // Turret on top of this
+    public NodeMenu contextMenu;
     [SerializeField] private Color baseColour;//Basic colour of this
     [SerializeField] private Color available; // Available colour
     [SerializeField] public Color unavailable; // Unavailable colour
@@ -35,17 +34,17 @@ public class Node : MonoBehaviour {
         }
 
         GetComponent<Renderer>().material.color = baseColour;
-        game = Game.instance;
+        game = Game.Instance;
     }
 
     /// Calls BuildTurret
     private void OnMouseDown() {
-        Build(game.selectedTurret);
+        Build();
     }
     /// Changes colour of this
     private void OnMouseEnter() {
-        if (occupied) return;
-        GetComponent<Renderer>().material.color = game.selectedTurret.cost <= Player.Money ? available : unavailable;
+        if (Occupied) return;
+        GetComponent<Renderer>().material.color = game.shop.selected.cost <= Player.Money ? available : unavailable;
     }
 
     /// Resets to a basic colour
@@ -58,36 +57,19 @@ public class Node : MonoBehaviour {
      * Custom Methods.
      */
     
-    /// Builds a turret on top of this
-    private void Build(Turret turret) {
-        if (occupied) {
-            
-            return;
-        }
-
-        if (Player.Money < turret.GetComponent<Turret>().cost) {
-            Debug.Log("You dont have enough money to build that!");
-            return;
-        }
-        Player.Money -= turret.GetComponent<Turret>().cost; 
-        
-        this.turret = Instantiate(turret.prefab,
-            transform.position + turret.positionOffset,
-            Quaternion.identity).GetComponent<Turret>();
-        
-        Debug.Log("Turret build!");
+    /// Builds a turret on top of this (Pass turret only with set prefab)
+    private void Build() {
+        if (Occupied || Player.Money < game.shop.selected.cost) return;
+        Player.Money -= game.shop.selected.cost;
+        turret = Instantiate(game.shop.selected.prefab, transform.position + turret.positionOffset, Quaternion.identity).GetComponent<Turret>();
     }
     
-    /// Selects and deselects node
+    /// Selection
     public void Select() {
-        // Deselects if you click on the same node you clicked before.
         contextMenu.ui.SetActive(true);
-        contextMenu.Add(this);
     }
-
-    /// Deselects a node
     public void Deselect(ref Node node) {
-        node.contextMenu.ui.SetActive(false);
+        contextMenu.ui.SetActive(false);
         node = null;
     }
 }

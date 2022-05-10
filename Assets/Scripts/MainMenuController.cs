@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject OptionPanel;
-    public GameObject MenuPanel;
+    [FormerlySerializedAs("OptionPanel")] public GameObject optionPanel;
+    [FormerlySerializedAs("MenuPanel")] public GameObject menuPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        MenuPanel.SetActive(true);
-        OptionPanel.SetActive(false);
+        menuPanel.SetActive(true);
+        optionPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,14 +24,14 @@ public class MainMenuController : MonoBehaviour
 
     public void GoToOptionPanel()
     {
-        MenuPanel.SetActive(false);
-        OptionPanel.SetActive(true);
+        menuPanel.SetActive(false);
+        optionPanel.SetActive(true);
     }
     
     public void Back()
     {
-        MenuPanel.SetActive(true);
-        OptionPanel.SetActive(false);
+        menuPanel.SetActive(true);
+        optionPanel.SetActive(false);
     }
 
     public void PlayGame(string name)

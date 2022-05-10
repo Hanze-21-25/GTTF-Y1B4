@@ -1,32 +1,31 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
+/**
+ * This class represents a context menu, which parent MUST be a node.
+ */
 public class NodeMenu : MonoBehaviour{
-
-    public int displayedSellCost;
-    public int displayedUpgradeCost;
+    
     public GameObject ui;
     public Button upgradeButton;
-    private Node host;
+    private Node _host;
 
-    /// Adds this to a host, which sent as a parameter
-    public void Add(Node host) {
-        transform.position = host.transform.position + host.turret.GetComponent<Turret>().positionOffset;
-        displayedSellCost = host.turret.GetComponent<Turret>().GetSellCost();
-        ui.SetActive(true);
-        host.contextMenu = this;
+    /// Initialisation
+    private void Start() {
+        _host = transform.parent.GetComponent<Node>();
+        transform.position = _host.transform.position + _host.turret.positionOffset;
+        _host.contextMenu = this;
     }
 
-    /// Upgrades the turret and deselects the node
+    /// Upgrade Button
     public void Upgrade() {
-        host.turret.Upgrade();
-        host.Deselect();
+        _host.turret.Upgrade();
+        _host.Deselect(ref _host);
     }
 
-    /// Upgrades the turret and deselects the node
+    /// Sell Button
     public void Sell() {
-        host.turret.Sell();
-        host.Deselect();
+        _host.turret.Sell();
+        _host.Deselect(ref _host);
     }
 }

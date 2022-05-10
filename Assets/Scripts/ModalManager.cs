@@ -8,12 +8,12 @@ public class ModalManager : MonoBehaviour
     public TextMeshProUGUI header;
     public TextMeshProUGUI body;
 
-    public static ModalManager instance;
+    public static ModalManager Instance;
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
     }

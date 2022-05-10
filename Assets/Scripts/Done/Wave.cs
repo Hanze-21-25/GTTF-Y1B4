@@ -5,21 +5,21 @@ using UnityEngine;
 public class Wave : MonoBehaviour {
 
     public int number;
-    private int maxEnemies;
+    private int _maxEnemies;
     public int enemyCounter;
     public int rate = 500;
     public Transform spawn;
-    public static Enemy[] enemies;
-    private GameObject[] enemyTypePrefabs;
+    public static Enemy[] Enemies;
+    private GameObject[] _enemyTypePrefabs;
     
     private void Start() {
         enemyCounter = 0;
         number = 0;
-        SpawnWave(enemyTypePrefabs, maxEnemies);
+        SpawnWave(_enemyTypePrefabs, _maxEnemies);
     }
     private void Update() {
-        enemies = FindObjectsOfType<Enemy>();
-        enemyCounter = enemies.Length;
+        Enemies = FindObjectsOfType<Enemy>();
+        enemyCounter = Enemies.Length;
     }
     /// Spawns a single wave. Gets array of enemy type prefabs as an argument
     private void SpawnWave(GameObject[] prefabs, int maxEnemies) {
