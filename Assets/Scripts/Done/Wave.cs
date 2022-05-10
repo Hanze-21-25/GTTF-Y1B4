@@ -37,7 +37,7 @@ public class Wave : MonoBehaviour {
         }
 
         number++;
-        PlayerStats.Rounds++;
+        Player.Rounds++;
     }
 
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Serialization;
 
 public class Turret : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class Turret : MonoBehaviour
 	public float range = 15f;
 	public float fireRate = 1f;
 	private float fireCountdown;
-	public bool isUpgraded;
+	public bool upgraded;
 	public Vector3 positionOffset; // Offset of a turret from this
 	public Node host;
 
@@ -101,7 +102,7 @@ public class Turret : MonoBehaviour
 
 	/// Checks if turret is upgraded
 	private void CheckUpgraded() {
-		if (!isUpgraded) {
+		if (!upgraded) {
 			host.contextMenu.upgradeButton.interactable = true;
 		}
 		else {
@@ -111,7 +112,7 @@ public class Turret : MonoBehaviour
 
 	/// Upgrades a turret
 	public void Upgrade() {
-		if (PlayerStats.Money < GetComponent<Turret>().upgradeCost) {
+		if (Player.Money < GetComponent<Turret>().upgradeCost) {
 			Debug.Log("You dont have enough money to upgrade that!");
 			return;
 		}
@@ -121,14 +122,14 @@ public class Turret : MonoBehaviour
 		prefab = Instantiate(upgradedPrefab,
 			transform.position + positionOffset,
 			Quaternion.identity);
-		isUpgraded = true;
+		upgraded = true;
 		Debug.Log("Turret upgraded!");
 	}
 
 	/// Sells turret
 	public void Sell() {
-		PlayerStats.Money +=  GetSellCost();
-		isUpgraded = false;
+		Player.Money +=  GetSellCost();
+		upgraded = false;
 		Destroy(this);
 	}
 }

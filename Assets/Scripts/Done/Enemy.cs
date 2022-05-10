@@ -33,14 +33,14 @@ public class Enemy : MonoBehaviour {
     void Kill() {
         if (health > 0) return;
         hpBar = null;
-        PlayerStats.Money += reward;
+        Player.Money += reward;
         Destroy(gameObject);
     }
 
     /// Sets next waypoint to go;
     private void NextWaypoint() {
         if (stage >= Waypoints.amount) {
-            PlayerStats.Lives--;
+            Player.Lives--;
             Destroy(gameObject);
             return;
         }

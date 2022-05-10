@@ -17,26 +17,26 @@ public class Shop : MonoBehaviour {
     /// Selection of a turret
     public void SelectCrabTurret() {
         Debug.Log("Crab Selected");
-        _game.SelectTurretToBuild(crab);
+        _game.SelectTurret(crab);
     }
 
     public void SelectSeaTurtleTurret() {
         Debug.Log("Seaturtle Selected");
-        _game.SelectTurretToBuild(seaTurtle);
+        _game.SelectTurret(seaTurtle);
     }
 
     public void SelectSquidTurret() {
         Debug.Log("Squid Selected");
-        _game.SelectTurretToBuild(squid);
+        _game.SelectTurret(squid);
     }
 
     public void SelectSealTurret() {
         Debug.Log("Seal Selected");
-        _game.SelectTurretToBuild(seal);
+        _game.SelectTurret(seal);
     }
 
     public void SelectSeagullTower() {
         Debug.Log("Seagull Tower Selected");
-        _game.SelectTurretToBuild(seagull);
+        _game.SelectTurret(seagull);
     }
 }

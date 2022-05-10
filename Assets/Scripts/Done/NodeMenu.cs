@@ -8,31 +8,25 @@ public class NodeMenu : MonoBehaviour{
     public int displayedUpgradeCost;
     public GameObject ui;
     public Button upgradeButton;
-    private Node menuHost;
-
-    /// Hides context menu
-    public void Hide() {
-        ui.SetActive(false);
-    }
+    private Node host;
 
     /// Adds this to a host, which sent as a parameter
-    public void Add(ref Node menuHost) {
-        transform.position = this.menuHost.transform.position + menuHost.turret.GetComponent<Turret>().positionOffset;
-        displayedSellCost = menuHost.turret.GetComponent<Turret>().GetSellCost();
+    public void Add(Node host) {
+        transform.position = host.transform.position + host.turret.GetComponent<Turret>().positionOffset;
+        displayedSellCost = host.turret.GetComponent<Turret>().GetSellCost();
         ui.SetActive(true);
-        
-        menuHost.contextMenu = this;
+        host.contextMenu = this;
     }
 
     /// Upgrades the turret and deselects the node
     public void Upgrade() {
-        menuHost.turret.GetComponent<Turret>().Upgrade();
-        Game.instance.DeselectNode();
+        host.turret.Upgrade();
+        host.Deselect();
     }
 
     /// Upgrades the turret and deselects the node
     public void Sell() {
-        menuHost.turret.GetComponent<Turret>().Sell();
-        Game.instance.DeselectNode();
+        host.turret.Sell();
+        host.Deselect();
     }
 }

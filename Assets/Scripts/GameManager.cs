@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
             WinLevel();
         }
 
-        if (PlayerStats.Lives <= 0)
+        if (Player.Lives <= 0)
         {
             EndGame();
         }

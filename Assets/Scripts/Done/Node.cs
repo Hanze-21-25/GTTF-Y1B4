@@ -7,17 +7,21 @@ using UnityEngine.EventSystems;
  */
 public class Node : MonoBehaviour {
     
-    [NonSerialized] public Turret turret; // Turret on top of this
-    [NonSerialized] public bool isUpgraded;
     private Game game;
-    [NonSerialized] public NodeMenu contextMenu;
+    private bool occupied => turret == null;
     
+    [NonSerialized] public Turret turret; // Turret on top of this
+    [NonSerialized] public NodeMenu contextMenu;
     [SerializeField] private Color baseColour;//Basic colour of this
     [SerializeField] private Color available; // Available colour
     [SerializeField] public Color unavailable; // Unavailable colour
     
+    /**
+     * Unity events
+     */
+    
     /// Initialises necessary values
-    void Start() {
+    private void Start() {
         if (GetComponent<Renderer>() == null) {
             gameObject.AddComponent<Renderer>();
         }
@@ -33,24 +37,39 @@ public class Node : MonoBehaviour {
         GetComponent<Renderer>().material.color = baseColour;
         game = Game.instance;
     }
-    
+
     /// Calls BuildTurret
-    void OnMouseDown() {
-        BuildTurret(game.turretToBuild);
+    private void OnMouseDown() {
+        Build(game.selectedTurret);
+    }
+    /// Changes colour of this
+    private void OnMouseEnter() {
+        if (occupied) return;
+        GetComponent<Renderer>().material.color = game.selectedTurret.cost <= Player.Money ? available : unavailable;
     }
 
+    /// Resets to a basic colour
+    private void OnMouseExit() {
+        GetComponent<Renderer>().material.color = baseColour;
+    }
+
+    
+    /**
+     * Custom Methods.
+     */
+    
     /// Builds a turret on top of this
-    void BuildTurret(Turret turret) {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
-        if (turret != null) {
-            game.SelectNode(this);
+    private void Build(Turret turret) {
+        if (occupied) {
+            
             return;
-        } if (!game.CanBuild) return;
-        if (PlayerStats.Money < turret.GetComponent<Turret>().cost) {
+        }
+
+        if (Player.Money < turret.GetComponent<Turret>().cost) {
             Debug.Log("You dont have enough money to build that!");
             return;
         }
-        PlayerStats.Money -= turret.GetComponent<Turret>().cost; 
+        Player.Money -= turret.GetComponent<Turret>().cost; 
         
         this.turret = Instantiate(turret.prefab,
             transform.position + turret.positionOffset,
@@ -58,18 +77,17 @@ public class Node : MonoBehaviour {
         
         Debug.Log("Turret build!");
     }
-
-    /// Changes colour of this
-    void OnMouseEnter() {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
-
-        if (!game.CanBuild) return;
-
-        GetComponent<Renderer>().material.color = game.HasMoney ? available : unavailable;
+    
+    /// Selects and deselects node
+    public void Select() {
+        // Deselects if you click on the same node you clicked before.
+        contextMenu.ui.SetActive(true);
+        contextMenu.Add(this);
     }
 
-    /// Resets to a basic colour
-    void OnMouseExit() {
-        GetComponent<Renderer>().material.color = baseColour;
+    /// Deselects a node
+    public void Deselect(ref Node node) {
+        node.contextMenu.ui.SetActive(false);
+        node = null;
     }
 }
