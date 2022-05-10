@@ -8,35 +8,35 @@ public class Shop : MonoBehaviour {
     public Turret seal;
     public Turret seagull;
 
-    BuildManager buildManager;
+    Game _game;
 
     void Start() {
-        buildManager = BuildManager.instance;
+        _game = Game.instance;
     }
 
     /// Selection of a turret
     public void SelectCrabTurret() {
         Debug.Log("Crab Selected");
-        buildManager.SelectTurretToBuild(crab);
+        _game.SelectTurretToBuild(crab);
     }
 
     public void SelectSeaTurtleTurret() {
         Debug.Log("Seaturtle Selected");
-        buildManager.SelectTurretToBuild(seaTurtle);
+        _game.SelectTurretToBuild(seaTurtle);
     }
 
     public void SelectSquidTurret() {
         Debug.Log("Squid Selected");
-        buildManager.SelectTurretToBuild(squid);
+        _game.SelectTurretToBuild(squid);
     }
 
     public void SelectSealTurret() {
         Debug.Log("Seal Selected");
-        buildManager.SelectTurretToBuild(seal);
+        _game.SelectTurretToBuild(seal);
     }
 
     public void SelectSeagullTower() {
         Debug.Log("Seagull Tower Selected");
-        buildManager.SelectTurretToBuild(seagull);
+        _game.SelectTurretToBuild(seagull);
     }
 }

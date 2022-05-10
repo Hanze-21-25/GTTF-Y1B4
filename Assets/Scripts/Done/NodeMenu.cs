@@ -27,13 +27,12 @@ public class NodeMenu : MonoBehaviour{
     /// Upgrades the turret and deselects the node
     public void Upgrade() {
         menuHost.turret.GetComponent<Turret>().Upgrade();
-        BuildManager.instance.DeselectNode();
+        Game.instance.DeselectNode();
     }
 
     /// Upgrades the turret and deselects the node
     public void Sell() {
         menuHost.turret.GetComponent<Turret>().Sell();
-        BuildManager.instance.DeselectNode();
-        menuHost.isUpgraded = false;
+        Game.instance.DeselectNode();
     }
 }

@@ -6,7 +6,7 @@ public class CarAnimationController : MonoBehaviour
 {
     void Update()
     {
-        if (WaveEvents.EnemiesAlive < 1)
+        if (Wave.enemies.Length < 1)
         {
             GetComponent<Animator>().Play("Car Movement");
         } else
