@@ -16,7 +16,7 @@ public class Tile : MonoBehaviour {
     
     
     /* private variables */
-    private bool selected;
+    private bool _selected;
 
     /* public variables */
     
@@ -29,24 +29,24 @@ public class Tile : MonoBehaviour {
         // Inherits parent or sets children
         SetChildren();
         SetColour(neutral);
-        selected = false;
+        _selected = false;
     }
 
     private void OnMouseEnter() {
-        if (!selected) {
+        if (!_selected) {
             SetColour(available);
         }
     }
 
     private void OnMouseExit() {
-        if (!selected) {
+        if (!_selected) {
             SetColour(neutral);
         }
     }
 
     private void OnMouseDown() {
-        selected = !selected;
-        switch (selected) {
+        _selected = !_selected;
+        switch (_selected) {
             case true:
                 SetColour(selection);
                 break;
@@ -67,8 +67,7 @@ public class Tile : MonoBehaviour {
             var renderer = transform.GetComponent<Renderer>();
             if (renderer == null) return;
             renderer.material.color = colour;
-    
-        }
+    }
     
     /** Private Methods **/
 
