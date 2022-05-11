@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+public class Player {
 
-public class Player : MonoBehaviour
-{
-    public static int Money = 300;
-    public static int Rounds = 0;
-    public static int Lives = 20;
+    public int Money { get; private set; }
+    public int Rounds { get; private set; }
+    public int Lives { get; private set; }
+
+    public Player() {
+        Money = 300;
+        Rounds = 0;
+        Lives = 20;
+    }
 }
