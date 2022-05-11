@@ -1,135 +1,68 @@
+using System;
 using UnityEngine;
-using System.Collections;
-using UnityEngine.Serialization;
 
-public class Turret : MonoBehaviour
-{
-	private Transform _target;
+public class Turret : MonoBehaviour {
+    
+    Transform _target;
+    float _timer;
+    Node _host;
+    
+    public GameObject prefab;
 
-	[Header("Prefabs")]
-	public GameObject prefab;
-	public GameObject upgradedPrefab;
-	
-	[Header("Attributes")]
-	public int cost;
-	public int upgradeCost;
-	public float range = 15f;
-	public float fireRate = 1f;
-	private float _fireCountdown;
-	public bool upgraded;
-	public Vector3 positionOffset; // Offset of a turret from this
-	public Node host;
+    public int cost;
+    public float fireRate = 1f;
+    public bool upgraded;
+    public float range = 15f;
+    
+    
+    
+    /* Unity Events */
+    
+    void Start() {
+        upgraded = false;
+    }
+    void Update() {
+        Action();
+    }
+    
+    
+    /* Methods */
+    
+    /// Targets closest enemy (launched from the start loop) 
+    void LockOn() {
+        //Target lock on
+        transform.rotation = Quaternion.Euler(new Vector3(0, (_target.position - transform.position).y, 0));
+    }
+    
+    /// Action
+    void Action(){
+        if (_target == null) return;
 
-	[Header("Unity Setup Fields")]
-	public string enemyTag = "Enemy";
-	public Transform partToRotate;
-	public float turnSpeed = 10f;
-	public GameObject bulletPrefab;
-	public Transform firePoint;
-	
-	/// Executes working loop
-	void Start()
-	{
-		InvokeRepeating("Target", 0f, 0.5f);
-	}
+        LockOn();
+        if (_timer > 0) { 
+            _timer -= Time.deltaTime;
+            return;
+        }
+        Shoot();
+        _timer = 1/fireRate;
+    }
+    
+    /// Launches a projectile towards closest enemy
+    void Shoot() {
+        throw new NotImplementedException();
+    }
 
-	/// Targets closest enemy (launched from the start loop) 
-	void Target()
-	{
+    /// Upgrades this
+    public void Upgrade() {
+        throw new NotImplementedException();
+        if (Player.Money < cost * 1.25) return;
+        // upgrade code; Change stats and prefab
+        upgraded = true;
+    }
 
-		GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-		float shortestDistance = Mathf.Infinity;
-		GameObject nearestEnemy = null;
-		foreach (GameObject enemy in enemies)
-		{
-			float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-			if (distanceToEnemy < shortestDistance)
-			{
-				shortestDistance = distanceToEnemy;
-				nearestEnemy = enemy;
-			}
-		}
-
-		if (nearestEnemy != null && shortestDistance <= range)
-		{
-			_target = nearestEnemy.transform;
-		}
-		else
-		{
-			_target = null;
-		}
-
-	}
-
-	/// Executes combat
-	void Update()
-	{ 
-		if (_target == null)
-			return;
-		
-		CheckUpgraded();
-
-		//Target lock on
-		Vector3 dir = _target.position - transform.position;
-		Quaternion lookRotation = Quaternion.LookRotation(dir);
-		Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-		partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-		if (_fireCountdown <= 0f)
-        {
-			Shoot();
-			_fireCountdown = 1f / fireRate;
-
-		}
-		_fireCountdown -= Time.deltaTime;
-
-	}
-	
-	/// Launches a projectile towards closest enemy
-	void Shoot ()
-    {
-		GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-		Bullet bullet = bulletGo.GetComponent<Bullet>();
-
-		if (bullet != null)
-			bullet.Seek(_target);
-	}
-	
-	///  Gets the cost of a turret on sale
-	public int GetSellCost() {
-		return cost / 2;
-	}
-
-	/// Checks if turret is upgraded
-	private void CheckUpgraded() {
-		if (!upgraded) {
-			host.contextMenu.upgradeButton.interactable = true;
-		}
-		else {
-			host.contextMenu.upgradeButton.interactable = true;
-		}
-	}
-
-	/// Upgrades a turret
-	public void Upgrade() {
-		if (Player.Money < GetComponent<Turret>().upgradeCost) {
-			Debug.Log("You dont have enough money to upgrade that!");
-			return;
-		}
-		//Deleting old turret
-		Destroy(this);
-		//Building a new turret
-		prefab = Instantiate(upgradedPrefab,
-			transform.position + positionOffset,
-			Quaternion.identity);
-		upgraded = true;
-		Debug.Log("Turret upgraded!");
-	}
-
-	/// Sells turret
-	public void Sell() {
-		Player.Money +=  GetSellCost();
-		upgraded = false;
-		Destroy(this);
-	}
+    /// Sells this (Done)
+    public void Sell() {
+        Player.Money += cost / 2;
+        Destroy(this);
+    }
 }
