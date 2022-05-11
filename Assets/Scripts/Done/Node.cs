@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 /** Issues -> Renderer is not working.
@@ -7,22 +6,18 @@ using UnityEngine;
 public class Node : MonoBehaviour {
     
     public Game game;
-    private bool Occupied => turret == null;
-    
     public Turret turret; // Turret on top of this
     public NodeMenu contextMenu;
-    [SerializeField] private Color baseColour;//Basic colour of this
-    [SerializeField] private Color available; // Available colour
+    Renderer _renderer;
+    bool occupied => turret == null;
+    
+    [SerializeField] Color baseColour; //Basic colour of this
+    [SerializeField] Color available; // Available colour
     [SerializeField] public Color unavailable; // Unavailable colour
     
-    /**
-     * Unity events
-     */
-    
     /// Initialises necessary values
-    private void Start() {
-        if (GetComponent<Renderer>() == null) {
-            gameObject.AddComponent<Renderer>();
+    void Start() {
+        if (transform.parent.GetComponent<Renderer>() != null) {
         }
 
         // Get from node parent
@@ -38,36 +33,34 @@ public class Node : MonoBehaviour {
     }
 
     /// Calls BuildTurret
-    private void OnMouseDown() {
+    void OnMouseDown() {
         Build();
     }
+
     /// Changes colour of this
-    private void OnMouseEnter() {
-        if (Occupied) return;
+    void OnMouseEnter() {
+        if (occupied) return;
         GetComponent<Renderer>().material.color = game.shop.selected.cost <= Player.Money ? available : unavailable;
     }
 
     /// Resets to a basic colour
-    private void OnMouseExit() {
+    void OnMouseExit() {
         GetComponent<Renderer>().material.color = baseColour;
     }
-
-    
-    /**
-     * Custom Methods.
-     */
     
     /// Builds a turret on top of this (Pass turret only with set prefab)
-    private void Build() {
-        if (Occupied || Player.Money < game.shop.selected.cost) return;
+    void Build() {
+        if (occupied || Player.Money < game.shop.selected.cost) return;
         Player.Money -= game.shop.selected.cost;
-        turret = Instantiate(game.shop.selected.prefab, transform.position + turret.positionOffset, Quaternion.identity).GetComponent<Turret>();
+        turret = Instantiate(game.shop.selected.prefab, transform.position + turret.positionOffset, Quaternion.identity)
+            .GetComponent<Turret>();
     }
-    
+
     /// Selection
     public void Select() {
         contextMenu.ui.SetActive(true);
     }
+
     public void Deselect(ref Node node) {
         contextMenu.ui.SetActive(false);
         node = null;
