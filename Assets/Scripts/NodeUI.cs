@@ -13,7 +13,10 @@ public class NodeUI : MonoBehaviour
     public Text sellAmount;
     //Node is the target parameter
     private Node target;
-
+    void Update()
+    {
+        transform.rotation = Camera.main.transform.rotation;
+    }
 
     //Sets the target on selected turret
     public void SetTarget(Node _target)
