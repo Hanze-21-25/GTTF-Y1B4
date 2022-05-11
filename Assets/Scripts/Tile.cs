@@ -12,29 +12,48 @@ public class Tile : MonoBehaviour {
     [SerializeField] public Color available;
     [SerializeField] public Color unavailable;
     [SerializeField] public Color neutral;
+    [SerializeField] public Color selection;
     
     
     /* private variables */
-
+    private bool selected;
 
     /* public variables */
     
     
-    /* Unity Methods */
     
+    /** Unity Methods **/
+    
+    // Selection
     private void Start() {
         // Inherits parent or sets children
-        InheritParent();
         SetChildren();
-        SetChildrenColours(neutral);
+        SetColour(neutral);
+        selected = false;
     }
 
     private void OnMouseEnter() {
-        SetColour(available);
+        if (!selected) {
+            SetColour(available);
+        }
     }
 
     private void OnMouseExit() {
-        SetColour(neutral);
+        if (!selected) {
+            SetColour(neutral);
+        }
+    }
+
+    private void OnMouseDown() {
+        selected = !selected;
+        switch (selected) {
+            case true:
+                SetColour(selection);
+                break;
+            case false:
+                SetColour(neutral);
+                break;
+        }
     }
 
     private void Update() {
@@ -43,6 +62,14 @@ public class Tile : MonoBehaviour {
     
     /** Public Methods **/
     
+    // Changes a colour of this
+    private void SetColour(Color colour) {
+            var renderer = transform.GetComponent<Renderer>();
+            if (renderer == null) return;
+            renderer.material.color = colour;
+    
+        }
+    
     /** Private Methods **/
 
     // Builds a turret on top of this
@@ -50,38 +77,14 @@ public class Tile : MonoBehaviour {
         
     }
 
-    // Changes a colour of this
-    private void SetColour(Color colour) {
-        var renderer = transform.GetComponent<Renderer>();
-        if (renderer == null) return;
-        renderer.material.color = colour;
-
-    }
-
-    // Changes a colour of children
-    private void SetChildrenColours(Color colour) {
-        foreach (var renderer in GetComponentsInChildren<Renderer>()) {
-            renderer.material.color = colour;
-        }
-    }
-
-    // Inherits all public properties of a parent
-    private bool InheritParent() {
-        var parent = transform.parent.GetComponent<Tile>();
-        if (parent == null) return false;
-        // Sets this properties to parent's
-        neutral = parent.neutral;
-        available = parent.available;
-        unavailable = parent.unavailable;
-        return true;
-    }
-
+    // Adds this to all children and sets same property values.
     private void SetChildren() {
-        SetChildrenColours(neutral);
-        var children = GetComponentsInChildren<Transform>();
-
-        foreach (var child in children) {
+        foreach (Transform child in transform){
             child.gameObject.AddComponent<Tile>();
+            var c = child.GetComponent<Tile>();
+            c.available = available;
+            c.unavailable = unavailable;
+            c.neutral = neutral;
         }
     }
 }
