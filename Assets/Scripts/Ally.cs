@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using DefaultNamespace;
 using UnityEngine;
 
 public class Ally : MonoBehaviour{
@@ -12,7 +11,7 @@ public class Ally : MonoBehaviour{
     private int _agility; // Fire rate
     private bool _upgraded;
     private Tile _host; // A tile, on top of which this sits 
-    // private Enemy target;
+    private Enemy target;
 
     /** Unity Events **/
 
@@ -23,17 +22,15 @@ public class Ally : MonoBehaviour{
 
     private void Update() {
         Action();
-        Aim();
+        Aim();  
     }
 
-    private void OnMouseDown() {
-        var MMB = Input.GetMouseButtonDown(2);
-        var RMB = Input.GetMouseButtonDown(1);
-        if (MMB) {
+
+    private void OnMouseOver() {
+        if (Input.GetMouseButtonDown(2)) {
             Sell();
         }
-
-        if (RMB) {
+        if (Input.GetMouseButtonDown(1)) {
             Upgrade();
         }
     }
@@ -50,7 +47,6 @@ public class Ally : MonoBehaviour{
     
 
     /** Private Methods **/
-    
 
     // Key move of an object *
     private void Action() {
@@ -73,6 +69,6 @@ public class Ally : MonoBehaviour{
     // *
     private void Sell() {
         // Add money
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
