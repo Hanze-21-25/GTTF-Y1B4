@@ -12,12 +12,10 @@ public class Tile : MonoBehaviour {
     [SerializeField] public Color available;
     [SerializeField] public Color unavailable;
     [SerializeField] public Color neutral;
-    [SerializeField] public Color selection;
+    [SerializeField] public Color occupied;
     
     
     /* private variables */
-    
-    private bool _selected;
     private Ally _ally;
 
 
@@ -30,21 +28,22 @@ public class Tile : MonoBehaviour {
         // Inherits parent or sets children
         SetChildren();
         SetColour(neutral);
-        _selected = false;
     }
     private void OnMouseEnter() {
-        SetColour(available);
+        if (_ally == null) {
+            SetColour(available);
+        }
     }
     private void OnMouseExit() {
-        if (!_selected) {
+        if (_ally == null) {
             SetColour(neutral);
         }
     }
     // Select/Deselect Tile
     private void OnMouseDown() {
-        if (!Input.GetMouseButtonDown(0)) return;
-        _selected = !_selected; SetColour(selection);
-        Build();
+        if (Input.GetMouseButtonDown(0) && _ally == null) {
+            Build();
+        } 
     }
 
     /** Public Methods **/
@@ -61,6 +60,7 @@ public class Tile : MonoBehaviour {
     // Builds a turret on top of this
     private void Build() {
         if (_ally != null) return;
+        SetColour(occupied);
         var pos = transform.position;
         pos.y += 0.6f;
         _ally = Instantiate(allyPrefab, pos, transform.rotation).GetComponent<Ally>();

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657922, g: 0.49641383, b: 0.57482, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964128, b: 0.57481825, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7843,6 +7843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 712969471}
   - component: {fileID: 712969472}
+  - component: {fileID: 712969473}
   m_Layer: 0
   m_Name: Tiles
   m_TagString: Untagged
@@ -7982,9 +7983,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd2b4f55adb00a40a93f63748d37a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allyPrefab: {fileID: 0}
   available: {r: 0.20201136, g: 0.8145467, b: 0.9150943, a: 1}
   unavailable: {r: 0.8584906, g: 0.5208173, b: 0.18951581, a: 1}
   neutral: {r: 0.8117647, g: 0.7411765, b: 0.47058824, a: 1}
+  occupied: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &712969473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712969470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd2b4f55adb00a40a93f63748d37a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allyPrefab: {fileID: 0}
+  available: {r: 0, g: 0, b: 0, a: 0}
+  unavailable: {r: 0, g: 0, b: 0, a: 0}
+  neutral: {r: 0, g: 0, b: 0, a: 0}
+  occupied: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &720091960
 GameObject:
   m_ObjectHideFlags: 0
