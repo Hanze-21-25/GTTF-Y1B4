@@ -1,14 +1,14 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 /**
  * Should change colour on mouse enter and exit
  */
 public class Tile : MonoBehaviour {
     
+    
     /* Serialized Fields */
     
+    [SerializeField] public Transform allyPrefab;
     [SerializeField] public Color available;
     [SerializeField] public Color unavailable;
     [SerializeField] public Color neutral;
@@ -16,12 +16,13 @@ public class Tile : MonoBehaviour {
     
     
     /* private variables */
+    
     private bool _selected;
+    private Ally _ally;
+
 
     /* public variables */
-    
-    
-    
+
     /** Unity Methods **/
     
     // Selection
@@ -31,35 +32,21 @@ public class Tile : MonoBehaviour {
         SetColour(neutral);
         _selected = false;
     }
-
     private void OnMouseEnter() {
-        if (!_selected) {
-            SetColour(available);
-        }
+        SetColour(available);
     }
-
     private void OnMouseExit() {
         if (!_selected) {
             SetColour(neutral);
         }
     }
-
+    // Select/Deselect Tile
     private void OnMouseDown() {
-        _selected = !_selected;
-        switch (_selected) {
-            case true:
-                SetColour(selection);
-                break;
-            case false:
-                SetColour(neutral);
-                break;
-        }
+        if (!Input.GetMouseButtonDown(0)) return;
+        _selected = !_selected; SetColour(selection);
+        Build();
     }
 
-    private void Update() {
-        
-    }
-    
     /** Public Methods **/
     
     // Changes a colour of this
@@ -73,7 +60,10 @@ public class Tile : MonoBehaviour {
 
     // Builds a turret on top of this
     private void Build() {
-        
+        if (_ally != null) return;
+        var pos = transform.position;
+        pos.y += 0.6f;
+        _ally = Instantiate(allyPrefab, pos, transform.rotation).GetComponent<Ally>();
     }
 
     // Adds this to all children and sets same property values.
@@ -84,6 +74,7 @@ public class Tile : MonoBehaviour {
             c.available = available;
             c.unavailable = unavailable;
             c.neutral = neutral;
+            c.allyPrefab = allyPrefab;
         }
     }
 }

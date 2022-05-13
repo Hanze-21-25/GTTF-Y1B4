@@ -4,11 +4,15 @@ using UnityEngine;
 public class Ally : MonoBehaviour{
     
     /* Serialised Fields */
+    
+    [SerializeField] private int agility; // Fire rate
+    
+    
     /* public variables */
     
     
     /* private variables */
-    private int _agility; // Fire rate
+    
     private bool _upgraded;
     private Tile _host; // A tile, on top of which this sits 
     private Enemy target;
@@ -16,16 +20,13 @@ public class Ally : MonoBehaviour{
     /** Unity Events **/
 
     private void Start() {
-        _agility = 1;
+        agility = 1;
         _upgraded = false;
     }
-
     private void Update() {
         Action();
         Aim();  
     }
-
-
     private void OnMouseOver() {
         if (Input.GetMouseButtonDown(2)) {
             Sell();
@@ -34,7 +35,7 @@ public class Ally : MonoBehaviour{
             Upgrade();
         }
     }
-
+    
     /** Public Methods **/
     
     // Sets a host of this 
@@ -42,9 +43,6 @@ public class Ally : MonoBehaviour{
         _host = host;
         ally = this;
     }
-    
-    
-    
 
     /** Private Methods **/
 
@@ -62,7 +60,7 @@ public class Ally : MonoBehaviour{
     private void Upgrade() {
         if (_upgraded) return;
         // Add money
-        _agility *= 2;
+        agility *= 2;
         _upgraded = true;
     }
 
