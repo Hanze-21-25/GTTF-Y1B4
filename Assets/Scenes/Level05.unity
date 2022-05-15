@@ -4000,6 +4000,10 @@ PrefabInstance:
       propertyPath: turret
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1192559218087953378, guid: bf6d011e98fea6849987e36711fef956, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 9003353085549565770, guid: 80c216c93eb60e749ae8e74cbd50322d, type: 3}
     - target: {fileID: 3220696907720197828, guid: bf6d011e98fea6849987e36711fef956, type: 3}
       propertyPath: m_Name
       value: Node (3)
@@ -4426,6 +4430,10 @@ PrefabInstance:
       propertyPath: turret
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1192559218087953378, guid: bf6d011e98fea6849987e36711fef956, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 9003353085549565770, guid: 80c216c93eb60e749ae8e74cbd50322d, type: 3}
     - target: {fileID: 3220696907720197828, guid: bf6d011e98fea6849987e36711fef956, type: 3}
       propertyPath: m_Name
       value: Node (4)
@@ -6142,6 +6150,34 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3887185075125053422, guid: 86c0863f8b4f57d49886cd8a8ae77e18, type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 86c0863f8b4f57d49886cd8a8ae77e18, type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: 0.0025380254
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 86c0863f8b4f57d49886cd8a8ae77e18, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: -0.0119586475
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 86c0863f8b4f57d49886cd8a8ae77e18, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.0023002028
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 86c0863f8b4f57d49886cd8a8ae77e18, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 1.0047619
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 86c0863f8b4f57d49886cd8a8ae77e18, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.087383375
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 86c0863f8b4f57d49886cd8a8ae77e18, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 1.007273
+      objectReference: {fileID: 0}
+    - target: {fileID: -3887185075125053422, guid: 86c0863f8b4f57d49886cd8a8ae77e18, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: -6478536213147159724, guid: 0f7c77e319d7f804792954ee94f46f49, type: 3}
@@ -7178,6 +7214,10 @@ PrefabInstance:
       propertyPath: turret
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1192559218087953378, guid: bf6d011e98fea6849987e36711fef956, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 9003353085549565770, guid: 80c216c93eb60e749ae8e74cbd50322d, type: 3}
     - target: {fileID: 3220696907720197828, guid: bf6d011e98fea6849987e36711fef956, type: 3}
       propertyPath: m_Name
       value: Node (2)
@@ -8970,6 +9010,10 @@ PrefabInstance:
       propertyPath: turret
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1192559218087953378, guid: bf6d011e98fea6849987e36711fef956, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 9003353085549565770, guid: 80c216c93eb60e749ae8e74cbd50322d, type: 3}
     - target: {fileID: 3220696907720197828, guid: bf6d011e98fea6849987e36711fef956, type: 3}
       propertyPath: m_Name
       value: Node (5)
@@ -9035,6 +9079,10 @@ PrefabInstance:
       propertyPath: turret
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1192559218087953378, guid: bf6d011e98fea6849987e36711fef956, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 9003353085549565770, guid: 80c216c93eb60e749ae8e74cbd50322d, type: 3}
     - target: {fileID: 3220696907720197828, guid: bf6d011e98fea6849987e36711fef956, type: 3}
       propertyPath: m_Name
       value: Node (1)
@@ -9189,6 +9237,10 @@ PrefabInstance:
       propertyPath: turret
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1192559218087953378, guid: bf6d011e98fea6849987e36711fef956, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 9003353085549565770, guid: 80c216c93eb60e749ae8e74cbd50322d, type: 3}
     - target: {fileID: 3220696907720197828, guid: bf6d011e98fea6849987e36711fef956, type: 3}
       propertyPath: m_Name
       value: Node (6)
