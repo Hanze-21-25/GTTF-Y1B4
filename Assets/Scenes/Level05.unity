@@ -555,7 +555,7 @@ Transform:
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &91935509
 MonoBehaviour:
@@ -1018,7 +1018,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &225724117
 BoxCollider:
@@ -2052,7 +2052,7 @@ Transform:
   - {fileID: 1138639532}
   - {fileID: 1975103145}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &388809236
 GameObject:
@@ -2590,7 +2590,7 @@ Transform:
   - {fileID: 246794723}
   - {fileID: 1315504378}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &442136311 stripped
 Transform:
@@ -3541,7 +3541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: 60.127, z: 0}
 --- !u!1 &720091960
 GameObject:
@@ -4872,7 +4872,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1077721288
 PrefabInstance:
@@ -5207,7 +5207,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 80c216c93eb60e749ae8e74cbd50322d, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 80c216c93eb60e749ae8e74cbd50322d, type: 3}
       propertyPath: m_LocalScale.x
@@ -5447,7 +5447,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 90.127, z: 0}
 --- !u!1 &1201445832
 GameObject:
@@ -5552,7 +5552,7 @@ RectTransform:
   - {fileID: 1475944612689848702}
   - {fileID: 1835948888}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6192,6 +6192,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4075727188483990279, guid: 6d363e6e87b7f574fb08c979ded1a6a4, type: 3}
   m_PrefabInstance: {fileID: 827737138}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1428413933
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5008018
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.87904
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5008018
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 22.436247
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
+      propertyPath: m_Name
+      value: oil_rig
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 448efac0f48e04b459e9e7742634f6e3, type: 3}
 --- !u!1 &1441624511
 GameObject:
   m_ObjectHideFlags: 0
@@ -7142,7 +7211,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1626959499
 MonoBehaviour:
@@ -7797,7 +7866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1723103948
 PrefabInstance:
