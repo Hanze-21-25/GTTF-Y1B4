@@ -4,8 +4,7 @@ using UnityEngine;
  * Should change colour on mouse enter and exit
  */
 public class Tile : MonoBehaviour {
-    
-    
+
     /* Serialized Fields */
     
     [SerializeField] public Transform allyPrefab;
@@ -13,7 +12,6 @@ public class Tile : MonoBehaviour {
     [SerializeField] public Color unavailable;
     [SerializeField] public Color neutral;
     [SerializeField] public Color occupied;
-    
     
     /* private variables */
     private Ally _ally;
@@ -48,14 +46,14 @@ public class Tile : MonoBehaviour {
 
     /** Public Methods **/
     
+    /** Private Methods **/
     // Changes a colour of this
     private void SetColour(Color colour) {
             var renderer = transform.GetComponent<Renderer>();
+            
             if (renderer == null) return;
             renderer.material.color = colour;
     }
-    
-    /** Private Methods **/
 
     // Builds a turret on top of this
     private void Build() {
