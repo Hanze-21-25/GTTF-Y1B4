@@ -144,4 +144,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agility: 20
+  cost: 10
   bulletType: {fileID: 5548630623039270179, guid: efa9caa61d67b44689323ab10e0b17e4, type: 3}

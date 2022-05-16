@@ -24,15 +24,15 @@ public class Enemy : MonoBehaviour{
     private void Start() {
         index = 0;
         _waypoints = FindObjectsOfType<Waypoint>();
-        _waypoint = _waypoints[index];
-        
         body = GetComponent<Rigidbody>();
         if (body == null) body = gameObject.AddComponent<Rigidbody>();
     }
     private void Update() {
-        _waypoint = _waypoints[index];
-        _direction = _waypoint.transform.position - transform.position;
-        Follow();
+        if (_waypoints.Length > 0) {
+            _waypoint = _waypoints[index];
+            _direction = _waypoint.transform.position - transform.position;
+            Follow();
+        }
     }
     
     // On waypoint touch + checks defeat
