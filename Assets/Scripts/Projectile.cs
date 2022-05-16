@@ -1,3 +1,4 @@
+
 using System;
 using UnityEngine;
 public class Projectile : MonoBehaviour{
@@ -6,23 +7,18 @@ public class Projectile : MonoBehaviour{
     [SerializeField] private int power;
 
     /* Public Variables */
-    
+    [NonSerialized] public Enemy _target;
 
-    /* Private Variables */ 
-    private Enemy _target;
+    /* Private Variables */
     private Rigidbody _body;
     private Vector3 _spawn;
-    
-    
-    /* Public Fields */
-    public float damage { get; private set; }
+    private Vector3 _direction;
+    private Transform _parent;
 
     /** Unity Event Functions **/
     
-    // Initialisation
+    // Initialiser
     private void Start() {
-        _target = transform.parent.GetComponent<Ally>()._target;
-        _spawn = transform.position;
         _body = gameObject.GetComponent<Rigidbody>();
         if (_body == null) {
             _body = gameObject.AddComponent<Rigidbody>();
@@ -30,24 +26,44 @@ public class Projectile : MonoBehaviour{
     }
 
     private void Update() {
-        damage = power / (transform.position - _spawn).magnitude;
         Follow();
     }
 
     private void OnCollisionEnter(Collision c) {
-        var enemy = c.gameObject.GetComponent<Enemy>();
-        if(enemy != null) {
-            // Particle explosion;
-            Destroy(this);
-        }
+        // Particle explosion
+        if (c.transform != _target.transform) return;
+        gameObject.GetComponent<Renderer>().material.color = Color.cyan;
+        c.gameObject.GetComponent<Enemy>().Hit(power); Destroy(gameObject);
     }
-    
-    /** Public Methods **/
 
     /** Private Methods **/
+    
     private void Follow() {
-        var dir = _target.transform.position - transform.position;
-        if (dir.magnitude > 300) Destroy(this); // Destroys itself if it's too far from enemy
-        _body.AddForce(dir * power * Time.deltaTime, ForceMode.Force);
+        
+        // Rotate to target
+        var rot = Vector3.RotateTowards
+        (
+            transform.forward,
+            
+            _target.transform.position - transform.position,
+                    
+            300 * power * Mathf.Deg2Rad* Time.deltaTime, //rotation speed
+                    
+            1f
+        ); transform.rotation = Quaternion.LookRotation(rot);
+        
+        
+        // Moves towards a target
+        if (_target != null) {
+            _direction = _target.transform.position - transform.position;
+            _body.velocity = Vector3.zero;
+            _body.AddForce(
+                power * 300 * _direction.normalized * Time.deltaTime, //direction and magnitude
+                ForceMode.Force
+            );
+        }
+        else {
+            Destroy(gameObject);
+        }
     }
 }
