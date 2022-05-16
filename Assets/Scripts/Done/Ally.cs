@@ -16,7 +16,6 @@ public class Ally : MonoBehaviour{
     private Enemy[] _enemies;
     private Vector3 _direction;
     private Enemy _target;
-    private Game _game;
 
     /** Unity Events **/
 
@@ -44,27 +43,24 @@ public class Ally : MonoBehaviour{
     private void Upgrade() {
         if (_upgraded) return;
         transform.GetComponent<Renderer>().material.color = Color.black;
-        _game.money -= cost;
+        // - money
         agility *= 2;
         _upgraded = true;
     }
     private void Sell() {
-        _game.money += cost/2;
+        // +money/2
         Destroy(gameObject);
     }
-
     // Key move of an object *
     private void Action() {
         Aim();
         var bullet = Instantiate(bulletType, transform.position, transform.rotation);
         bullet.GetComponent<Projectile>()._target = _target;
     }
-    
     // Locks-on on an enemy and rotates towards it
     private void Aim() {
         // Finds closest enemy
-        _enemies = _game != null ? _game.Enemies : FindObjectsOfType<Enemy>();
-        
+        _enemies = FindObjectsOfType<Enemy>();
         var lo = Mathf.Infinity;
         
         Enemy closest = null;

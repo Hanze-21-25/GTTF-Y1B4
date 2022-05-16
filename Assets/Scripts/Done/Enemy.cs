@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 
 /** Represents an opposing force in the game - plastic bottles, boxes, etc. **/
-public class Enemy : MonoBehaviour{
+public partial class Enemy : MonoBehaviour{
     
     /* Serialised Fields */
     [SerializeField] private float health;
@@ -88,10 +88,10 @@ public class Enemy : MonoBehaviour{
         
         
         // Move towards waypoint
-        /*body.AddForce(
+        body.AddForce(
              agility * 30 * _direction.normalized * Time.deltaTime, //direction and magnitude
              ForceMode.Force
-        );*/
+        );
     }
 }
 
