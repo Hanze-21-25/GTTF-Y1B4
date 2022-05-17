@@ -1,10 +1,12 @@
 
 using System;
+using System.Linq.Expressions;
 using UnityEngine;
 public class Projectile : MonoBehaviour{
 
     /* Serialized Fields */
     [SerializeField] private int power;
+    [SerializeField] private float age;
 
     /* Public Variables */
     [NonSerialized] public Enemy _target;
@@ -37,33 +39,33 @@ public class Projectile : MonoBehaviour{
     }
 
     /** Private Methods **/
-    
     private void Follow() {
-        
-        // Rotate to target
-        var rot = Vector3.RotateTowards
-        (
-            transform.forward,
-            
-            _target.transform.position - transform.position,
-                    
-            300 * power * Mathf.Deg2Rad* Time.deltaTime, //rotation speed
-                    
-            1f
-        ); transform.rotation = Quaternion.LookRotation(rot);
-        
-        
-        // Moves towards a target
-        if (_target != null) {
-            _direction = _target.transform.position - transform.position;
-            _body.velocity = Vector3.zero;
-            _body.AddForce(
-                power * 300 * _direction.normalized * Time.deltaTime, //direction and magnitude
-                ForceMode.Force
+        try {
+            // Rotate to target
+            var rot = Vector3.RotateTowards
+            (
+                transform.forward,
+                _target.transform.position - transform.position,
+                300 * power * Mathf.Deg2Rad * Time.deltaTime, //rotation speed
+                1f
             );
+            transform.rotation = Quaternion.LookRotation(rot);
+            // Moves towards a target
+            if (_target != null) {
+                _direction = _target.transform.position - transform.position;
+                _body.velocity = Vector3.zero;
+                _body.AddForce(
+                    power * 300 * _direction.normalized * Time.deltaTime, //direction and magnitude
+                    ForceMode.Force
+                );
+            }
+            else {
+                Destroy(gameObject);
+            }
         }
-        else {
-            Destroy(gameObject);
+        catch (MissingReferenceException) {
+            // Explosion animation
+            Destroy(gameObject); 
         }
     }
 }
