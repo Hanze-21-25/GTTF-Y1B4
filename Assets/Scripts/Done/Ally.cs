@@ -97,16 +97,18 @@ public class Ally : MonoBehaviour{
             }
 
             _target = closest;
-
-            _direction = _target.transform.position - transform.position;
-
-
-            // Rotates towards enemy
-            var rotSpeed = 100 * agility;
-            var rot = Vector3.RotateTowards(transform.forward,
-                _direction, rotSpeed * Mathf.Deg2Rad * Time.deltaTime,
-                1f);
-            transform.rotation = Quaternion.LookRotation(rot);
+            if (_target != null) {
+                _direction = _target.transform.position - transform.position;
+                // Rotates towards enemy
+                var rotSpeed = 100 * agility;
+                var rot = Vector3.RotateTowards(transform.forward,
+                    _direction, rotSpeed * Mathf.Deg2Rad * Time.deltaTime,
+                    1f);
+                transform.rotation = Quaternion.LookRotation(rot);
+            }
+            else {
+                transform.rotation = Quaternion.identity;
+            }
         }
         catch (MissingReferenceException) {
             // New Wave;
