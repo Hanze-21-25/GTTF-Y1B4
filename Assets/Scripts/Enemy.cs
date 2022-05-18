@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 	//Health of the enemy
 
 	public int startHealth = 100;
+	private bool IsDead = false;
 	private float health;
 
 	//The money that player gets from a specific enemy type
@@ -46,10 +47,20 @@ public class Enemy : MonoBehaviour
 	//void Die makes the enemy destroy itself and gives the money amount to the player, as well as affects the wavespawner enemy count
 	void Die ()
 	 {
-        PlayerStats.Money += value;
-        Destroy (gameObject);
+		if (IsDead)
+		{ return; }
+		if (health <= 0)
+		{
+			PlayerStats.Money += value;
+			Destroy(gameObject);
 
-		WaveSpawner.EnemiesAlive--;
+			WaveSpawner.EnemiesAlive--;
+			IsDead = true;
+			Debug.Log("Enemy Death");
+			Debug.Log(WaveSpawner.EnemiesAlive);
+
+		}
+
 	 }
 
 
