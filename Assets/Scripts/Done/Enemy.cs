@@ -76,13 +76,11 @@ public partial class Enemy : MonoBehaviour{
         var rot = Vector3.RotateTowards
         (
             transform.forward,
-            
             _waypoint.transform.position - transform.position,
-            
-            300 * agility * Mathf.Deg2Rad* Time.deltaTime, //rotation speed
-            
+            300 * agility * Mathf.Deg2Rad * Time.deltaTime, //rotation speed
             1f
-        ); transform.rotation = Quaternion.LookRotation(rot);
+        );
+        transform.rotation = Quaternion.LookRotation(rot);
         
         
         

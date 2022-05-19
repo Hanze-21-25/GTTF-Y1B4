@@ -47,6 +47,22 @@ public class Ally : MonoBehaviour{
         }
     }
 
+    /** Public methods **/
+    
+    public void Upgrade(MonoBehaviour calledFrom) {
+        if (_upgraded || calledFrom.gameObject.GetComponent<Tile>() == null) return;
+        transform.GetComponent<Renderer>().material.color = Color.black;
+        // - money
+        agility *= 2;
+        UpdateInit();
+        _upgraded = true;
+    }
+    
+    public void Sell(MonoBehaviour calledFrom) {
+        if (calledFrom.gameObject.GetComponent<Tile>() == null) return;
+        // +money/2
+        Destroy(gameObject);
+    }
 
     /** Private Methods **/
 
@@ -59,7 +75,7 @@ public class Ally : MonoBehaviour{
         _cooldown = 1;
         _currentCooldown = 0;
     }
-
+    
     private void Upgrade() {
         if (_upgraded) return;
         transform.GetComponent<Renderer>().material.color = Color.black;

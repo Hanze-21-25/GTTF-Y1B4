@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /**
@@ -36,10 +37,17 @@ public class Tile : MonoBehaviour {
         }
     }
     // Select/Deselect Tile
-    private void OnMouseDown() {
+    private void OnMouseOver() {
         if (Input.GetMouseButtonDown(0) && _ally == null) {
             Build();
-        } 
+        }
+        if (_ally == null) return;
+        
+        if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Backspace)) {
+            _ally.Sell(this);
+        } else if (Input.GetMouseButtonDown(1)) {
+            _ally.Upgrade(this);
+        }
     }
 
     /** Public Methods **/
