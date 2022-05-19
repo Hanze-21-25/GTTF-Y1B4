@@ -574,7 +574,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121388287}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
@@ -3732,7 +3732,7 @@ RectTransform:
   - {fileID: 406060657}
   - {fileID: 589382550}
   m_Father: {fileID: 1201445836}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4940,7 +4940,7 @@ RectTransform:
   - {fileID: 1718076666}
   - {fileID: 1264080864}
   m_Father: {fileID: 1201445836}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5381,10 +5381,10 @@ RectTransform:
   - {fileID: 121388288}
   - {fileID: 1361979458}
   - {fileID: 1812519781}
+  - {fileID: 1835948888}
   - {fileID: 720091961}
   - {fileID: 1097549435}
   - {fileID: 1475944612689848702}
-  - {fileID: 1835948888}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8352,7 +8352,7 @@ RectTransform:
   - {fileID: 324326800}
   - {fileID: 1613572245}
   m_Father: {fileID: 1201445836}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -9853,7 +9853,7 @@ RectTransform:
   - {fileID: 1475944612933266294}
   - {fileID: 1475944612164235531}
   m_Father: {fileID: 1201445836}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
