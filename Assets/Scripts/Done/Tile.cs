@@ -9,10 +9,8 @@ public class Tile : MonoBehaviour {
     
     [SerializeField] public Transform allyPrefab;
     [SerializeField] public Color available;
-    [SerializeField] public Color unavailable;
     [SerializeField] public Color neutral;
-    [SerializeField] public Color occupied;
-    
+
     /* private variables */
     private Ally _ally;
 
@@ -58,7 +56,7 @@ public class Tile : MonoBehaviour {
     // Builds a turret on top of this
     private void Build() {
         if (_ally != null) return;
-        SetColour(occupied);
+        SetColour(neutral);
         var pos = transform.position;
         pos.y += 0.6f;
         _ally = Instantiate(allyPrefab, pos, transform.rotation).GetComponent<Ally>();
@@ -70,7 +68,6 @@ public class Tile : MonoBehaviour {
             child.gameObject.AddComponent<Tile>();
             var c = child.GetComponent<Tile>();
             c.available = available;
-            c.unavailable = unavailable;
             c.neutral = neutral;
             c.allyPrefab = allyPrefab;
         }
