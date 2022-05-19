@@ -11910,7 +11910,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1052176635}
   timeBetweenWaves: 6
   countdown: 10
-  waveCountdownText: {fileID: 0}
+  waveCountdownText: {fileID: 1310752525}
 --- !u!4 &1626959498
 Transform:
   m_ObjectHideFlags: 0
