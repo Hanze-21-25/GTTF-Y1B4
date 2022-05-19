@@ -16,7 +16,7 @@ public class WaveSpawner : MonoBehaviour
     public Text waveCountdownText;
 
     private int waveIndex = 0;
-
+    private int waveUIc = 1;
     private void Start()
     {
         EnemiesAlive = 0;
@@ -56,7 +56,7 @@ public class WaveSpawner : MonoBehaviour
         
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        waveCountdownText.text = string.Format("{0:0.0}", countdown);
+        waveCountdownText.text = string.Format("Wave " + waveUIc + " in: " + "{0:0.0}", countdown);
     }
 
     IEnumerator SpawnWave ()
@@ -71,6 +71,7 @@ public class WaveSpawner : MonoBehaviour
 
         waveIndex++;
         PlayerStats.Rounds++;
+        waveUIc = PlayerStats.Rounds + 1;
     }
 
     void SpawnEnemy (GameObject enemy)
