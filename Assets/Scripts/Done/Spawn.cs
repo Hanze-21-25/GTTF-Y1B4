@@ -2,35 +2,21 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Spawn <T> : MonoBehaviour where T : MonoBehaviour{
     
     /* Serialised Fields */
     [SerializeField] private float cooldown;
+    [SerializeField] private float timeout;
     [SerializeField] private Transform subject;
     [SerializeField] private float offset;
-    [SerializeField] private int waves;
+    [SerializeField] private int wave;
 
-    
     /* Private Variables */
-    private int subjectToSpawn;
-    private int subjects => FindObjectsOfType<T>().Length;
-    private bool inWait;
-    private int _wave;
-    private int Wave {
-        get => _wave;
-         set {
-            if (value >= 0) {
-                subjectToSpawn = (int) Math.Pow(2, value) + 1;
-                if (cooldown > 0.5f) cooldown-=0.4f;
-                _wave = value;
-                StartCoroutine(NewWave());
-            }
-            else {
-                throw new ArgumentOutOfRangeException();
-            }
-        }
-    }
+    private bool _isSpawning;
+    private static bool _noSpawnedItems => !FindObjectOfType<T>();
+    private int _current;
 
 
     /** Unity Events **/
@@ -43,31 +29,35 @@ public class Spawn <T> : MonoBehaviour where T : MonoBehaviour{
             Debug.Log("Subject's not Enemy, thus destroyed");
             Destroy(gameObject);
         }
-        Wave = 0;
+        _current = 0;
+        _isSpawning = false;
     }
+    
     private void Update() {
-        if (Wave > waves) SceneManager.LoadScene("Victory"); // Win
-        if (subjects <= 0 && !inWait) Wave++;
+        if (_current > wave) SceneManager.LoadScene("Victory");
+        if (_noSpawnedItems && !_isSpawning && _current <= wave) StartCoroutine(Initiate());
     }
 
     /** Private Enumerators **/
 
-    // Spawns Enemies
+    // Next Wave
     private IEnumerator Action() {
-        var t = transform;
-        var sub = subjectToSpawn;
-        while (sub <= subjectToSpawn && sub > 0) {
-            inWait = true;
+        
+        
+        //Spawns Enemies
+        for (var sub = 0; sub <= (int) (Math.Pow(2, _current) + 1); sub++) {
             yield return new WaitForSeconds(cooldown);
-            Instantiate(subject,t.position + Vector3.up * offset, t.rotation);
-            sub--;
-            inWait = false;
+            Instantiate(subject,transform.position + Vector3.up * offset, transform.rotation);
         }
+        _isSpawning = false;
     }
-    // Launches a new wave
-    private IEnumerator NewWave() {
-        inWait = true;
-        yield return new WaitForSeconds(5);
-        StartCoroutine(Action());
+
+    private IEnumerator Initiate() {
+        _isSpawning = true;
+                // Launches new wave
+                _current++;
+                if (cooldown > 0.5f) cooldown-=0.4f; //Acceleration of spawn each wave
+                yield return new WaitForSeconds(timeout);
+                StartCoroutine(Action());
     }
 }

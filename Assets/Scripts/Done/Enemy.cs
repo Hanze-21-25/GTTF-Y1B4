@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /** Represents an opposing force in the game - plastic bottles, boxes, etc. **/

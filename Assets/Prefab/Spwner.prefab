@@ -45,5 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1.5
+  timeout: 2
   subject: {fileID: 2909552760532131364, guid: a5c6c4d85ad5d475586ff57c849d1372, type: 3}
-  offset: 2
+  offset: 0
+  wave: 5
