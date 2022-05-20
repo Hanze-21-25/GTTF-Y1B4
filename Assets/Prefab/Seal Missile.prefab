@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   damage: 400
+  Csound: Seal Shoot
   explosionRadius: 0
   impactEffect: {fileID: 5602886501433900314, guid: 5c910d947e4de5540ae8ddfc55881f09, type: 3}
 --- !u!1001 &809410676987427368

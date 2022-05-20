@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641412, b: 0.57481986, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641383, b: 0.57482004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,46 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.data[2].name
-      value: LevelTheme
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.data[3].name
-      value: MenuTheme
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 03c695720c062814f946db6b930fd896, type: 3}
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.data[4].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.data[4].name
-      value: LevelTheme
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.data[4].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.data[2].volume
-      value: 0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.data[3].volume
-      value: 0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 0.01
-      objectReference: {fileID: 0}
     - target: {fileID: 5454026489202675273, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -392,7 +352,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: V2Button1
+          m_StringArgument: Button High
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &382084598
@@ -787,7 +747,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: V2Button2
+          m_StringArgument: Button Low
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &730010115

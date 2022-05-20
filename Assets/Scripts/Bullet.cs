@@ -7,10 +7,13 @@ public class Bullet : MonoBehaviour
 	public float speed = 70f;
 
 	public int damage = 50;
+
+	public string Csound;
 	
 	//Explosion radius variable
 	public float explosionRadius = 0f;
 	public GameObject impactEffect;
+
 
 	public void Seek(Transform _target)
 	{

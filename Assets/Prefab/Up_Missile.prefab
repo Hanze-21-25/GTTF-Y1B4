@@ -131,5 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   damage: 120
+  Csound: Squid Shoot
   explosionRadius: 15
   impactEffect: {fileID: 5602886501433900314, guid: aae540cc5024f10448eb7476900c4cbb, type: 3}

@@ -8,8 +8,6 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        FindObjectOfType<AudioManager>().StopPlaying("MenuTheme");
-        FindObjectOfType<AudioManager>().Play("LevelTheme");
         SceneManager.LoadScene(levelToLoad);
     }
 

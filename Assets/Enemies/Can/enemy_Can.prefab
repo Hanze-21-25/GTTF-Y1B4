@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c265a85fed0b4f4da05d751dd64e60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  death_sound: Can
   speed: 7
   startHealth: 200
   value: 15

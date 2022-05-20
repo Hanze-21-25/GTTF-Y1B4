@@ -6,6 +6,7 @@ public class GameOver : MonoBehaviour
 {
     public Text roundsText;
 
+
     private void Start()
     {
         Time.timeScale = 0f;
@@ -13,6 +14,11 @@ public class GameOver : MonoBehaviour
     void OnEnable ()
     {
         roundsText.text = PlayerStats.Rounds.ToString();
+    }
+
+    public void Next (string levelName)
+    {
+        SceneManager.LoadScene(levelName);
     }
 
     public void Retry ()

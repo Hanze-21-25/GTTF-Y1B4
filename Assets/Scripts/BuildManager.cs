@@ -58,6 +58,7 @@ public class BuildManager : MonoBehaviour
 	//Reference to TurretBlueprint script to build the turret
 	public void SelectTurretToBuild (TurretBlueprint turret)
     {
+		FindObjectOfType<AudioManager>().Play("Tower selected");
 		turretToBuild = turret;
 		
 		//Deselects the node when the turret is build

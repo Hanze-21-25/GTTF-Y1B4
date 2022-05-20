@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+
+	public string death_sound;
 	//Speed of the enemy
 	public float speed = 10f;
 	//Health of the enemy
@@ -56,8 +58,7 @@ public class Enemy : MonoBehaviour
 
 			WaveSpawner.EnemiesAlive--;
 			IsDead = true;
-			Debug.Log("Enemy Death");
-			Debug.Log(WaveSpawner.EnemiesAlive);
+			FindObjectOfType<AudioManager>().Play(death_sound);
 
 		}
 

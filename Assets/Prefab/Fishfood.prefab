@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   damage: 75
+  Csound: Seagull Shoot
   explosionRadius: 0
   impactEffect: {fileID: 5602886501433900314, guid: bdb43bc19498a7a4aa14aa6fc6701029, type: 3}
 --- !u!1001 &41499599659829869

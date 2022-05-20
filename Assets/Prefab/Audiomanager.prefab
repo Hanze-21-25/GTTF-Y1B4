@@ -44,27 +44,117 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: V2Button1
+  - name: Button High
     clip: {fileID: 8300000, guid: aeb13bdfbdea3b148b6c7ae553a42abc, type: 3}
-    volume: 0.4
+    volume: 0.26
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: V2Button2
+  - name: Button Low
     clip: {fileID: 8300000, guid: 54be07d819e11e74ba24641d072cde05, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: MenuTheme
+  - name: LevelTheme
     clip: {fileID: 8300000, guid: 5aeba234b2276c740bb269bd2c87179f, type: 3}
-    volume: 0.05
+    volume: 0.11
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: LevelTheme
+  - name: MenuTheme
     clip: {fileID: 8300000, guid: 03c695720c062814f946db6b930fd896, type: 3}
-    volume: 0.01
+    volume: 0.28
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Tower selected
+    clip: {fileID: 8300000, guid: aeb13bdfbdea3b148b6c7ae553a42abc, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Tower sold
+    clip: {fileID: 8300000, guid: 9c5724d0cba100b43ae3008d83e87038, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Tower placed
+    clip: {fileID: 8300000, guid: 521f8377a300cfe44a41c20ec858f8cf, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Tower upgraded
+    clip: {fileID: 8300000, guid: db77553b49e65284fa88948930a0fe05, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Crab Shoot
+    clip: {fileID: 8300000, guid: 4f6a78731a6a2f844978d730bd6b38b4, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Turtle Shoot
+    clip: {fileID: 8300000, guid: a50b321230e81764cb5ed204336efdaf, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Squid Shoot
+    clip: {fileID: 8300000, guid: 23e4b7562344fc247866c71115446316, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Seal Shoot
+    clip: {fileID: 8300000, guid: 5adeb51f53441b4468867e1826338058, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Seagull Shoot
+    clip: {fileID: 8300000, guid: 492a3ce5e9bb42d42869df50971c3a32, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bottle
+    clip: {fileID: 8300000, guid: 6d917c32f5a253549847164e385aada6, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bottle Big
+    clip: {fileID: 8300000, guid: 6bfaf203c3af9ce4d9df1e11d65a4d82, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Box
+    clip: {fileID: 8300000, guid: 22d3f910c9056a24f887cba401c99028, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Can
+    clip: {fileID: 8300000, guid: 517f76a8f035aed4cb341dad6e6e2911, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Cup
+    clip: {fileID: 8300000, guid: 77b2361618b6b5049b9874fe5c430f35, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Straw
+    clip: {fileID: 8300000, guid: 2461aa43d81e82f4ca3fda31b9b9a75d, type: 3}
+    volume: 0.28
+    pitch: 1
+    loop: 0
     source: {fileID: 0}

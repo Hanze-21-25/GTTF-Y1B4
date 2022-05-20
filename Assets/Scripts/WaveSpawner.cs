@@ -27,16 +27,12 @@ public class WaveSpawner : MonoBehaviour
     {
         if (EnemiesAlive <= 0)
         {
-            Debug.Log("EnemiesAlive = 0");
             if (waveIndex == waves.Length)
             {
-                Debug.Log("LEVEL WON!");
                 this.enabled = false;
                 FindObjectOfType<GameManager>().WinLevel();
             }
         }
-        Debug.Log(waveIndex);
-        Debug.Log(EnemiesAlive);
         if (EnemiesAlive > 0)
         {
             return;

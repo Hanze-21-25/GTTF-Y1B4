@@ -9,7 +9,6 @@ public class Turret : MonoBehaviour
 	[Header("Attributes")]
 	//Range of the turret can be defined
 	public float range = 15f;
-
 	public float fireRate = 1f;
 	private float fireCountdown = 0f;
 
@@ -78,6 +77,10 @@ public class Turret : MonoBehaviour
         {
 			Shoot();
 			fireCountdown = 1f / fireRate;
+			GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+			Bullet bullet = bulletGO.GetComponent<Bullet>();
+			FindObjectOfType<AudioManager>().Play(bullet.Csound);
+
 
 		}
 		fireCountdown -= Time.deltaTime;

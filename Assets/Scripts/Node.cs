@@ -73,6 +73,7 @@ public class Node : MonoBehaviour
 		turretBlueprint = blueprint;
 
 		Debug.Log("Turret build!");
+		FindObjectOfType<AudioManager>().Play("Tower placed");
 	}
 
 	public void UpgradeTurret()
@@ -95,8 +96,7 @@ public class Node : MonoBehaviour
 
 		isUpgraded = true;
 
-
-		Debug.Log("Turret upgraded!");
+		FindObjectOfType<AudioManager>().Play("Tower upgraded");
 	}
 
 	public void SellTurret()
@@ -106,8 +106,9 @@ public class Node : MonoBehaviour
 
 		Destroy(turret);
 		turretBlueprint = null;
+		FindObjectOfType<AudioManager>().Play("Tower sold");
 
-    }
+	}
 
 
 	void OnMouseEnter()
