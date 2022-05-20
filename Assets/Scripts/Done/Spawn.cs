@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class Spawn <T> : MonoBehaviour where T : MonoBehaviour{
@@ -16,17 +15,17 @@ public class Spawn <T> : MonoBehaviour where T : MonoBehaviour{
 
 
     /* Private Variables */
-    private int entitiesToSpawn;
-    private int currentEntities;
+    private int subjectToSpawn;
+    private int subjects => FindObjectsOfType<T>().Length;
     private bool inWait;
 
     private int _wave;
-    public int Wave {
+    private int Wave {
         get => _wave;
-        private set {
+         set {
             if (value >= 0) {
-                entitiesToSpawn = (int) Math.Pow(2, value) + 1;
-                currentEntities = FindObjectsOfType<T>().Length;
+                subjectToSpawn = (int) Math.Pow(2, value) + 1;
+                if (cooldown > 0.5f) cooldown-=0.4f;
                 _wave = value;
                 StartCoroutine(Action());
             }
@@ -44,15 +43,12 @@ public class Spawn <T> : MonoBehaviour where T : MonoBehaviour{
             Debug.Log("Subject's not Enemy, thus destroyed");
             Destroy(gameObject);
         }
-        Wave = 3;
+        Wave = 0;
     }
 
     // Spawn cooldown timer;
     private void Update() {
-        if (currentEntities <= 0 && !inWait) Wave++;
-        else {
-            currentEntities = FindObjectsOfType<T>().Length;
-        }
+        if (subjects <= 0 && !inWait) Wave++;
     }
 
 
@@ -60,14 +56,14 @@ public class Spawn <T> : MonoBehaviour where T : MonoBehaviour{
     private IEnumerator Action() {
         
         var t = transform;
-        currentEntities = FindObjectsOfType<T>().Length;
-        
-        while (currentEntities < entitiesToSpawn) {
+        var sub = subjectToSpawn;
+
+        while (sub <= subjectToSpawn && sub > 0) {
 
             inWait = true;
             yield return new WaitForSeconds(cooldown);
             Instantiate(subject,t.position + Vector3.up * offset, t.rotation);
-            currentEntities++;
+            sub--;
             inWait = false;
         }
     }

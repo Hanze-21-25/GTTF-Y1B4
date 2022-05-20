@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Ally : MonoBehaviour{
     
@@ -9,7 +9,8 @@ public class Ally : MonoBehaviour{
     [SerializeField] private int agility; // Fire rate
     [SerializeField] private int cost; // Fire rate
     [SerializeField] private Transform bulletType;
-
+    [SerializeField] private float cooldown;
+    
     /* Private Variables */
 
     private bool _upgraded;
@@ -17,7 +18,6 @@ public class Ally : MonoBehaviour{
     private Enemy[] _enemies;
     private Vector3 _direction;
     private Enemy _target;
-    private float _cooldown;
     private float _currentCooldown;
     private double _mod;
 
@@ -32,6 +32,8 @@ public class Ally : MonoBehaviour{
         if (agility<= 0) {
             agility = 1;
         }
+        cooldown *= Random.Range(0.8f, 1.8f);
+        
         UpdateInit();
         _upgraded = false;
     }
@@ -71,6 +73,7 @@ public class Ally : MonoBehaviour{
         transform.GetComponent<Renderer>().material.color = Color.black;
         // - money
         agility *= 2;
+        cooldown *= (float) (1/(Math.Sin(agility) + 1));
         UpdateInit();
         _upgraded = true;
     }
@@ -96,8 +99,6 @@ public class Ally : MonoBehaviour{
         _mod = Math.Floor(_mod);
         _mod = Math.Pow(10, _mod);
         _mod = agility/ _mod;
-        
-        _cooldown = 1;
         _currentCooldown = 0;
     }
     
@@ -124,7 +125,7 @@ public class Ally : MonoBehaviour{
     protected virtual void Action() {
         if (_currentCooldown > 0) return;
         var bullet = Instantiate(bulletType, transform.position, transform.rotation);
-        bullet.GetComponent<Projectile>()._target = _target; _currentCooldown = _cooldown;
+        bullet.GetComponent<Projectile>()._target = _target; _currentCooldown = cooldown;
         Aim();
     }
     

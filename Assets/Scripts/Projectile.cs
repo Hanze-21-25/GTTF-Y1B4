@@ -1,7 +1,7 @@
-
 using System;
-using System.Linq.Expressions;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 public class Projectile : MonoBehaviour{
 
     /* Serialized Fields */
@@ -16,11 +16,14 @@ public class Projectile : MonoBehaviour{
     private Vector3 _spawn;
     private Vector3 _direction;
     private Transform _parent;
+    private Renderer rnd;
+    private Color _dstroyClr;
 
     /** Unity Event Functions **/
     
     // Initialiser
     private void Start() {
+        rnd = GetComponent<Renderer>() == null ? gameObject.AddComponent<Renderer>() : rnd;
         _body = gameObject.GetComponent<Rigidbody>();
         if (_body == null) {
             _body = gameObject.AddComponent<Rigidbody>();
@@ -32,13 +35,24 @@ public class Projectile : MonoBehaviour{
     }
 
     private void OnCollisionEnter(Collision c) {
-        // Particle explosion
-        if (c.transform != _target.transform) return;
-        gameObject.GetComponent<Renderer>().material.color = Color.cyan;
-        c.gameObject.GetComponent<Enemy>().Hit(power); Destroy(gameObject);
+        try {
+            // Particle explosion
+            if (c.transform != _target.transform) return;
+            c.gameObject.GetComponent<Enemy>().Hit(power);
+            Destroy(gameObject);
+        }
+        catch (MissingReferenceException) {
+            Destroy(gameObject);
+        }
+    }
+
+
+    private void OnDestroy() {
+        //Destroy animation (Explosion).
     }
 
     /** Private Methods **/
+    // Locks-on and follows target& 
     private void Follow() {
         try {
             // Rotate to target
@@ -55,7 +69,7 @@ public class Projectile : MonoBehaviour{
                 _direction = _target.transform.position - transform.position;
                 _body.velocity = Vector3.zero;
                 _body.AddForce(
-                    power * 300 * _direction.normalized * Time.deltaTime, //direction and magnitude
+                    power * 600 * _direction.normalized * (float) (Math.Log(_direction.magnitude,power) + 1.5f) * Time.deltaTime, //direction and magnitude
                     ForceMode.Force
                 );
             }
@@ -64,8 +78,7 @@ public class Projectile : MonoBehaviour{
             }
         }
         catch (MissingReferenceException) {
-            // Explosion animation
-            Destroy(gameObject); 
+            Destroy(gameObject,0.65f);
         }
     }
 }

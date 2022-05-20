@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /** Represents an opposing force in the game - plastic bottles, boxes, etc. **/
@@ -32,7 +33,14 @@ public class Enemy : MonoBehaviour{
         _direction = _waypoint.transform.position - transform.position;
         Follow();
     }
-    
+
+
+    private void FixedUpdate() {
+        if ((FindObjectOfType<EnemySpawn>().transform.position - transform.position).magnitude > 30) {
+            Destroy(gameObject);
+        }
+    }
+
     // On waypoint touch + checks defeat
     private void OnTriggerEnter(Collider c) {
         if (c.gameObject.GetComponent<Waypoint>() == null) return;
