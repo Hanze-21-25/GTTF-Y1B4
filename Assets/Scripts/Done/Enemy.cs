@@ -22,13 +22,13 @@ public class Enemy : MonoBehaviour{
 
     // Initialiser
     private void Start() {
-        index = 0;
+        index = 1;
         _waypoints = FindObjectsOfType<Waypoint>();
+        _waypoint = GameObject.Find("Waypoint (" + index + ")").GetComponent<Waypoint>();
         InitBody();
     }
     private void Update() {
-        if (_waypoints.Length <= 0) return;
-        _waypoint = _waypoints[index];
+        _waypoint = GameObject.Find("Waypoint (" + index + ")").GetComponent<Waypoint>();
         _direction = _waypoint.transform.position - transform.position;
         Follow();
     }
@@ -37,33 +37,17 @@ public class Enemy : MonoBehaviour{
     private void OnTriggerEnter(Collider c) {
         if (c.gameObject.GetComponent<Waypoint>() == null) return;
         body.velocity = Vector3.zero;
-        if (index == _waypoints.Length - 1 && c.gameObject.GetComponent<Waypoint>() == _waypoints[index]) {
+        
+        if (index >= _waypoints.Length) {
             Destroy(gameObject);
             SceneManager.LoadScene("Defeat");
         }
-        if(index < _waypoints.Length - 1) {
-            index++;
-        }
-        GetComponent<Renderer>().material.color = Color.red;
         
-        if(index < _waypoints.Length - 1) {
-            index++;
-        }
+        if(index < _waypoints.Length) index++;
     }
 
 
     /** Public Methods **/
-
-    private void InitBody() {
-        body = GetComponent<Rigidbody>();
-        if (body == null) body = gameObject.AddComponent<Rigidbody>();
-        body.velocity = Vector3.zero;
-        body.centerOfMass = Vector3.zero;
-        body.inertiaTensorRotation = Quaternion.identity;
-        body.freezeRotation = true;
-        body.constraints &= ~RigidbodyConstraints.FreezeRotationY;
-        body.mass = 40;
-    }
 
     // Damages this
     public void Hit(float damage) {
@@ -78,6 +62,17 @@ public class Enemy : MonoBehaviour{
     }
     
     /** Private Methods **/
+    
+    private void InitBody() {
+        body = GetComponent<Rigidbody>();
+        if (body == null) body = gameObject.AddComponent<Rigidbody>();
+        body.velocity = Vector3.zero;
+        body.centerOfMass = Vector3.zero;
+        body.inertiaTensorRotation = Quaternion.identity;
+        body.freezeRotation = true;
+        body.constraints &= ~RigidbodyConstraints.FreezeRotationY;
+        body.mass = 40;
+    }
     
     // Moves towards waypoint
     private void Follow() {
@@ -98,7 +93,7 @@ public class Enemy : MonoBehaviour{
         
         // Move towards waypoint
         body.AddForce(
-             agility * 300 * dir.normalized * Time.deltaTime, //direction and magnitude
+             agility * 3000 * dir.normalized * Time.deltaTime, //direction and magnitude
              ForceMode.Force
         );
     }
