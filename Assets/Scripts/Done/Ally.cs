@@ -21,8 +21,13 @@ public class Ally : MonoBehaviour{
     private float _currentCooldown;
     private double _mod;
 
+    
+    
+    
     /** Unity Events **/
 
+    
+    
     private void Start() {
         if (agility<= 0) {
             agility = 1;
@@ -30,6 +35,8 @@ public class Ally : MonoBehaviour{
         UpdateInit();
         _upgraded = false;
     }
+    
+    
     private void Update() {
         Aim();
         if (_target == null) return;
@@ -38,6 +45,9 @@ public class Ally : MonoBehaviour{
         }
         Action();
     }
+    
+    
+    // Upgrade or Sell
     private void OnMouseOver() {
         if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Backspace)) {
             Sell();
@@ -46,9 +56,16 @@ public class Ally : MonoBehaviour{
             Upgrade();
         }
     }
+    
+
+
+
 
     /** Public methods **/
     
+    
+    
+    // Upgrades this (Called from outside)
     public void Upgrade(MonoBehaviour calledFrom) {
         if (_upgraded || calledFrom.gameObject.GetComponent<Tile>() == null) return;
         transform.GetComponent<Renderer>().material.color = Color.black;
@@ -58,14 +75,22 @@ public class Ally : MonoBehaviour{
         _upgraded = true;
     }
     
+    
+    // Sells this (Called from outside)
     public void Sell(MonoBehaviour calledFrom) {
         if (calledFrom.gameObject.GetComponent<Tile>() == null) return;
         // +money/2
         Destroy(gameObject);
     }
 
+    
+    
+    
     /** Private Methods **/
 
+    
+    
+    // Reinitialises necessary variables
     private void UpdateInit() {
         _mod = Math.Log(agility,10);
         _mod = Math.Floor(_mod);
@@ -76,6 +101,8 @@ public class Ally : MonoBehaviour{
         _currentCooldown = 0;
     }
     
+    
+    // Sells this (Internal Call)
     private void Upgrade() {
         if (_upgraded) return;
         transform.GetComponent<Renderer>().material.color = Color.black;
@@ -84,10 +111,15 @@ public class Ally : MonoBehaviour{
         UpdateInit();
         _upgraded = true;
     }
+    
+    
+    // Upgrades this (Internal Call)
     private void Sell() {
         // +money/2
         Destroy(gameObject);
     }
+    
+    
     // Key move of an object *
     protected virtual void Action() {
         if (_currentCooldown > 0) return;
@@ -95,6 +127,8 @@ public class Ally : MonoBehaviour{
         bullet.GetComponent<Projectile>()._target = _target; _currentCooldown = _cooldown;
         Aim();
     }
+    
+    
     // Locks-on on an enemy and rotates towards it
     private void Aim() {
         try {

@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 
 /** Represents an opposing force in the game - plastic bottles, boxes, etc. **/
-public partial class Enemy : MonoBehaviour{
+public class Enemy : MonoBehaviour{
     
     /* Serialised Fields */
     [SerializeField] private float health;
@@ -24,15 +24,13 @@ public partial class Enemy : MonoBehaviour{
     private void Start() {
         index = 0;
         _waypoints = FindObjectsOfType<Waypoint>();
-        body = GetComponent<Rigidbody>();
-        if (body == null) body = gameObject.AddComponent<Rigidbody>();
+        InitBody();
     }
     private void Update() {
-        if (_waypoints.Length > 0) {
-            _waypoint = _waypoints[index];
-            _direction = _waypoint.transform.position - transform.position;
-            Follow();
-        }
+        if (_waypoints.Length <= 0) return;
+        _waypoint = _waypoints[index];
+        _direction = _waypoint.transform.position - transform.position;
+        Follow();
     }
     
     // On waypoint touch + checks defeat
@@ -53,9 +51,20 @@ public partial class Enemy : MonoBehaviour{
         }
     }
 
-    
+
     /** Public Methods **/
-    
+
+    private void InitBody() {
+        body = GetComponent<Rigidbody>();
+        if (body == null) body = gameObject.AddComponent<Rigidbody>();
+        body.velocity = Vector3.zero;
+        body.centerOfMass = Vector3.zero;
+        body.inertiaTensorRotation = Quaternion.identity;
+        body.freezeRotation = true;
+        body.constraints &= ~RigidbodyConstraints.FreezeRotationY;
+        body.mass = 40;
+    }
+
     // Damages this
     public void Hit(float damage) {
         if (damage is > 200 or < 0) return;
@@ -72,11 +81,13 @@ public partial class Enemy : MonoBehaviour{
     
     // Moves towards waypoint
     private void Follow() {
+
+        var dir = _direction;
+        dir = new Vector3(dir.x,0,dir.z);
         // Rotates towards waypoint
         var rot = Vector3.RotateTowards
         (
-            transform.forward,
-            _waypoint.transform.position - transform.position,
+            transform.forward, dir,
             300 * agility * Mathf.Deg2Rad * Time.deltaTime, //rotation speed
             1f
         );
@@ -87,7 +98,7 @@ public partial class Enemy : MonoBehaviour{
         
         // Move towards waypoint
         body.AddForce(
-             agility * 30 * _direction.normalized * Time.deltaTime, //direction and magnitude
+             agility * 300 * dir.normalized * Time.deltaTime, //direction and magnitude
              ForceMode.Force
         );
     }
