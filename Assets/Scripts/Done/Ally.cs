@@ -6,7 +6,7 @@ public class Ally : MonoBehaviour{
     
     /* Serialised Fields */
     
-    [SerializeField] private int agility; // Fire rate
+    [SerializeField] private float agility; // Fire rate
     [SerializeField] private int cost; // Fire rate
     [SerializeField] private Transform bulletType;
     [SerializeField] private float cooldown;
@@ -20,6 +20,7 @@ public class Ally : MonoBehaviour{
     private Enemy _target;
     private float _currentCooldown;
     private double _mod;
+    private int range => bulletType.GetComponent<Projectile>().range;
 
     
     
@@ -108,7 +109,7 @@ public class Ally : MonoBehaviour{
         if (_upgraded) return;
         transform.GetComponent<Renderer>().material.color = Color.black;
         // - money
-        agility *= 2;
+        agility *= Random.Range(1.1f,1.3f);
         UpdateInit();
         _upgraded = true;
     }
@@ -124,6 +125,7 @@ public class Ally : MonoBehaviour{
     // Key move of an object *
     protected virtual void Action() {
         if (_currentCooldown > 0) return;
+        if (_direction.magnitude > range) return;
         var bullet = Instantiate(bulletType, transform.position, transform.rotation);
         bullet.GetComponent<Projectile>()._target = _target; _currentCooldown = cooldown;
         Aim();

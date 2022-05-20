@@ -1,23 +1,21 @@
 using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Projectile : MonoBehaviour{
 
     /* Serialized Fields */
     [SerializeField] private int power;
-    [SerializeField] private float age;
 
     /* Public Variables */
     [NonSerialized] public Enemy _target;
-
+    [SerializeField] public int range;
+    
     /* Private Variables */
     private Rigidbody _body;
     private Vector3 _spawn;
     private Vector3 _direction;
     private Transform _parent;
     private Renderer rnd;
-    private Color _dstroyClr;
 
     /** Unity Event Functions **/
     
