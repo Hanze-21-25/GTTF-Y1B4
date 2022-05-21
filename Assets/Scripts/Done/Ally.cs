@@ -3,14 +3,13 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Ally : MonoBehaviour{
-    
     /* Serialised Fields */
-    
+
     [SerializeField] private float agility; // Fire rate
     [SerializeField] private int cost; // Fire rate
     [SerializeField] private Transform bulletType;
     [SerializeField] private float cooldown;
-    
+
     /* Private Variables */
 
     private bool _upgraded;
@@ -22,64 +21,57 @@ public class Ally : MonoBehaviour{
     private double _mod;
     private int range => bulletType.GetComponent<Projectile>().range;
 
-    
-    
-    
-    /** Unity Events **/
 
-    
-    
+    /** Unity Events **/
     private void Start() {
-        if (agility<= 0) {
+        if (agility <= 0) {
             agility = 1;
         }
+
         cooldown *= Random.Range(0.8f, 1.8f);
-        
+
         UpdateInit();
         _upgraded = false;
     }
-    
-    
+
+
     private void Update() {
         Aim();
         if (_target == null) return;
         if (_currentCooldown > 0) {
             _currentCooldown -= Time.deltaTime * (float) _mod;
         }
+
         Action();
     }
-    
-    
+
+
     // Upgrade or Sell
     private void OnMouseOver() {
         if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Backspace)) {
             Sell();
         }
+
         if (Input.GetMouseButtonDown(1)) {
             Upgrade();
         }
     }
-    
-
-
 
 
     /** Public methods **/
-    
-    
-    
+
     // Upgrades this (Called from outside)
     public void Upgrade(MonoBehaviour calledFrom) {
         if (_upgraded || calledFrom.gameObject.GetComponent<Tile>() == null) return;
         transform.GetComponent<Renderer>().material.color = Color.black;
         // - money
         agility *= 2;
-        cooldown *= (float) (1/(Math.Sin(agility) + 1));
+        cooldown *= (float) (1 / (Math.Sin(agility) + 1));
         UpdateInit();
         _upgraded = true;
     }
-    
-    
+
+
     // Sells this (Called from outside)
     public void Sell(MonoBehaviour calledFrom) {
         if (calledFrom.gameObject.GetComponent<Tile>() == null) return;
@@ -87,51 +79,48 @@ public class Ally : MonoBehaviour{
         Destroy(gameObject);
     }
 
-    
-    
-    
+
     /** Private Methods **/
 
-    
-    
     // Reinitialises necessary variables
     private void UpdateInit() {
-        _mod = Math.Log(agility,10);
+        _mod = Math.Log(agility, 10);
         _mod = Math.Floor(_mod);
         _mod = Math.Pow(10, _mod);
-        _mod = agility/ _mod;
+        _mod = agility / _mod;
         _currentCooldown = 0;
     }
-    
-    
+
+
     // Sells this (Internal Call)
     private void Upgrade() {
         if (_upgraded) return;
         transform.GetComponent<Renderer>().material.color = Color.black;
         // - money
-        agility *= Random.Range(1.1f,1.3f);
+        agility *= Random.Range(1.1f, 1.3f);
         UpdateInit();
         _upgraded = true;
     }
-    
-    
+
+
     // Upgrades this (Internal Call)
     private void Sell() {
         // +money/2
         Destroy(gameObject);
     }
-    
-    
+
+
     // Key move of an object *
     protected virtual void Action() {
         if (_currentCooldown > 0) return;
         if (_direction.magnitude > range) return;
         var bullet = Instantiate(bulletType, transform.position, transform.rotation);
-        bullet.GetComponent<Projectile>()._target = _target; _currentCooldown = cooldown;
+        bullet.GetComponent<Projectile>()._target = _target;
+        _currentCooldown = cooldown;
         Aim();
     }
-    
-    
+
+
     // Locks-on on an enemy and rotates towards it
     private void Aim() {
         try {
