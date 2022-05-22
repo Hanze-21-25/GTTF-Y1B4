@@ -58,13 +58,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: LevelTheme
     clip: {fileID: 8300000, guid: 5aeba234b2276c740bb269bd2c87179f, type: 3}
-    volume: 0.11
+    volume: 0.039
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MenuTheme
     clip: {fileID: 8300000, guid: 03c695720c062814f946db6b930fd896, type: 3}
-    volume: 0.28
+    volume: 0.103
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Turtle Shoot
     clip: {fileID: 8300000, guid: a50b321230e81764cb5ed204336efdaf, type: 3}
-    volume: 0.28
+    volume: 0.572
     pitch: 1
     loop: 0
     source: {fileID: 0}

@@ -16,9 +16,11 @@ public class GameOver : MonoBehaviour
         roundsText.text = PlayerStats.Rounds.ToString();
     }
 
-    public void Next (string levelName)
+    public void Next ()
     {
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
+
     }
 
     public void Retry ()
