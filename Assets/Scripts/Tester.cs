@@ -9,7 +9,9 @@ public class Tester : MonoBehaviour
         "Use Q/E or Middle Mouse Wheel to rotate.",
         "Scroll Mouse Wheel to zoom in & out.",
         "Use Left Mouse Button to place an animal.",
-        "Don't let the trash reach the ocean. Save the ocean, help animals protect their home!",
+        "Don't let the trash reach the ocean. You will lose one life if plastic reaches the ocean.",
+        "Click on the animal, then place it on the square.",
+        "Make sure Animal can reach plastic.",
 
         };
 
