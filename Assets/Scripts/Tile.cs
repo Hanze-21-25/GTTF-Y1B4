@@ -14,6 +14,7 @@ public class Tile : MonoBehaviour {
 
     /* private variables */
     private Ally _ally;
+    private UserInterface _UI;
 
 
     /* public variables */
@@ -25,7 +26,13 @@ public class Tile : MonoBehaviour {
         // Inherits parent or sets children
         SetChildren();
         SetColour(neutral);
+        var lui = FindObjectOfType<UserInterface>(); if (lui != null) _UI = lui;
     }
+
+    private void Update() {
+        GetToBuild();
+    }
+
     private void OnMouseEnter() {
         if (_ally == null) {
             SetColour(available);
@@ -50,8 +57,6 @@ public class Tile : MonoBehaviour {
         }
     }
 
-    /** Public Methods **/
-    
     /** Private Methods **/
     // Changes a colour of this
     private void SetColour(Color colour) {
@@ -61,15 +66,12 @@ public class Tile : MonoBehaviour {
             renderer.material.color = colour;
     }
 
-    // Builds a turret on top of this
-    private void Build() {
-        if (_ally != null) return;
-        SetColour(neutral);
-        var pos = transform.position;
-        pos.y += 0.6f;
-        _ally = Instantiate(allyPrefab, pos, transform.rotation).GetComponent<Ally>();
+    // Gets what prefab to build on top of the tile.
+    private void GetToBuild() {
+        if (_UI == null) return; { allyPrefab = _UI.selected; }
+        throw new Exception("No UI is set");
     }
-
+    
     // Adds this to all children and sets same property values.
     private void SetChildren() {
         foreach (Transform child in transform){
@@ -79,5 +81,14 @@ public class Tile : MonoBehaviour {
             c.neutral = neutral;
             c.allyPrefab = allyPrefab;
         }
+    }
+    
+    // Builds a turret on top of this
+    private void Build() {
+        if (_ally != null) return;
+        SetColour(neutral);
+        var pos = transform.position;
+        pos.y += 0.6f;
+        _ally = Instantiate(allyPrefab, pos, transform.rotation).GetComponent<Ally>();
     }
 }
