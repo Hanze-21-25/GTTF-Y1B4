@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641383, b: 0.57482004, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641412, b: 0.57481986, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2136,7 +2136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1132972465761030405, guid: 79cb3364404c58a4db225652cc2dca67, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level 1
+      value: CrabCutScene
       objectReference: {fileID: 0}
     - target: {fileID: 1132972465761030405, guid: 79cb3364404c58a4db225652cc2dca67, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument

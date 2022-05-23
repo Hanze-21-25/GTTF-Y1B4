@@ -3487,7 +3487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: Click on the Carb and place it down on the any square
+  tipToShow: Click on the Crab and place it down on any square
 --- !u!1001 &990957122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6930,8 +6930,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 951, y: -426}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 960, y: -449}
+  m_SizeDelta: {x: 323.5419, y: 177.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879486432
 MonoBehaviour:
@@ -7974,8 +7974,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
