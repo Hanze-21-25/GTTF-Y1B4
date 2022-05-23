@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameIsOver = false;
+        
     }
 
 
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
             EndGame();
         }
 
+       
+
         if (PlayerStats.Lives <= 4)
         {
             Warning();
@@ -53,10 +56,12 @@ public class GameManager : MonoBehaviour
 
     void Warning()
     {
-        PlayerStats.Lives = 4;
+        
         Debug.Log("Game Over!");
 
         warningUI.SetActive(true);
+        
+        
 
     }
 
