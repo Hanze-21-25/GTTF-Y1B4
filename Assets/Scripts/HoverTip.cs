@@ -13,18 +13,22 @@ public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         StopAllCoroutines();
         StartCoroutine(StartTimer());
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         StopAllCoroutines();
         HoverTipManager.OnMouseLoseFocus();
+        Time.timeScale = 1f;
+
     }
 
     private void ShowMessage()
     {
         //Reference to the HoverTipManger to display the message
         HoverTipManager.OnMouseHover(tipToShow, Input.mousePosition);
+        Time.timeScale = 0f;
     }
 
     private IEnumerator StartTimer()
