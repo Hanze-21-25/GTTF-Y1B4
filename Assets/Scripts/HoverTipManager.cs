@@ -18,6 +18,7 @@ public class HoverTipManager : MonoBehaviour
     {
         OnMouseHover += ShowTip;
         OnMouseLoseFocus += HideTip;
+
     }
 
     private void OnDisable()

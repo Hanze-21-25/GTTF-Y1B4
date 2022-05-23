@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static bool GameIsOver;
 
     public GameObject gameOverUI;
+    public GameObject warningUI;
     public GameObject completeLevelUI;
 
     void Start()
@@ -35,6 +36,11 @@ public class GameManager : MonoBehaviour
         {
             EndGame();
         }
+
+        if (PlayerStats.Lives <= 4)
+        {
+            Warning();
+        }
     }
     void EndGame()
     {
@@ -42,6 +48,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over!");
 
         gameOverUI.SetActive(true);
+
+    }
+
+    void Warning()
+    {
+        PlayerStats.Lives = 4;
+        Debug.Log("Game Over!");
+
+        warningUI.SetActive(true);
 
     }
 
