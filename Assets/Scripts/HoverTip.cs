@@ -20,7 +20,7 @@ public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         StopAllCoroutines();
         HoverTipManager.OnMouseLoseFocus();
-        Time.timeScale = 1f;
+        
 
     }
 
@@ -28,7 +28,7 @@ public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         //Reference to the HoverTipManger to display the message
         HoverTipManager.OnMouseHover(tipToShow, Input.mousePosition);
-        Time.timeScale = 2f;
+        
     }
 
     private IEnumerator StartTimer()

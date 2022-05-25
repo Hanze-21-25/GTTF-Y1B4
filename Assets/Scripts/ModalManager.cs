@@ -23,14 +23,14 @@ public class ModalManager : MonoBehaviour
     {
         this.header.text = header;
         this.body.text = body;
-        Time.timeScale = 0f;
+        
         modalWindow.SetActive(true);
     }
     //Hides the modal window
     public void HideModal()
     {
         modalWindow.SetActive(false);
-        Time.timeScale = 1f;
+        
     }
 
 }
