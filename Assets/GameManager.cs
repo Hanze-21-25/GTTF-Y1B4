@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     void Warning()
     {
         
-        Debug.Log("Game Over!");
+        
 
         warningUI.SetActive(true);
         

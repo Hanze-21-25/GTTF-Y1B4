@@ -28,7 +28,7 @@ public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         //Reference to the HoverTipManger to display the message
         HoverTipManager.OnMouseHover(tipToShow, Input.mousePosition);
-        Time.timeScale = 0f;
+        Time.timeScale = 2f;
     }
 
     private IEnumerator StartTimer()
