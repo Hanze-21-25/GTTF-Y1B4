@@ -200,7 +200,7 @@ MonoBehaviour:
   death_sound: Straw
   speed: 7
   startHealth: 100
-  value: 20
+  value: 7
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035
 CapsuleCollider:

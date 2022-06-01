@@ -198,9 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death_sound: Can
-  speed: 7
-  startHealth: 200
-  value: 15
+  speed: 9
+  startHealth: 175
+  value: 20
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035
 CapsuleCollider:
