@@ -2007,6 +2007,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[5]
       value: 
       objectReference: {fileID: 2100000, guid: cbb6de61f41ddc44993e424ececcef10, type: 2}
+    - target: {fileID: -3072280830926685077, guid: 69bf4b7f04ab28347a1c1a2ab5b83f55, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbb6de61f41ddc44993e424ececcef10, type: 2}
     - target: {fileID: 919132149155446097, guid: 69bf4b7f04ab28347a1c1a2ab5b83f55, type: 3}
       propertyPath: m_Name
       value: lowpolyrestaurant
@@ -4950,8 +4954,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.7921569, g: 0.73807895, b: 0.48796862, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

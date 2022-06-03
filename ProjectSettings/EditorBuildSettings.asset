@@ -23,9 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeaTurtleCutScene.unity
     guid: b09256922acb82640ac628d6ce1a0f5f
-  - enabled: 1
-    path: Assets/Scenes/SeaTurtleCutSceneWrong.unity
-    guid: 3a2c63a9d7fd0ec4f964e42f9ed70c08
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: 8b20bfa1023c317488b6f9110cc265e2
