@@ -121,11 +121,12 @@ public class Node : MonoBehaviour
 			return;
 		//If payer does not have enough money to build the turret, node displays other color
 		if (buildManager.HasMoney){
-
-          rend.material.color = hoverColor;
+			
+		  rend.material.color = hoverColor;
 		} else {
 			rend.material.color = notEnoughMoneyColor;
 		}
+		
 
 	}
 

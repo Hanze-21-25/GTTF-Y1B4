@@ -38,7 +38,7 @@ public class UI_Assistant : MonoBehaviour
 
                 break;
 
-            case 4:
+                case 4:
                 messageList.Clear();
                 List<string> toAdd2 = new List<string>()
                 {
@@ -49,6 +49,33 @@ public class UI_Assistant : MonoBehaviour
                 };
 
                 messageList.AddRange(toAdd2);
+                break;
+
+                case 5:
+                messageList.Clear();
+                List<string> toAdd3 = new List<string>()
+                {
+                    "Guys I need your help!",
+                    "People are gonna eat me!",
+                    "Carb and Seaturtle only you can help me!",
+                   
+                };
+
+                messageList.AddRange(toAdd3);
+                break;
+
+
+                case 7:
+                messageList.Clear();
+                List<string> toAdd4 = new List<string>()
+                {
+                    "I got trapped by a fishing nest or My home got destroyed because of global warming!",
+                    "And now I am here in Venice",
+                    "Please help me!",
+
+                };
+
+                messageList.AddRange(toAdd4);
                 break;
         }   
 

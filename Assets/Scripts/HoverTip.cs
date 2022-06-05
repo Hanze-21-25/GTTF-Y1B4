@@ -8,7 +8,7 @@ public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public string tipToShow;
     //Delay before the window appearing
-    private float timeToWait = 0.4f;
+    private float timeToWait = 0.2f;
     public void OnPointerEnter(PointerEventData eventData)
     {
         StopAllCoroutines();

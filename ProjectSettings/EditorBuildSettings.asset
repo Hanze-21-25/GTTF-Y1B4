@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeaTurtleCutScene.unity
     guid: b09256922acb82640ac628d6ce1a0f5f
+  - enabled: 1
+    path: Assets/Scenes/SquidCutScene.unity
+    guid: a9fb69afcc328b74a83335b9724061c9
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -30,8 +36,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 2.unity
     guid: 8b20bfa1023c317488b6f9110cc265e2
   - enabled: 1
-    path: Assets/Scenes/SquidTurtleCutScene.unity
-    guid: 99d9b9ff673ff7542938a5f3282ef450
+    path: Assets/Scenes/SealCutScene.unity
+    guid: 0bf51312701fdb14499dfef80f737f1c
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
     guid: 3b3ed1c0035861a4fbb5ad73b3f2fa1a
