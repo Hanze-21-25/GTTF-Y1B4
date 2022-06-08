@@ -42,6 +42,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 3.unity
     guid: 3b3ed1c0035861a4fbb5ad73b3f2fa1a
   - enabled: 1
+    path: Assets/Scenes/SeagullCutScene.unity
+    guid: db5aa60aa6f739c498d8bef96de67729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
     path: Assets/Scenes/Level 4.unity
     guid: 9e04f3bd98594c14abe9a4887b94a919
   - enabled: 1
