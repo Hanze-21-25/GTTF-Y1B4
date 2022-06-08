@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +12,9 @@ public class NodeUI : MonoBehaviour
     public Text sellAmount;
     //Node is the target parameter
     private Node target;
+    public GameObject rangeIndic;
+    private Vector3 towerPos;
+
     void Update()
     {
         transform.rotation = Camera.main.transform.rotation;
@@ -22,8 +24,8 @@ public class NodeUI : MonoBehaviour
     public void SetTarget(Node _target)
     {
         target = _target;
-
         transform.position = target.GetBuildPosition();
+
 
         if (!target.isUpgraded)
         {

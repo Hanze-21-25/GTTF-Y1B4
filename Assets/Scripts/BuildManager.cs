@@ -17,6 +17,7 @@ public class BuildManager : MonoBehaviour
 	public GameObject squidPrefab;
 	public GameObject sealPrefab;
 	public GameObject seagullPrefab;
+	public GameObject octopusPrefab;
 
 	private TurretBlueprint turretToBuild;
 

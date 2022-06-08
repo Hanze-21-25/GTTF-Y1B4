@@ -7,6 +7,7 @@ public class Shop : MonoBehaviour
 	public TurretBlueprint Squid;
 	public TurretBlueprint Seal;
 	public TurretBlueprint Seagull;
+	public TurretBlueprint Octopus;
 
 	BuildManager buildManager;
 
@@ -43,5 +44,11 @@ public class Shop : MonoBehaviour
 	{
 		Debug.Log("Seagull Tower Selected");
 		buildManager.SelectTurretToBuild(Seagull);
+	}
+
+	public void SelectOctopusTower()
+	{
+		Debug.Log("Octopus Tower Selected");
+		buildManager.SelectTurretToBuild(Octopus);
 	}
 }
