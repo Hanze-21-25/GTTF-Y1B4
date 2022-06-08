@@ -77,6 +77,19 @@ public class UI_Assistant : MonoBehaviour
 
                 messageList.AddRange(toAdd4);
                 break;
+
+                case 9:
+                messageList.Clear();
+                List<string> toAdd5 = new List<string>()
+                {
+                    "Hello Im seagull",
+                    
+                    "Please help me!",
+
+                };
+
+                messageList.AddRange(toAdd5);
+                break;
         }   
 
         for (int i = 0; i < messageList.Count; i++)
