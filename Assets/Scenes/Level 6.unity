@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641383, b: 0.57482004, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641412, b: 0.57481986, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9661,6 +9661,7 @@ MonoBehaviour:
   upgradeCost: {fileID: 286019429}
   upgradeButton: {fileID: 135348717}
   sellAmount: {fileID: 1016498711}
+  rangeIndic: {fileID: 0}
 --- !u!1 &1174250783
 GameObject:
   m_ObjectHideFlags: 0
@@ -16474,6 +16475,11 @@ MonoBehaviour:
     cost: 1000
     upgradedPrefab: {fileID: 6154498404679421889, guid: d659fd0a33db6e24ba9e227938d32e8e, type: 3}
     upgradeCost: 2000
+  Octopus:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab: {fileID: 0}
+    upgradeCost: 0
 --- !u!1 &1932629869
 GameObject:
   m_ObjectHideFlags: 0

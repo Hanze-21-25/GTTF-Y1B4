@@ -51,6 +51,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 4.unity
     guid: 9e04f3bd98594c14abe9a4887b94a919
   - enabled: 1
+    path: Assets/Scenes/OilRigCutScene.unity
+    guid: a07611b723dd0b746ad8340378e09932
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
     path: Assets/Scenes/Level 5.unity
     guid: adb6d2e1f3997ff49a1dd85a3cb357bd
   - enabled: 1
@@ -65,4 +71,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Level 7.unity
+    guid: 2f2306d131da88b488b45251fdae5da7
   m_configObjects: {}

@@ -90,6 +90,20 @@ public class UI_Assistant : MonoBehaviour
 
                 messageList.AddRange(toAdd5);
                 break;
+            
+                case 11:
+                messageList.Clear();
+                List<string> toAdd6 = new List<string>()
+                {
+                    "There is a big explosion on the Oil Rig in the middle of the ocean",
+                    "World needs animals to save the world from the polution",
+                   
+
+
+                };
+
+                messageList.AddRange(toAdd6);
+                break;
         }   
 
         for (int i = 0; i < messageList.Count; i++)
@@ -104,6 +118,7 @@ public class UI_Assistant : MonoBehaviour
                 {
                     // Currently active TextWriter
                     textWriterSingle.WriteAllAndDestroy();
+                    StopTalkingSound();
                 }
                 if (counter < messageList.Count)
                 {
@@ -116,6 +131,7 @@ public class UI_Assistant : MonoBehaviour
                 else
                 {
                     cutsceneNextUI.SetActive(true);
+                    
                 }
             };
 
@@ -130,7 +146,8 @@ public class UI_Assistant : MonoBehaviour
 
     private void StopTalkingSound()
     {
-    talkingAudioSource.Stop();
+        
+        talkingAudioSource.Stop();
     }
 
     private void Start()
