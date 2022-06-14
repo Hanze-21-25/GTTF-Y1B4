@@ -27,7 +27,6 @@ public class UI_Assistant : MonoBehaviour
                 List<string> toAdd1 = new List<string>()
                 {
                     "Okay human, I heard from General X that you should be able to help us fight this war.",
-                    "I heard that you humans use these things called names, what's your's?",
                     "To be honest, I'm not a big fan of the General's decision to put you in charge.  It's you humans who started this whole thing in the first place!",
                     "But General X was a great X, he was a great leading figure for all of us animals.",
                     "I trust he had his reasons in choosing you.",
@@ -56,9 +55,10 @@ public class UI_Assistant : MonoBehaviour
                 List<string> toAdd3 = new List<string>()
                 {
                     "Guys I need your help!",
-                    "People are gonna eat me!",
-                    "Carb and Seaturtle only you can help me!",
-                   
+                    "Humans caught me in the ocean",
+                    "Now they are gonna cook and eat me!",
+                    "I need your help to destroy all of their plastic waste to escape this place!",
+                    
                 };
 
                 messageList.AddRange(toAdd3);
@@ -69,10 +69,14 @@ public class UI_Assistant : MonoBehaviour
                 messageList.Clear();
                 List<string> toAdd4 = new List<string>()
                 {
-                    "I got trapped by a fishing nest or My home got destroyed because of global warming!",
+                    "Hello Human!",
+                    "My home, Iceberg!",
+                    "It got destroyed because of global warming!",
                     "And now I am here in Venice",
-                    "Please help me!",
-
+                    "Trapped by a fishing net",
+                    "Arriving plastic makes it hard to breathe in this net",
+                    "Can you please defeat all the plastic and free me out of this fishing net?",
+                    
                 };
 
                 messageList.AddRange(toAdd4);
@@ -82,9 +86,13 @@ public class UI_Assistant : MonoBehaviour
                 messageList.Clear();
                 List<string> toAdd5 = new List<string>()
                 {
-                    "Hello Im seagull",
-                    
-                    "Please help me!",
+                    "Hey human, what are you doing here?",
+                    "Are you here to polute the city again?",
+                    "Streets of the city are so polluted",
+                    "People had to organize a World Clean Up Day",
+                    "World Clean Up Day is THE BIGGEST GLOBAL CLEANUP OF THE YEAR!",
+                    "World Cleanup Day unites millions of volunteers",
+                    "Governments and organisations in 191 countries to tackle the global waste problem and build up the new and sustainable world.",
 
                 };
 
@@ -95,8 +103,8 @@ public class UI_Assistant : MonoBehaviour
                 messageList.Clear();
                 List<string> toAdd6 = new List<string>()
                 {
-                    "There is a big explosion on the Oil Rig in the middle of the ocean",
-                    "World needs animals to save the world from the polution",
+                    "There is a big explosion on the Oil Rig in the middle of the ocean. World needs animals to save the world from the polution",
+                    
                    
 
 
