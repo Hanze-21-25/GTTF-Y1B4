@@ -200,9 +200,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 10
   death_sound: Cup
+<<<<<<< HEAD
   speed: 11
   startHealth: 70
   worth: 50
+=======
+  speed: 10
+  startHealth: 90
+  value: 10
+>>>>>>> ggChanges
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035
 CapsuleCollider:

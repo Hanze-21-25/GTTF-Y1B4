@@ -202,7 +202,11 @@ MonoBehaviour:
   death_sound: Can
   speed: 9
   startHealth: 175
+<<<<<<< HEAD
   worth: 50
+=======
+  value: 25
+>>>>>>> ggChanges
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035
 CapsuleCollider:

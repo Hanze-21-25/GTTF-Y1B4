@@ -201,8 +201,13 @@ MonoBehaviour:
   startSpeed: 10
   death_sound: Box
   speed: 7
+<<<<<<< HEAD
   startHealth: 900
   worth: 50
+=======
+  startHealth: 1000
+  value: 40
+>>>>>>> ggChanges
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035
 CapsuleCollider:

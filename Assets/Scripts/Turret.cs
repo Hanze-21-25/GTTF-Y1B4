@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour
 	public float fireRate = 1f;
 	private float fireCountdown = 0f;
 	public float slowAmount = .5f;
+	public bool sht = false;
 
 	public bool useSlow = false;
 
@@ -101,6 +102,7 @@ public class Turret : MonoBehaviour
 
 	void Shoot ()
     {
+		sht = true;
 		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
 		FindObjectOfType<AudioManager>().Play(bullet.Csound);

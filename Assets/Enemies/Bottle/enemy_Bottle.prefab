@@ -200,8 +200,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   death_sound: Bottle
   speed: 7
+<<<<<<< HEAD
   startHealth: 125
   worth: 50
+=======
+  startHealth: 100
+  value: 20
+>>>>>>> ggChanges
   healthBar: {fileID: 4394700253679133817}
 --- !u!114 &-3581649977921393896
 MonoBehaviour:
