@@ -4452,7 +4452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '450  '
+  m_Text: '500  '
 --- !u!222 &504139343
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6649,7 +6649,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 67e939f38f5e4cc46aa1a301cf8be681, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67e939f38f5e4cc46aa1a301cf8be681, type: 3}
       propertyPath: m_LocalScale.x
@@ -8708,7 +8708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '450  '
+  m_Text: '350  '
 --- !u!222 &1095289939
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9743,7 +9743,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 727154e4865977e41b922fbb5e776143, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 727154e4865977e41b922fbb5e776143, type: 3}
       propertyPath: m_LocalScale.x
@@ -11645,20 +11645,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 5984153035875754869, guid: e2d26f63e85efd042bf22b13a2ebb47d, type: 3}
-    count: 2
-    rate: 1
-  - enemy: {fileID: 5984153035875754869, guid: 2770c4f98d55e134da1dc9900156aed3, type: 3}
     count: 5
-    rate: 1
+    rate: 3
+  - enemy: {fileID: 5984153035875754869, guid: 2770c4f98d55e134da1dc9900156aed3, type: 3}
+    count: 7
+    rate: 3
   - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
     count: 7
-    rate: 1
+    rate: 4
   - enemy: {fileID: 5984153035875754869, guid: 83e31018f3cc7104abb6185f1bc29ee9, type: 3}
+    count: 9
+    rate: 4
+  - enemy: {fileID: 5984153035875754869, guid: 83e31018f3cc7104abb6185f1bc29ee9, type: 3}
+    count: 13
+    rate: 4
+  - enemy: {fileID: 5984153035875754869, guid: dd8e66c97c7bd1e49bbb1c9e3e1a3fa7, type: 3}
+    count: 20
+    rate: 2
+  - enemy: {fileID: 5984153035875754869, guid: dd8e66c97c7bd1e49bbb1c9e3e1a3fa7, type: 3}
+    count: 25
+    rate: 3
+  - enemy: {fileID: 5984153035875754869, guid: c0d852fc2f0191048a8657890dc940d2, type: 3}
+    count: 15
+    rate: 2
+  - enemy: {fileID: 5984153035875754869, guid: c0d852fc2f0191048a8657890dc940d2, type: 3}
+    count: 20
+    rate: 2
+  - enemy: {fileID: 5984153035875754869, guid: aadd429c7fd65e94d8dabb860064de1b, type: 3}
     count: 5
-    rate: 1
-  - enemy: {fileID: 5984153035875754869, guid: 83e31018f3cc7104abb6185f1bc29ee9, type: 3}
+    rate: 2
+  - enemy: {fileID: 5984153035875754869, guid: aadd429c7fd65e94d8dabb860064de1b, type: 3}
     count: 10
-    rate: 1
+    rate: 3
+  - enemy: {fileID: 5984153035875754869, guid: 4abefb6f279157849b07272231f2818a, type: 3}
+    count: 10
+    rate: 3
+  - enemy: {fileID: 5984153035875754869, guid: 4abefb6f279157849b07272231f2818a, type: 3}
+    count: 15
+    rate: 5
+  - enemy: {fileID: 5984153035875754869, guid: aadd429c7fd65e94d8dabb860064de1b, type: 3}
+    count: 10
+    rate: 5
+  - enemy: {fileID: 5984153035875754869, guid: aadd429c7fd65e94d8dabb860064de1b, type: 3}
+    count: 20
+    rate: 4
   spawnPoint: {fileID: 1052176635}
   timeBetweenWaves: 6
   countdown: 10
@@ -11708,7 +11738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c725fc0f42185748a174cdb5bf48cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 350
+  startMoney: 650
   startLives: 5
 --- !u!114 &1626959501
 MonoBehaviour:
@@ -13257,7 +13287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960, y: 540}
+  m_AnchoredPosition: {x: 960, y: 532}
   m_SizeDelta: {x: 799.99994, y: 449.99997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1835948887
@@ -13885,7 +13915,7 @@ MonoBehaviour:
     prefab: {fileID: 6154498404679421889, guid: aa44af54dd255a240abb7b60036e8435, type: 3}
     cost: 100
     upgradedPrefab: {fileID: 6154498404679421889, guid: 949fa959f7e904b4c9bdd5fda3e71565, type: 3}
-    upgradeCost: 225
+    upgradeCost: 200
   Seaturtle:
     prefab: {fileID: 6154498404679421889, guid: 48a54f240ee7d4f429bb1de38beb694f, type: 3}
     cost: 150
@@ -13893,14 +13923,14 @@ MonoBehaviour:
     upgradeCost: 300
   Squid:
     prefab: {fileID: 3699481411386982324, guid: a75e1bed372c6104ea1472eeb76cd409, type: 3}
-    cost: 450
+    cost: 350
     upgradedPrefab: {fileID: 3699481411386982324, guid: 723ee2624f112684da2c596ef3880eea, type: 3}
-    upgradeCost: 850
+    upgradeCost: 700
   Seal:
     prefab: {fileID: 6154498404679421889, guid: 62643166760a3bf42860842a0b74f31e, type: 3}
-    cost: 450
+    cost: 500
     upgradedPrefab: {fileID: 6154498404679421889, guid: 3b44070dbd4e0f2438ae08dcd0621920, type: 3}
-    upgradeCost: 900
+    upgradeCost: 850
   Seagull:
     prefab: {fileID: 6154498404679421889, guid: 45e3f2e3e58730b41b5dd01fd9eae81e, type: 3}
     cost: 1000
@@ -15091,7 +15121,7 @@ Transform:
   - {fileID: 1125007031}
   - {fileID: 1305094339}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &727582073373078643
 PrefabInstance:
@@ -15596,7 +15626,7 @@ Transform:
   - {fileID: 915062850}
   - {fileID: 292890761}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &6267992940022182351
 PrefabInstance:

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9027358976372549751}
   - component: {fileID: 8691431151971075220}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bullet 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  damage: 30
+  damage: 40
   Csound: Crab Shoot
   explosionRadius: 0
   impactEffect: {fileID: 5602886501433900314, guid: bdb43bc19498a7a4aa14aa6fc6701029, type: 3}

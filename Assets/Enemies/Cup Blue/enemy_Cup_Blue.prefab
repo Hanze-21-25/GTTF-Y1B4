@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death_sound: Cup
-  speed: 8
-  startHealth: 700
+  speed: 12
+  startHealth: 150
   value: 15
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035

@@ -201,7 +201,7 @@ MonoBehaviour:
   death_sound: Bottle Big
   speed: 3
   startHealth: 5000
-  value: 1000
+  value: 100
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035
 CapsuleCollider:
