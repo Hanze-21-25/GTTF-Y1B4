@@ -1,36 +1,36 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
+
 
 public class Enemy : MonoBehaviour
 {
-
+	public float startSpeed = 10f;
 	public string death_sound;
+	
 	//Speed of the enemy
-	public float speed = 10f;
+	[HideInInspector]
+	public float speed;
+	
 	//Health of the enemy
-
-	public int startHealth = 100;
+	public float startHealth = 100;
 	private bool IsDead = false;
 	private float health;
 
 	//The money that player gets from a specific enemy type
-	public int value = 50;
+	public int worth = 50;
 
 	[Header("Unity stuff")]
 	//Added healthbar
 	public Image healthBar;
 
-	private Transform target;
-	private int wavepointIndex = 0;
-
 	void Start()
 	{
-		//Makes the enemy follow the wayponts
-		target = Waypoints.points[0];
 		health = startHealth;
+		speed = startSpeed;
 	}
 
-	public void TakeDamage (int amount) 
+	public void TakeDamage (float amount) 
 	{
 		//substrcts the damage amount from the enemy health
 		health -= amount;
@@ -45,6 +45,18 @@ public class Enemy : MonoBehaviour
 		}
 	}
 
+	public void Slow (float pct)
+    {
+		speed = startSpeed * (1f - pct);
+		StartCoroutine(Wait());
+	}
+
+	//Wait to remove slow 
+	IEnumerator Wait ()
+	{
+		yield return new WaitForSeconds(5);
+		speed = startSpeed;
+	}
 
 	//void Die makes the enemy destroy itself and gives the money amount to the player, as well as affects the wavespawner enemy count
 	void Die ()
@@ -53,7 +65,7 @@ public class Enemy : MonoBehaviour
 		{ return; }
 		if (health <= 0)
 		{
-			PlayerStats.Money += value;
+			PlayerStats.Money += worth;
 			Destroy(gameObject);
 
 			WaveSpawner.EnemiesAlive--;
@@ -63,39 +75,5 @@ public class Enemy : MonoBehaviour
 		}
 
 	 }
-
-
-	//Update void makes the enemy foloow the path of layed out waypoints
-	void Update()
-	{
-		Vector3 dir = target.position - transform.position;
-		transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-		if (Vector3.Distance(transform.position, target.position) <= 0.4f)
-		{
-			GetNextWaypoint();
-		}
-	}
-
-	//This void structures the index of the waypoints that enemy is following
-	void GetNextWaypoint()
-	{
-		if (wavepointIndex >= Waypoints.points.Length - 1)
-		{
-			EndPath();
-			return;
-		}
-
-		wavepointIndex++;
-		target = Waypoints.points[wavepointIndex];
-	}
-
-	//When enemy gets to the end and substracts the lives from the player
-	void EndPath () 
-	{
-		PlayerStats.Lives--;
-		WaveSpawner.EnemiesAlive--;
-        Destroy(gameObject);
-	} 
 
 }

@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 7328647472373184926}
   - component: {fileID: 2971609929606322002}
   - component: {fileID: 7076300477007800035}
+  - component: {fileID: -2641783781295585637}
   m_Layer: 0
   m_Name: enemy_Can
   m_TagString: Enemy
@@ -197,10 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c265a85fed0b4f4da05d751dd64e60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startSpeed: 10
   death_sound: Can
   speed: 9
   startHealth: 175
-  value: 20
+  worth: 50
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035
 CapsuleCollider:
@@ -216,6 +218,18 @@ CapsuleCollider:
   m_Height: 0.06
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0.005}
+--- !u!114 &-2641783781295585637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984153035875754869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f16e01409059542b4308f97aaff6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7354030005319241970
 GameObject:
   m_ObjectHideFlags: 0

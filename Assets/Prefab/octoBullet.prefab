@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6928460674314115797}
-  - component: {fileID: 3591185746612097030}
+  - component: {fileID: -4361595839912213888}
   m_Layer: 0
   m_Name: octoBullet
   m_TagString: Untagged
@@ -127,7 +127,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3591185746612097030
+--- !u!114 &-4361595839912213888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,11 +136,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6808398938589220931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f28f7bfb4d44ae42a91cf3c02588a93, type: 3}
+  m_Script: {fileID: 11500000, guid: 46a8077d4d728584c9582a0eeb490365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10000
-  damage: 20
+  damage: 1
   Csound: Seal Shoot
-  explosionRadius: 15
-  impactEffect: {fileID: 5602886501433900314, guid: aae540cc5024f10448eb7476900c4cbb, type: 3}
+  sTower: {fileID: -7437469343506136252, guid: 6d478d4806881e84e86fae03cdb03b68, type: 3}
+  explosionRadius: 10
+  impactEffect: {fileID: 5602886501433900314, guid: ae97e4e60d16f014581a4ed59131810b, type: 3}

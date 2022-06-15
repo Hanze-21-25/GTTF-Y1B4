@@ -1,5 +1,5 @@
 using UnityEngine;
-public class Bullet : MonoBehaviour
+public class SlowBullet : MonoBehaviour
 {
 	private Transform target;
 
@@ -10,11 +10,19 @@ public class Bullet : MonoBehaviour
 
 	public string Csound;
 
-	private bool octo;
+	public Turret sTower;
+
+	private float sAmount;
 
 	//Explosion radius variable
 	public float explosionRadius = 0f;
 	public GameObject impactEffect;
+
+	void Start ()
+    {
+		sAmount = sTower.slowAmount;
+
+	}
 
 	public void Seek(Transform _target)
 	{
@@ -89,6 +97,7 @@ public class Bullet : MonoBehaviour
 		
 		if (e != null) 
 		{
+			e.Slow(sAmount);
 			e.TakeDamage(damage);
 		}
 

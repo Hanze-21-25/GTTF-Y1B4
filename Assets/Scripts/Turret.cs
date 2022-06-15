@@ -5,13 +5,16 @@ public class Turret : MonoBehaviour
 {
 
 	private Transform target;
+	private Enemy targetEnemy;
 
 	[Header("Attributes")]
 	//Range of the turret can be defined
 	public float range = 15f;
 	public float fireRate = 1f;
 	private float fireCountdown = 0f;
+	public float slowAmount = .5f;
 
+	public bool useSlow = false;
 
 	[Header("Unity Setup Fields")]
 
@@ -24,8 +27,6 @@ public class Turret : MonoBehaviour
 
 	public GameObject bulletPrefab;
 	public Transform firePoint;
-	
-
 
 	// Use this for initialization
 	void Start()
@@ -53,6 +54,7 @@ public class Turret : MonoBehaviour
 		if (nearestEnemy != null && shortestDistance <= range)
 		{
 			target = nearestEnemy.transform;
+			targetEnemy = nearestEnemy.GetComponent<Enemy>();
 		}
 		else
 		{
@@ -65,32 +67,53 @@ public class Turret : MonoBehaviour
 	void Update()
 	{
 		if (target == null)
+		{
 			return;
+		}
 
+		LockOnTarget();
+
+		if (useSlow)
+        {
+			SlowShoot();
+        }
+		else
+        {
+			if (fireCountdown <= 0f)
+			{
+				Shoot();
+				fireCountdown = 1f / fireRate;
+			}
+
+			fireCountdown -= Time.deltaTime;
+		}
+	}
+
+	void LockOnTarget()
+    {
 		//Target lock on
 		Vector3 dir = target.position - transform.position;
 		Quaternion lookRotation = Quaternion.LookRotation(dir);
 		Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
 		partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-		if (fireCountdown <= 0f)
-        {
-			Shoot();
-			fireCountdown = 1f / fireRate;
-			GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-			Bullet bullet = bulletGO.GetComponent<Bullet>();
-			FindObjectOfType<AudioManager>().Play(bullet.Csound);
-
-
-		}
-		fireCountdown -= Time.deltaTime;
-
 	}
+
 
 	void Shoot ()
     {
 		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		Bullet bullet = bulletGO.GetComponent<Bullet>();
+		FindObjectOfType<AudioManager>().Play(bullet.Csound);
+
+		if (bullet != null)
+			bullet.Seek(target);
+	}
+
+	void SlowShoot()
+	{
+		targetEnemy.Slow(slowAmount);
+		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+		SlowBullet bullet = bulletGO.GetComponent<SlowBullet>();
 
 		if (bullet != null)
 			bullet.Seek(target);
