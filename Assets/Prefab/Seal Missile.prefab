@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f28f7bfb4d44ae42a91cf3c02588a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  damage: 400
+  speed: 80
+  damage: 200
   Csound: Seal Shoot
   explosionRadius: 0
   impactEffect: {fileID: 5602886501433900314, guid: 5c910d947e4de5540ae8ddfc55881f09, type: 3}
