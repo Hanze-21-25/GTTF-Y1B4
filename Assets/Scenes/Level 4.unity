@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641383, b: 0.57482004, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641412, b: 0.57481986, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -989,7 +989,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9f7fac4494a99814faf34cc63eb5ddf2, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -1809,7 +1809,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1821,7 +1821,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Crab
+  m_Text: CRAB
 --- !u!222 &271802638
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2013,10 +2013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: <b>AOE</b> - Explodes multiple enemies at once                           
-    .                                <b>Fact:</b> Human pollution can even be found
-    at the very depths of the ocean causing deep sea squids to be affected by chemical
-    contaminants.
+  tipToShow: <b>AOE</b> - Explodes multiple enemies at once
 --- !u!1001 &281024345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2511,9 +2508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: <b>Single Target</b> - Attacks only one enemy at once                         
-    .                                <b>Fact:</b> An estimated 570,000 hermit crabs
-    have been killed after being trapped in plastic debris.
+  tipToShow: <b>Single Target</b> - Attacks only one enemy at once
 --- !u!1 &345352459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3153,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -3170,7 +3165,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seal
+  m_Text: SEAL
 --- !u!222 &388809239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3886,7 +3881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.92549026, g: 0.80392164, b: 0.45882356, a: 0.392}
+  m_Color: {r: 0.29411766, g: 0.5568628, b: 0.69803923, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4361,7 +4356,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9f7fac4494a99814faf34cc63eb5ddf2, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -4416,7 +4411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260, y: -92.27171}
+  m_AnchoredPosition: {x: 260, y: -88}
   m_SizeDelta: {x: 250.76, y: 63.4566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504139342
@@ -4440,7 +4435,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 49
     m_FontStyle: 0
     m_BestFit: 0
@@ -4511,7 +4506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8396226, g: 0.7421108, b: 0.21703447, a: 0.62352943}
+  m_Color: {r: 0.85882354, g: 0.3372549, b: 0.3137255, a: 0.62352943}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8672,7 +8667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -92.27171}
+  m_AnchoredPosition: {x: 2, y: -87.999985}
   m_SizeDelta: {x: 250.76, y: 63.4566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095289938
@@ -8696,7 +8691,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 49
     m_FontStyle: 0
     m_BestFit: 0
@@ -9431,7 +9426,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9f7fac4494a99814faf34cc63eb5ddf2, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -10731,7 +10726,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -10743,7 +10738,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sea turtle
+  m_Text: SEA TURTLE
 --- !u!222 &1495912105
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11450,13 +11445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: "<b>Single Target</b> - Attacks only one enemy at once                         
-    .                                <b>Fact:</b> Plastic bags look very similar
-    to jellyfish, fishing nets often look like tasty seaweed. Sea turtles think they\u2019re
-    eating some of their everyday foods when really they\u2019re welcoming harmful
-    substances into their stomach. At least 1000 sea turtles die because of plastic
-    polution in Australia every year. Today nearly all species of sea turtle are
-    classified as endangered."
+  tipToShow: <b>Single Target</b> - Attacks only one enemy at once
 --- !u!1001 &1621518436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12668,11 +12657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: <b>Sniper</b> - High damage, low rate of fire                              
-    .                               <b>Fact:</b> Seals often eat microplastics because
-    of their small size. And plastic contains toxic chemicals, which can increase
-    the chance of disease and affect reproduction. After eating microplastics seals
-    and other sea animals may suffer for months or years before they die.
+  tipToShow: <b>Sniper</b> - High damage, low rate of fire
 --- !u!224 &1725072367 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 727582072805204789, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
@@ -13041,7 +13026,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -520.46, y: -92.27171}
+  m_AnchoredPosition: {x: -520.46, y: -87.999985}
   m_SizeDelta: {x: 250.76, y: 63.4566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766215577
@@ -13065,7 +13050,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 49
     m_FontStyle: 0
     m_BestFit: 0
@@ -13945,7 +13930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -262, y: -92.27171}
+  m_AnchoredPosition: {x: -262, y: -87.999985}
   m_SizeDelta: {x: 250.76, y: 63.4566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949509655
@@ -13969,7 +13954,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 49
     m_FontStyle: 0
     m_BestFit: 0
@@ -14553,7 +14538,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: fcde2ba4266a4d84ab81013e21bd427b, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -14565,7 +14550,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Squid
+  m_Text: SQUID
 --- !u!222 &2054887008
 CanvasRenderer:
   m_ObjectHideFlags: 0
