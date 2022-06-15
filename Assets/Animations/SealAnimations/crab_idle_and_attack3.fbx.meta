@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 7e55c5cfa85608741936c216cbb683a4
+guid: 4fe0e236a1dfc6547b85520152758a8b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 4781951162920444690
+    second: Armature|ArmatureAction
+  - first:
+      74: -8897117266599516814
     second: Crab Idle
   - first:
       74: -1970130122874265554
