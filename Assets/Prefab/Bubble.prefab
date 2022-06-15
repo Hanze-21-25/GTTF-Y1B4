@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f28f7bfb4d44ae42a91cf3c02588a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 20
   damage: 50
   Csound: Turtle Shoot
   explosionRadius: 0

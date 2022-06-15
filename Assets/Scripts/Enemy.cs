@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 	private float health;
 
 	//The money that player gets from a specific enemy type
-	public int value = 50;
+	public int worth = 50;
 
 	[Header("Unity stuff")]
 	//Added healthbar
@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
 		{ return; }
 		if (health <= 0)
 		{
-			PlayerStats.Money += value;
+			PlayerStats.Money += worth;
 			Destroy(gameObject);
 
 			WaveSpawner.EnemiesAlive--;

@@ -6826,7 +6826,7 @@ MonoBehaviour:
     prefab: {fileID: 6154498404679421889, guid: aa44af54dd255a240abb7b60036e8435, type: 3}
     cost: 100
     upgradedPrefab: {fileID: 6154498404679421889, guid: 949fa959f7e904b4c9bdd5fda3e71565, type: 3}
-    upgradeCost: 200
+    upgradeCost: 225
   Seaturtle:
     prefab: {fileID: 6154498404679421889, guid: 48a54f240ee7d4f429bb1de38beb694f, type: 3}
     cost: 150
@@ -8490,32 +8490,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 5984153035875754869, guid: e2d26f63e85efd042bf22b13a2ebb47d, type: 3}
-    count: 3
-    rate: 2
-  - enemy: {fileID: 5984153035875754869, guid: e2d26f63e85efd042bf22b13a2ebb47d, type: 3}
+    count: 2
+    rate: 1
+  - enemy: {fileID: 5984153035875754869, guid: 2770c4f98d55e134da1dc9900156aed3, type: 3}
     count: 5
-    rate: 2
-  - enemy: {fileID: 5984153035875754869, guid: 2770c4f98d55e134da1dc9900156aed3, type: 3}
+    rate: 1
+  - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
     count: 7
-    rate: 2
-  - enemy: {fileID: 5984153035875754869, guid: 2770c4f98d55e134da1dc9900156aed3, type: 3}
-    count: 10
-    rate: 2
-  - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
-    count: 10
-    rate: 3
+    rate: 1
   - enemy: {fileID: 5984153035875754869, guid: 83e31018f3cc7104abb6185f1bc29ee9, type: 3}
-    count: 15
-    rate: 3
+    count: 5
+    rate: 1
   - enemy: {fileID: 5984153035875754869, guid: 83e31018f3cc7104abb6185f1bc29ee9, type: 3}
-    count: 20
-    rate: 3
+    count: 10
+    rate: 1
   - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
     count: 20
-    rate: 4
+    rate: 2
   - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
-    count: 25
-    rate: 5
+    count: 40
+    rate: 3
   spawnPoint: {fileID: 1052176635}
   timeBetweenWaves: 6
   countdown: 10

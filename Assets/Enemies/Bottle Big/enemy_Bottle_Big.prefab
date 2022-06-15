@@ -203,11 +203,7 @@ MonoBehaviour:
   death_sound: Bottle Big
   speed: 3
   startHealth: 5000
-<<<<<<< HEAD
   worth: 50
-=======
-  value: 100
->>>>>>> ggChanges
   healthBar: {fileID: 4394700253679133817}
 --- !u!136 &7076300477007800035
 CapsuleCollider:
