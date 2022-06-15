@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641412, b: 0.57481986, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641383, b: 0.57482004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4802,7 +4802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.85882354, g: 0.3372549, b: 0.3137255, a: 0.62352943}
+  m_Color: {r: 0.8396226, g: 0.7421108, b: 0.21703447, a: 0.62352943}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11069,7 +11069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29411766, g: 0.5568628, b: 0.69803923, a: 0.392}
+  m_Color: {r: 0.92549026, g: 0.80392164, b: 0.45882356, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14508,7 +14508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c725fc0f42185748a174cdb5bf48cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 25000
+  startMoney: 250
   startLives: 5
 --- !u!114 &1626959501
 MonoBehaviour:

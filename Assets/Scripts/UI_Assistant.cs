@@ -73,9 +73,9 @@ public class UI_Assistant : MonoBehaviour
                     "My home, Iceberg!",
                     "It got destroyed because of global warming!",
                     "And now I am here in Venice",
-                    "Trapped in a fishing net",
-                    "The net and plastic are making it hard to breath!",
-                    "Can you please defeat all the plastic and free me from this fishing net?",
+                    "Trapped by a fishing net",
+                    "Arriving plastic makes it hard to breathe in this net",
+                    "Can you please defeat all the plastic and free me out of this fishing net?",
                     
                 };
 
@@ -87,11 +87,12 @@ public class UI_Assistant : MonoBehaviour
                 List<string> toAdd5 = new List<string>()
                 {
                     "Hey human, what are you doing here?",
-                    "Are you here to pollute the city again?",
+                    "Are you here to polute the city again?",
                     "Streets of the city are so polluted",
                     "People had to organize a World Clean Up Day",
                     "World Clean Up Day is THE BIGGEST GLOBAL CLEANUP OF THE YEAR!",
-                    "World Cleanup Day unites millions of volunteers, governments and organisations in one hundred and ninety-one countries to tackle the global waste problem and build up the new and sustainable world.",
+                    "World Cleanup Day unites millions of volunteers",
+                    "Governments and organisations in 191 countries to tackle the global waste problem and build up the new and sustainable world.",
 
                 };
 
@@ -102,7 +103,7 @@ public class UI_Assistant : MonoBehaviour
                 messageList.Clear();
                 List<string> toAdd6 = new List<string>()
                 {
-                    "There has been big explosion on the Oil Rig in the middle of the ocean. You need to save the world from the pollution.",
+                    "There is a big explosion on the Oil Rig in the middle of the ocean. World needs animals to save the world from the polution",
                     
                    
 
