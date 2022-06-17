@@ -290,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 727582072805204794, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7df920d19d40ad1448220600e704dcad, type: 3}
+      objectReference: {fileID: 21300000, guid: 3c8f6e759180b1d498868342cf6659c5, type: 3}
     - target: {fileID: 727582072805204794, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1535,7 +1535,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: 9888060d4b063224bac17cf358415609, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -1547,7 +1547,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Crab
+  m_Text: CRAB
 --- !u!222 &271802638
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1796,10 +1796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: <b>AOE</b> - Explodes multiple enemies at once                           
-    .                                <b>Fact:</b> Human pollution can even be found
-    at the very depths of the ocean causing deep sea squids to be affected by chemical
-    contaminants.
+  tipToShow: <b>AOE</b> - Explodes multiple enemies at once
 --- !u!1001 &278435510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2169,9 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: <b>Single Target</b> - Attacks only one enemy at once                         
-    .                                <b>Fact:</b> An estimated 570,000 hermit crabs
-    have been killed after being trapped in plastic debris.
+  tipToShow: <b>Single Target</b> - Attacks only one enemy at once
 --- !u!1 &345352459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2403,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: 9888060d4b063224bac17cf358415609, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -2420,7 +2415,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seal
+  m_Text: SEAL
 --- !u!222 &388809239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7272,7 +7267,7 @@ PrefabInstance:
     - target: {fileID: 727582072805204794, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 45a3a87228a806e45beb91feb574eafe, type: 3}
+      objectReference: {fileID: 21300000, guid: a6c11119500acab41aee2e26d649bf07, type: 3}
     - target: {fileID: 727582072805204795, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -7871,7 +7866,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: 9888060d4b063224bac17cf358415609, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -7883,7 +7878,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seagull
+  m_Text: SEAGULL
 --- !u!222 &1441624514
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8208,7 +8203,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: 9888060d4b063224bac17cf358415609, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -8220,7 +8215,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sea turtle
+  m_Text: SEA TURTLE
 --- !u!222 &1495912105
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9045,13 +9040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: "<b>Single Target</b> - Attacks only one enemy at once                         
-    .                                <b>Fact:</b> Plastic bags look very similar
-    to jellyfish, fishing nets often look like tasty seaweed. Sea turtles think they\u2019re
-    eating some of their everyday foods when really they\u2019re welcoming harmful
-    substances into their stomach. At least 1000 sea turtles die because of plastic
-    polution in Australia every year. Today nearly all species of sea turtle are
-    classified as endangered."
+  tipToShow: <b>Single Target</b> - Attacks only one enemy at once
 --- !u!1001 &1621518436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9162,7 +9151,7 @@ PrefabInstance:
     - target: {fileID: 727582072805204794, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1a4e32258724dec4aa2306212acbe1cc, type: 3}
+      objectReference: {fileID: 21300000, guid: e657b7beba9656644a02fc2b517a783b, type: 3}
     - target: {fileID: 727582072805204794, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -10003,11 +9992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: <b>Sniper</b> - High damage, low rate of fire                              
-    .                               <b>Fact:</b> Seals often eat microplastics because
-    of their small size. And plastic contains toxic chemicals, which can increase
-    the chance of disease and affect reproduction. After eating microplastics seals
-    and other sea animals may suffer for months or years before they die.
+  tipToShow: <b>Sniper</b> - High damage, low rate of fire
 --- !u!224 &1725072367 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 727582072805204789, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
@@ -10123,7 +10108,7 @@ PrefabInstance:
     - target: {fileID: 727582072805204794, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4fd566e5b899b4d4cb58279afa2e9067, type: 3}
+      objectReference: {fileID: 21300000, guid: 4581ab3a1ada2fd4aa9afc800d2e58e0, type: 3}
     - target: {fileID: 727582072805204794, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -11831,7 +11816,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_Font: {fileID: 12800000, guid: 9888060d4b063224bac17cf358415609, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -11843,7 +11828,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Squid
+  m_Text: SQUID
 --- !u!222 &2054887008
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12064,6 +12049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrabItem
       objectReference: {fileID: 0}
+    - target: {fileID: 727582072805204794, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2aa1af4b0a4af7d47b665220fe862de5, type: 3}
     - target: {fileID: 727582072805204795, guid: 4a810ac4a102eb34ea00ef1b593cd502, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

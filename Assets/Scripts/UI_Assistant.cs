@@ -26,9 +26,9 @@ public class UI_Assistant : MonoBehaviour
             case 2:
                 List<string> toAdd1 = new List<string>()
                 {
-                    "Okay human, I heard from General X that you should be able to help us fight this war.",
+                    "Okay human, I heard from General Jellyfish that you should be able to help us fight this war.",
                     "To be honest, I'm not a big fan of the General's decision to put you in charge.  It's you humans who started this whole thing in the first place!",
-                    "But General X was a great X, he was a great leading figure for all of us animals.",
+                    "But General Jellyfish was a great Jellyfish, he was a great leading figure for all of us animals.",
                     "I trust he had his reasons in choosing you.",
                     "Here, let me show you the basics.",
                     "There are straggling plastic bottles from the previous battle that you can help us get rid of."
@@ -41,7 +41,7 @@ public class UI_Assistant : MonoBehaviour
                 messageList.Clear();
                 List<string> toAdd2 = new List<string>()
                 {
-                    "I saw you take care of those plastic bottles, great job!",
+                    "I saw you take care of those plastic straws, great job!",
                     "But the plastic invasion is getting stronger and stronger! Many of our strongest Animals have been captured. Without them, we have no chance of defeating the pollution army!",
                     "My good friend Slimy Squid was taken by a group of humans to a restaurant not long ago.",
                     "We’re going to need his help if we want to deal with big groups of plastic!"
@@ -55,7 +55,7 @@ public class UI_Assistant : MonoBehaviour
                 List<string> toAdd3 = new List<string>()
                 {
                     "Guys I need your help!",
-                    "Humans caught me in the ocean",
+                    "Humans caught me and now I’m in this bucket",
                     "Now they are gonna cook and eat me!",
                     "I need your help to destroy all of their plastic waste to escape this place!",
                     
@@ -87,12 +87,11 @@ public class UI_Assistant : MonoBehaviour
                 List<string> toAdd5 = new List<string>()
                 {
                     "Hey human, what are you doing here?",
-                    "Are you here to polute the city again?",
-                    "Streets of the city are so polluted",
-                    "People had to organize a World Clean Up Day",
+                    "Are you here to pollute the city again?",
+                    "Streets of the city are so polluted that people had to organize a World Clean Up Day",
                     "World Clean Up Day is THE BIGGEST GLOBAL CLEANUP OF THE YEAR!",
-                    "World Cleanup Day unites millions of volunteers",
-                    "Governments and organisations in one one hundred ninety-one countries to tackle the global waste problem and build up the new and sustainable world.",
+                    "World Cleanup Day unites millions of volunteers, governments and organisations in one hundred ninety-one countries around the world.",
+                    "You also can join World Clean Up Day and save the world today!",
 
                 };
 
@@ -103,7 +102,7 @@ public class UI_Assistant : MonoBehaviour
                 messageList.Clear();
                 List<string> toAdd6 = new List<string>()
                 {
-                    "There is a big explosion on the Oil Rig in the middle of the ocean. World needs animals to save the world from the polution",
+                    "There is a big explosion on the Oil Rig in the middle of the ocean. The world needs animals to save it from pollution",
                     
                    
 
