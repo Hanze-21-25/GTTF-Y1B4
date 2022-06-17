@@ -43,6 +43,9 @@ public class WaveSpawner : MonoBehaviour
         }
         if (waveIndex >= waves.Length)
         {
+
+            
+            gameManager.WinLevel();
             return;
         }
 
@@ -74,7 +77,7 @@ public class WaveSpawner : MonoBehaviour
         waveIndex++;
         PlayerStats.Rounds++;
         waveUIc = PlayerStats.Rounds + 1;
-        gameManager.WinLevel();
+        
     }
 
     void SpawnEnemy (GameObject enemy)

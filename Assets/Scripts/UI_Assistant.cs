@@ -133,8 +133,13 @@ public class UI_Assistant : MonoBehaviour
                 messageList.Clear();
                 List<string> toAdd8 = new List<string>()
                 {
-                    "Kill your self",
+                    "Thank you human for helping us out in this war",
+                    "There is still so much to do to defeat the plastic",
+                    "Make sure to check out World Clean Up Day!",
+                    "We will continue fightning the plastic",
                     
+
+
 
 
 
