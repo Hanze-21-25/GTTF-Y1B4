@@ -92,7 +92,7 @@ public class UI_Assistant : MonoBehaviour
                     "People had to organize a World Clean Up Day",
                     "World Clean Up Day is THE BIGGEST GLOBAL CLEANUP OF THE YEAR!",
                     "World Cleanup Day unites millions of volunteers",
-                    "Governments and organisations in 191 countries to tackle the global waste problem and build up the new and sustainable world.",
+                    "Governments and organisations in one one hundred ninety-one countries to tackle the global waste problem and build up the new and sustainable world.",
 
                 };
 
@@ -111,6 +111,22 @@ public class UI_Assistant : MonoBehaviour
                 };
 
                 messageList.AddRange(toAdd6);
+                break;
+
+
+            case 13:
+                messageList.Clear();
+                List<string> toAdd7 = new List<string>()
+                {
+                    "G'day mate, I need ya help!",
+                    "That bloody plastic is ruining our arvo, can ya defeat them, mate.",
+
+
+
+
+                };
+
+                messageList.AddRange(toAdd7);
                 break;
         }   
 

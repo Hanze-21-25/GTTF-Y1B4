@@ -60,6 +60,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 5.unity
     guid: adb6d2e1f3997ff49a1dd85a3cb357bd
   - enabled: 1
+    path: Assets/Scenes/OctopusCutScene.unity
+    guid: 951a12c8a714ef349a184af4d0d74c5d
+  - enabled: 1
     path: Assets/Scenes/Level 6.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
