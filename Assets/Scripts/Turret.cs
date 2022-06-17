@@ -75,8 +75,16 @@ public class Turret : MonoBehaviour
 
 		if (useSlow)
         {
-			SlowShoot();
-        }
+			if (fireCountdown <= 0f)
+			{
+				SlowShoot();
+				fireCountdown = 1f / fireRate;
+			}
+
+			fireCountdown -= Time.deltaTime;
+
+		}
+		
 		else
         {
 			if (fireCountdown <= 0f)

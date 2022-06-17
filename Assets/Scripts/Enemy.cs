@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
 	//Wait to remove slow 
 	IEnumerator Wait ()
 	{
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(10);
 		speed = startSpeed;
 	}
 
