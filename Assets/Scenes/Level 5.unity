@@ -9258,6 +9258,7 @@ MonoBehaviour:
   timeBetweenWaves: 6
   countdown: 10
   waveCountdownText: {fileID: 838877306}
+  gameManager: {fileID: 1626959501}
 --- !u!4 &1626959498
 Transform:
   m_ObjectHideFlags: 0
@@ -9320,6 +9321,7 @@ MonoBehaviour:
   gameOverUI: {fileID: 720091960}
   warningUI: {fileID: 212403915}
   completeLevelUI: {fileID: 1436324765}
+  levelToUnlock: 6
 --- !u!114 &1626959502
 MonoBehaviour:
   m_ObjectHideFlags: 0

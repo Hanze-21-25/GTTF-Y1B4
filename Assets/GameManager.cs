@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject warningUI;
     public GameObject completeLevelUI;
 
+    public int levelToUnlock = 2;
+
     void Start()
     {
         GameIsOver = false;
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             WinLevel();
         }
+
 
         if (PlayerStats.Lives <= 0)
         {
@@ -56,17 +59,13 @@ public class GameManager : MonoBehaviour
 
     void Warning()
     {
-        
-        
-
-        warningUI.SetActive(true);
-        
-        
-
+         warningUI.SetActive(true);
     }
+
 
     public void WinLevel()
     {
+        PlayerPrefs.SetInt("levelReached", levelToUnlock);
         GameIsOver = true;
         completeLevelUI.SetActive(true);
     }
