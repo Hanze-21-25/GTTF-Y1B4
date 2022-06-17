@@ -128,6 +128,21 @@ public class UI_Assistant : MonoBehaviour
 
                 messageList.AddRange(toAdd7);
                 break;
+
+            case 16:
+                messageList.Clear();
+                List<string> toAdd8 = new List<string>()
+                {
+                    "Kill your self",
+                    
+
+
+
+
+                };
+
+                messageList.AddRange(toAdd8);
+                break;
         }   
 
         for (int i = 0; i < messageList.Count; i++)
