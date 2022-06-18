@@ -9624,14 +9624,14 @@ MonoBehaviour:
     upgradeCost: 300
   Squid:
     prefab: {fileID: 3699481411386982324, guid: a75e1bed372c6104ea1472eeb76cd409, type: 3}
-    cost: 450
+    cost: 350
     upgradedPrefab: {fileID: 3699481411386982324, guid: 723ee2624f112684da2c596ef3880eea, type: 3}
-    upgradeCost: 850
+    upgradeCost: 700
   Seal:
     prefab: {fileID: 6154498404679421889, guid: 62643166760a3bf42860842a0b74f31e, type: 3}
-    cost: 450
+    cost: 500
     upgradedPrefab: {fileID: 6154498404679421889, guid: 3b44070dbd4e0f2438ae08dcd0621920, type: 3}
-    upgradeCost: 900
+    upgradeCost: 850
   Seagull:
     prefab: {fileID: 6154498404679421889, guid: 45e3f2e3e58730b41b5dd01fd9eae81e, type: 3}
     cost: 1000

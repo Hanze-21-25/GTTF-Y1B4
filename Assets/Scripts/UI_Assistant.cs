@@ -27,7 +27,7 @@ public class UI_Assistant : MonoBehaviour
                 List<string> toAdd1 = new List<string>()
                 {
                     "Okay human, I heard from General Jellyfish that you should be able to help us fight this war.",
-                    "To be honest, I'm not a big fan of the General's decision to put you in charge.  It's you humans who started this whole thing in the first place!",
+                    "To be honest, I'm not a big fan of the General's decision to put you in charge. It's you humans who started this whole thing in the first place!",
                     "But General Jellyfish was a great Jellyfish, he was a great leading figure for all of us animals.",
                     "I trust he had his reasons in choosing you.",
                     "Here, let me show you the basics.",
@@ -56,7 +56,7 @@ public class UI_Assistant : MonoBehaviour
                 {
                     "Guys I need your help!",
                     "Humans caught me and now I’m in this bucket",
-                    "Now they are gonna cook and eat me!",
+                    "They are gonna cook and eat me!",
                     "I need your help to destroy all of their plastic waste to escape this place!",
                     
                 };
