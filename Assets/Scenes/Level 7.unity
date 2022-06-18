@@ -1458,7 +1458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be01a5e0c1ba4aa409dadaacbcab143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipToShow: <b>Air Support</b> - Long range rapid fire
+  tipToShow: <b>AOE</b> - Explodes multiple enemies at once
 --- !u!1001 &179165047
 PrefabInstance:
   m_ObjectHideFlags: 0
