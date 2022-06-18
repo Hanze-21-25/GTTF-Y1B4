@@ -10493,26 +10493,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 5984153035875754869, guid: e2d26f63e85efd042bf22b13a2ebb47d, type: 3}
-    count: 2
-    rate: 1
-  - enemy: {fileID: 5984153035875754869, guid: 2770c4f98d55e134da1dc9900156aed3, type: 3}
     count: 5
-    rate: 1
-  - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
-    count: 7
-    rate: 1
-  - enemy: {fileID: 5984153035875754869, guid: 83e31018f3cc7104abb6185f1bc29ee9, type: 3}
-    count: 5
-    rate: 1
-  - enemy: {fileID: 5984153035875754869, guid: 83e31018f3cc7104abb6185f1bc29ee9, type: 3}
-    count: 10
-    rate: 1
-  - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
-    count: 20
-    rate: 2
-  - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
-    count: 40
     rate: 3
+  - enemy: {fileID: 5984153035875754869, guid: 2770c4f98d55e134da1dc9900156aed3, type: 3}
+    count: 7
+    rate: 3
+  - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
+    count: 10
+    rate: 4
+  - enemy: {fileID: 5984153035875754869, guid: 0390b9e40135c1c4b8d98d2e7bb55c05, type: 3}
+    count: 15
+    rate: 4
+  - enemy: {fileID: 5984153035875754869, guid: dd8e66c97c7bd1e49bbb1c9e3e1a3fa7, type: 3}
+    count: 20
+    rate: 6
+  - enemy: {fileID: 5984153035875754869, guid: dd8e66c97c7bd1e49bbb1c9e3e1a3fa7, type: 3}
+    count: 25
+    rate: 7
+  - enemy: {fileID: 5984153035875754869, guid: 83e31018f3cc7104abb6185f1bc29ee9, type: 3}
+    count: 20
+    rate: 8
+  - enemy: {fileID: 5984153035875754869, guid: 83e31018f3cc7104abb6185f1bc29ee9, type: 3}
+    count: 25
+    rate: 8
+  - enemy: {fileID: 5984153035875754869, guid: c0d852fc2f0191048a8657890dc940d2, type: 3}
+    count: 25
+    rate: 9
+  - enemy: {fileID: 5984153035875754869, guid: c0d852fc2f0191048a8657890dc940d2, type: 3}
+    count: 30
+    rate: 10
   spawnPoint: {fileID: 1052176635}
   timeBetweenWaves: 6
   countdown: 10
@@ -10563,7 +10572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c725fc0f42185748a174cdb5bf48cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 2500
+  startMoney: 500
   startLives: 5
 --- !u!114 &1626959501
 MonoBehaviour:
