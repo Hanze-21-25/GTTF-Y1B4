@@ -147,9 +147,31 @@ public class UI_Assistant : MonoBehaviour
 
                 messageList.AddRange(toAdd8);
                 break;
-        }   
+        }
 
-        for (int i = 0; i < messageList.Count; i++)
+        //
+
+        messageText = transform.Find("message").Find("messageText").GetComponent<Text>();
+        talkingAudioSource = transform.Find("talkingSound").GetComponent<AudioSource>();
+        if (textWriterSingle != null && textWriterSingle.IsActive())
+        {
+            // Currently active TextWriter
+            textWriterSingle.WriteAllAndDestroy();
+            
+        }
+        if (counter < messageList.Count)
+        {
+            string message = messageList[counter];
+            Debug.Log(counter + " , " + messageList.Count);
+            StartTalkingSound();
+            textWriterSingle = TextWriter.AddWriter_Static(messageText, message, .02f, true, true, StopTalkingSound);
+            counter++;
+        }
+
+
+
+        //
+        for (int i = 1; i < messageList.Count; i++)
         {
 
             messageText = transform.Find("message").Find("messageText").GetComponent<Text>();
@@ -195,7 +217,7 @@ public class UI_Assistant : MonoBehaviour
 
     private void Start()
     {
-        talkingAudioSource.Stop();
+        //talkingAudioSource.Stop();
         //TextWriter.AddWriter_Static(messageText, "This is the assistant speaking, hello and goodbye, see you next time!", .1f, true);
     }
 
