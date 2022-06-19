@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641412, b: 0.57481986, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641383, b: 0.57482004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6825,12 +6825,12 @@ MonoBehaviour:
   Crab:
     prefab: {fileID: 6154498404679421889, guid: aa44af54dd255a240abb7b60036e8435, type: 3}
     cost: 100
-    upgradedPrefab: {fileID: 6154498404679421889, guid: 949fa959f7e904b4c9bdd5fda3e71565, type: 3}
+    upgradedPrefab: {fileID: 2691077589857590457, guid: 6b4f1bd2f76546a47bcc21cc7f969cce, type: 3}
     upgradeCost: 225
   Seaturtle:
     prefab: {fileID: 6154498404679421889, guid: 48a54f240ee7d4f429bb1de38beb694f, type: 3}
     cost: 150
-    upgradedPrefab: {fileID: 6154498404679421889, guid: f37dffbc5e1e0de41ad62cd9b5903a8b, type: 3}
+    upgradedPrefab: {fileID: 6401696858637287653, guid: d905637da776ea248978801dcb8e30d3, type: 3}
     upgradeCost: 300
   Squid:
     prefab: {fileID: 3699481411386982324, guid: a75e1bed372c6104ea1472eeb76cd409, type: 3}
