@@ -204,6 +204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SealWithAnimations
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: 4a1fb559bd3a456499cb446c5e72b48a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 9723ab1f2da36344ab9574548a855fb8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a1fb559bd3a456499cb446c5e72b48a, type: 3}
 --- !u!1 &4782622655047321628 stripped
