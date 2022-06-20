@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a8077d4d728584c9582a0eeb490365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 9
   damage: 1
   Csound: Seal Shoot
   sTower: {fileID: -7437469343506136252, guid: 6d478d4806881e84e86fae03cdb03b68, type: 3}
