@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 281181947}
   - component: {fileID: 281181946}
   - component: {fileID: 281181948}
+  - component: {fileID: 281181949}
   m_Layer: 5
   m_Name: messageText
   m_TagString: Untagged
@@ -442,6 +443,27 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &281181949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281181944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602f74cbbbd80034b96f88091a8e7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverBehaviourType: 0
+  hoverBehaviour_Color_Enter: {r: 0, g: 0, b: 0, a: 0}
+  hoverBehaviour_Color_Exit: {r: 0, g: 0, b: 0, a: 0}
+  hoverBehaviour_Image: {fileID: 0}
+  hoverBehaviour_Sprite_Exit: {fileID: 0}
+  hoverBehaviour_Sprite_Enter: {fileID: 0}
+  hoverBehaviour_Move: 0
+  hoverBehaviour_Move_Amount: {x: 0, y: 0}
+  triggerMouseOutFuncOnClick: 0
 --- !u!224 &436643104 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1132972465761030407, guid: 79cb3364404c58a4db225652cc2dca67, type: 3}
@@ -1501,7 +1523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1132972465761030407, guid: 79cb3364404c58a4db225652cc2dca67, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -367
+      value: -386
       objectReference: {fileID: 0}
     - target: {fileID: 1132972465761030407, guid: 79cb3364404c58a4db225652cc2dca67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1521,7 +1543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1132972465761030456, guid: 79cb3364404c58a4db225652cc2dca67, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79cb3364404c58a4db225652cc2dca67, type: 3}
