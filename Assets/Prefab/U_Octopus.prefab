@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 464906505037742874}
   - component: {fileID: -7437469343506136252}
   m_Layer: 0
-  m_Name: Octopus
+  m_Name: U_Octopus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,15 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c0993fd745be647a10b9118f9eadf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
+  range: 20
   fireRate: 1000
-  slowAmount: 0.7
+  slowAmount: 1.2
   useSlow: 1
   sht: 0
   enemyTag: Enemy
   partToRotate: {fileID: 1814459506736614708}
   turnSpeed: 10
-  bulletPrefab: {fileID: 6808398938589220931, guid: c17e14b749da9c24d98f660fb8df0b6c, type: 3}
+  bulletPrefab: {fileID: 6808398938589220931, guid: 3b7b0fcff730e9244b7dc2af1c51a757, type: 3}
   firePoint: {fileID: 7636142508904277589}
 --- !u!1 &575412580943117002
 GameObject:
@@ -229,8 +229,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 4fd58734ddaf3f443aa229ea19602ce6, type: 3}
-  - {fileID: -3522955778539423533, guid: 4fd58734ddaf3f443aa229ea19602ce6, type: 3}
+  - {fileID: 3188687217808306833, guid: 727154e4865977e41b922fbb5e776143, type: 3}
+  - {fileID: 3188687217808306833, guid: 727154e4865977e41b922fbb5e776143, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -343,7 +343,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: -2813467912831258332, guid: 4fd58734ddaf3f443aa229ea19602ce6, type: 3}
   - {fileID: -6629797300637803691, guid: 4fd58734ddaf3f443aa229ea19602ce6, type: 3}
-  - {fileID: -3522955778539423533, guid: 4fd58734ddaf3f443aa229ea19602ce6, type: 3}
+  - {fileID: 3188687217808306833, guid: 727154e4865977e41b922fbb5e776143, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
