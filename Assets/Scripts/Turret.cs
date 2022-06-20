@@ -126,9 +126,11 @@ public class Turret : MonoBehaviour
 		targetEnemy.Slow(slowAmount);
 		GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 		SlowBullet bullet = bulletGO.GetComponent<SlowBullet>();
-
+		
 		if (bullet != null)
 			bullet.Seek(target);
+		
+		AudioManager.PlaySoundStatic("Slow Shoot");
 	}
 
 	void OnDrawGizmosSelected()

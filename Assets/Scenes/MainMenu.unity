@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641412, b: 0.57481986, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657928, g: 0.49641383, b: 0.57482004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
+      propertyPath: sounds.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
+      propertyPath: sounds.Array.data[19].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: be546a4928abd8249a0fd172aa3b436d, type: 3}
+    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
+      propertyPath: sounds.Array.data[19].name
+      value: Octopus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
+      propertyPath: sounds.Array.data[19].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454026489202675272, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
+      propertyPath: sounds.Array.data[19].volume
+      value: 0.28
+      objectReference: {fileID: 0}
     - target: {fileID: 5454026489202675273, guid: 226391696c68a8640a87ba7115bb2c16, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -139,9 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a8077d4d728584c9582a0eeb490365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
+  speed: 1000
   damage: 1
-  Csound: Seal Shoot
+  Csound: Seagull Shoot
   sTower: {fileID: -7437469343506136252, guid: 6d478d4806881e84e86fae03cdb03b68, type: 3}
-  explosionRadius: 10
+  explosionRadius: 6
   impactEffect: {fileID: 5602886501433900314, guid: ae97e4e60d16f014581a4ed59131810b, type: 3}

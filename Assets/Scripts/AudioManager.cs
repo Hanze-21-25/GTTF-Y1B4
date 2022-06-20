@@ -55,5 +55,14 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public static void PlaySoundStatic(string name)
+    {
+        if (instance == null)
+        {
+            Debug.Log("No audio manager ");
+            return;
+        }
+        instance.Play(name);
+    }
 
 }

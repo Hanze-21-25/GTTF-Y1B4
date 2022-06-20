@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
 	//Wait to remove slow 
 	IEnumerator Wait ()
 	{
-		yield return new WaitForSeconds(10);
+		yield return new WaitForSeconds(3);
 		speed = startSpeed;
 	}
 
@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
 			WaveSpawner.EnemiesAlive--;
 			IsDead = true;
 			FindObjectOfType<AudioManager>().Play(death_sound);
-
+			
 		}
 
 	 }

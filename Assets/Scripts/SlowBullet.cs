@@ -21,7 +21,6 @@ public class SlowBullet : MonoBehaviour
 	void Start ()
     {
 		sAmount = sTower.slowAmount;
-
 	}
 
 	public void Seek(Transform _target)
@@ -97,8 +96,8 @@ public class SlowBullet : MonoBehaviour
 		
 		if (e != null) 
 		{
-			e.Slow(sAmount);
 			e.TakeDamage(damage);
+			e.Slow(sAmount);
 		}
 
 	}
